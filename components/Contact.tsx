@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { CallBackForm } from "./CallBackForm";
 
 export const Contact = () => {
   return (
@@ -20,11 +19,7 @@ export const Contact = () => {
           Залиште заявку, будь ласка. Наш менеджер зв&apos;яжеться з Вами
           найближчим часом та надасть фахову консультацію.
         </p>
-        <form className="flex flex-col gap-10">
-          <Input placeholder="Ведіть Ваше і'мя" />
-          <Input placeholder="Введіть номер телефону" />
-          <Button size="lg">Надіслати</Button>
-        </form>
+        <CallBackForm />
       </div>
     </section>
   );

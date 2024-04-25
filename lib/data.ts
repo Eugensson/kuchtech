@@ -25,153 +25,153 @@ export const categoryList = [
     subCategory: [
       {
         label: "Індукційні плити",
-        src: "/catalog/inductionPlates",
+        src: "/catalog/thermal/inductionPlates",
         imageURL: "/images/productsCategoryImageURL/inductionPlates.jpg",
       },
       {
         label: "Печі для піци",
-        src: "/catalog/pizzaOvens",
+        src: "/catalog/thermal/pizzaOvens",
         imageURL: "/images/productsCategoryImageURL/pizzaOvens.jpg",
       },
       {
         label: "Апарати Sous-Vide",
-        src: "/catalog/sousVideDevices",
+        src: "/catalog/thermal/sousVideDevices",
         imageURL: "/images/productsCategoryImageURL/sousVideDevices.jpg",
       },
       {
         label: "Грилі контактні професійні",
-        src: "/catalog/contactGrills",
+        src: "/catalog/thermal/contactGrills",
         imageURL: "/images/productsCategoryImageURL/contactGrills.jpg",
       },
       {
         label: "Фритюрниці професійні",
-        src: "/catalog/fryers",
+        src: "/catalog/thermal/fryers",
         imageURL: "/images/productsCategoryImageURL/fryers.jpg",
       },
       {
         label: "Рисоварки професійні",
-        src: "/catalog/riceCookers",
+        src: "/catalog/thermal/riceCookers",
         imageURL: "/images/productsCategoryImageURL/riceCookers.jpg",
       },
       {
         label: "Грилі для шаурми",
-        src: "/catalog/shawarmaGrills",
+        src: "/catalog/thermal/shawarmaGrills",
         imageURL: "/images/productsCategoryImageURL/shawarmaGrills.jpg",
       },
       {
         label: "Макароноварки",
-        src: "/catalog/pastaCookers",
+        src: "/catalog/thermal/pastaCookers",
         imageURL: "/images/productsCategoryImageURL/pastaCookers.jpg",
       },
       {
         label: "Розстійні шафи",
-        src: "/catalog/spaceSavingCabinets",
+        src: "/catalog/thermal/spaceSavingCabinets",
         imageURL: "/images/productsCategoryImageURL/spaceSavingCabinets.jpg",
       },
       {
         label: "Роликові грилі",
-        src: "/catalog/rollerGrills",
+        src: "/catalog/thermal/rollerGrills",
         imageURL: "/images/productsCategoryImageURL/rollerGrills.jpg",
       },
       {
         label: "Підігрівачі настільні",
-        src: "/catalog/tableHeaters",
+        src: "/catalog/thermal/tableHeaters",
         imageURL: "/images/productsCategoryImageURL/tableHeaters.jpg",
       },
       {
         label: "Електричні плити промислові",
-        src: "/catalog/electricStoves",
+        src: "/catalog/thermal/electricStoves",
         imageURL: "/images/productsCategoryImageURL/electricStoves.jpg",
       },
       {
         label: "Газові плити професійні",
-        src: "/catalog/gasStoves",
+        src: "/catalog/thermal/gasStoves",
         imageURL: "/images/productsCategoryImageURL/gasStoves.jpg",
       },
       {
         label: "Печі на вугіллі та дровах",
-        src: "/catalog/coalAndWoodStoves",
+        src: "/catalog/thermal/coalAndWoodStoves",
         imageURL: "/images/productsCategoryImageURL/coalAndWoodStoves.jpg",
       },
       {
         label: "Дров'яні печі для піци",
-        src: "/catalog/woodOvensForPizza",
+        src: "/catalog/thermal/woodOvensForPizza",
         imageURL: "/images/productsCategoryImageURL/woodOvensForPizza.jpg",
       },
       {
         label: "Поверхні для смаження",
-        src: "/catalog/surfacesForFrying",
+        src: "/catalog/thermal/surfacesForFrying",
         imageURL: "/images/productsCategoryImageURL/surfacesForFrying.jpg",
       },
       {
         label: "Вапо-грилі",
-        src: "/catalog/vapoGrills",
+        src: "/catalog/thermal/vapoGrills",
         imageURL: "/images/productsCategoryImageURL/vapoGrills.jpg",
       },
       {
         label: "Теплові вітрини",
-        src: "/catalog/thermalShowcases",
+        src: "/catalog/thermal/thermalShowcases",
         imageURL: "/images/productsCategoryImageURL/thermalShowcases.jpg",
       },
       {
         label: "Грилі Salamandra",
-        src: "/catalog/salamandraGrills",
+        src: "/catalog/thermal/salamandraGrills",
         imageURL: "/images/productsCategoryImageURL/salamandraGrills.jpg",
       },
       {
         label: "Вафельниці професійні",
-        src: "/catalog/waffleMakers",
+        src: "/catalog/thermal/waffleMakers",
         imageURL: "/images/productsCategoryImageURL/waffleMakers.jpg",
       },
       {
         label: "Дегідратори",
-        src: "/catalog/dehydrators",
+        src: "/catalog/thermal/dehydrators",
         imageURL: "/images/productsCategoryImageURL/dehydrators.jpg",
       },
       {
         label: "Котли варочні",
-        src: "/catalog/cookingBoilers",
+        src: "/catalog/thermal/cookingBoilers",
         imageURL: "/images/productsCategoryImageURL/cookingBoilers.jpg",
       },
       {
         label: "Марміти",
-        src: "/catalog/marmite",
+        src: "/catalog/thermal/marmite",
         imageURL: "/images/productsCategoryImageURL/marmite.jpg",
       },
       {
         label: "Паназійська кухня",
-        src: "/catalog/panAsianCuisine",
+        src: "/catalog/thermal/panAsianCuisine",
         imageURL: "/images/productsCategoryImageURL/panAsianCuisine.jpg",
       },
       {
         label: "Грилі лавові",
-        src: "/catalog/lavaGrills",
+        src: "/catalog/thermal/lavaGrills",
         imageURL: "/images/productsCategoryImageURL/lavaGrills.jpg",
       },
       {
         label: "Печі мікрохвильові професійні",
-        src: "/catalog/microwaveOvens",
+        src: "/catalog/thermal/microwaveOvens",
         imageURL: "/images/productsCategoryImageURL/microwaveOvens.jpg",
       },
       {
         label: "Апарати для попкорну",
-        src: "/catalog/popcornMachines",
+        src: "/catalog/thermal/popcornMachines",
         imageURL: "/images/productsCategoryImageURL/popcornMachines.jpg",
       },
       {
         label: "Апарати для солодкої вати",
-        src: "/catalog/apparatusForCottonCandy",
+        src: "/catalog/thermal/apparatusForCottonCandy",
         imageURL:
           "/images/productsCategoryImageURL/apparatusForCottonCandy.jpg",
       },
       {
         label: "Сковороди перекидні",
-        src: "/catalog/flipPans",
+        src: "/catalog/thermal/flipPans",
         imageURL: "/images/productsCategoryImageURL/flipPans.jpg",
       },
       {
         label: "Тостери професійні",
-        src: "/catalog/toasters",
+        src: "/catalog/thermal/toasters",
         imageURL: "/images/productsCategoryImageURL/toasters.jpg",
       },
     ],
@@ -185,62 +185,62 @@ export const categoryList = [
     subCategory: [
       {
         label: "Холодильні та морозильні шафи",
-        src: "/catalog/refrigeratorsAndFreezers",
+        src: "/catalog/refrigeration/refrigerators",
         imageURL:
           "/images/productsCategoryImageURL/refrigeratorsAndFreezers.jpg",
       },
       {
         label: "Холодильні та морозильні столи",
-        src: "/catalog/refrigeratorsAndFreezersTables",
+        src: "/catalog/refrigeration/tables",
         imageURL:
           "/images/productsCategoryImageURL/refrigeratorsAndFreezersTables.jpg",
       },
       {
         label: "Шафи шокової заморозки",
-        src: "/catalog/cabinetsOfShockFreezing",
+        src: "/catalog/refrigeration/shockFreezing",
         imageURL:
           "/images/productsCategoryImageURL/cabinetsOfShockFreezing.jpg",
       },
       {
         label: "Саладети",
-        src: "/catalog/salads",
+        src: "/catalog/refrigeration/salads",
         imageURL: "/images/productsCategoryImageURL/salads.jpg",
       },
       {
         label: "Льодогенератори",
-        src: "/catalog/iceMakers",
+        src: "/catalog/refrigeration/iceMakers",
         imageURL: "/images/productsCategoryImageURL/iceMakers.jpg",
       },
       {
         label: "Барні холодильники",
-        src: "/catalog/barFridges",
+        src: "/catalog/refrigeration/barFridges",
         imageURL: "/images/productsCategoryImageURL/barFridges.jpg",
       },
       {
         label: "Шафи для вина",
-        src: "/catalog/wineCabinets",
+        src: "/catalog/refrigeration/wineCabinets",
         imageURL: "/images/productsCategoryImageURL/wineCabinets.jpg",
       },
       {
         label: "Кондитерські вітрини",
-        src: "/catalog/confectioneryShowcases",
+        src: "/catalog/refrigeration/showcases",
         imageURL: "/images/productsCategoryImageURL/confectioneryShowcases.jpg",
       },
       {
         label: "Холодильні вітрини настільні",
-        src: "/catalog/refrigeratedShowcasesTabletop",
+        src: "/catalog/refrigeration/showcasesTabletop",
         imageURL:
           "/images/productsCategoryImageURL/refrigeratedShowcasesTabletop.jpg",
       },
       {
         label: "Холодильні вітрини-надставки",
-        src: "/catalog/refrigeratedShowcasesExtensions",
+        src: "/catalog/refrigeration/showcasesExtensions",
         imageURL:
           "/images/productsCategoryImageURL/refrigeratedShowcasesExtensions.jpg",
       },
       {
         label: "Апарати для виготовлення морозива",
-        src: "/catalog/iceCreamMachines",
+        src: "/catalog/refrigeration/iceCreamMachines",
         imageURL: "/images/productsCategoryImageURL/iceCreamMachines.jpg",
       },
     ],
@@ -253,83 +253,83 @@ export const categoryList = [
     subCategory: [
       {
         label: "М'ясорубки промислові",
-        src: "/catalog/meatGrindersIndustrial",
+        src: "/catalog/electromechanicalEquipment/meatGrindersIndustrial",
         imageURL: "/images/productsCategoryImageURL/meatGrindersIndustrial.jpg",
       },
       {
         label: "Тістоміси промислові",
-        src: "/catalog/doughMixers",
+        src: "/catalog/electromechanicalEquipment/doughMixers",
         imageURL: "/images/productsCategoryImageURL/doughMixers.jpg",
       },
       {
         label: "Слайсери промислові",
-        src: "/catalog/slicers",
+        src: "/catalog/electromechanicalEquipment/slicers",
         imageURL: "/images/productsCategoryImageURL/slicers.jpg",
       },
       {
         label: "Овочерізки професійні",
-        src: "/catalog/vegetableChopper",
+        src: "/catalog/electromechanicalEquipment/vegetableChopper",
         imageURL: "/images/productsCategoryImageURL/vegetableChopper.jpg",
       },
       {
         label: "Планетарні міксери",
-        src: "/catalog/planetaryMixers",
+        src: "/catalog/electromechanicalEquipment/planetaryMixers",
         imageURL: "/images/productsCategoryImageURL/planetaryMixers.jpg",
       },
       {
         label: "Ручні міксери професійні",
-        src: "/catalog/handMixers",
+        src: "/catalog/electromechanicalEquipment/handMixers",
         imageURL: "/images/productsCategoryImageURL/handMixers.jpg",
       },
       {
         label: "Кутери професійні",
-        src: "/catalog/cutters",
+        src: "/catalog/electromechanicalEquipment/cutters",
         imageURL: "/images/productsCategoryImageURL/cutters.jpg",
       },
       {
         label: "Картоплечистки промислові",
-        src: "/catalog/potatoPeelers",
+        src: "/catalog/electromechanicalEquipment/potatoPeelers",
         imageURL: "/images/productsCategoryImageURL/potatoPeelers.jpg",
       },
       {
         label: "Тісторозкаточні машини",
-        src: "/catalog/doughRoMachines",
+        src: "/catalog/electromechanicalEquipment/doughRoMachines",
         imageURL: "/images/productsCategoryImageURL/doughRoMachines.jpg",
       },
       {
         label: "Преси для піци та гамбургерів",
-        src: "/catalog/pizzaAndHamburgerPresses",
+        src: "/catalog/electromechanicalEquipment/pizzaAndHamburgerPresses",
         imageURL:
           "/images/productsCategoryImageURL/pizzaAndHamburgerPresses.jpg",
       },
       {
         label: "Шприці ковбасні",
-        src: "/catalog/sausageSyringes",
+        src: "/catalog/electromechanicalEquipment/sausageSyringes",
         imageURL: "/images/productsCategoryImageURL/sausageSyringes.jpg",
       },
       {
         label: "Пили для м'яса",
-        src: "/catalog/meatSaw",
+        src: "/catalog/electromechanicalEquipment/meatSaw",
         imageURL: "/images/productsCategoryImageURL/meatSaw.jpg",
       },
       {
         label: "Подрібнювачі спецій",
-        src: "/catalog/spiceGrinders",
+        src: "/catalog/electromechanicalEquipment/spiceGrinders",
         imageURL: "/images/productsCategoryImageURL/spiceGrinders.jpg",
       },
       {
         label: "Подрібнювачі відходів",
-        src: "/catalog/wasteShredders",
+        src: "/catalog/electromechanicalEquipment/wasteShredders",
         imageURL: "/images/productsCategoryImageURL/wasteShredders.jpg",
       },
       {
         label: "Хліборізки промислові",
-        src: "/catalog/breadCutters",
+        src: "/catalog/electromechanicalEquipment/breadCutters",
         imageURL: "/images/productsCategoryImageURL/breadCutters.jpg",
       },
       {
         label: "Фаршемішалки",
-        src: "/catalog/meatGrinders",
+        src: "/catalog/electromechanicalEquipment/meatGrinders",
         imageURL: "/images/productsCategoryImageURL/meatGrinders.jpg",
       },
     ],
@@ -342,12 +342,12 @@ export const categoryList = [
     subCategory: [
       {
         label: "Вакуумні пакувальники",
-        src: "/catalog/vacuumPackers",
+        src: "/catalog/packagingEquipment/vacuumPackers",
         imageURL: "/images/productsCategoryImageURL/vacuumPackers.jpg",
       },
       {
         label: "Апарати термопакувальні",
-        src: "/catalog/thermalPackaging",
+        src: "/catalog/packagingEquipment/thermalPackaging",
         imageURL: "/images/productsCategoryImageURL/thermalPackaging.jpg",
       },
     ],
@@ -360,27 +360,27 @@ export const categoryList = [
     subCategory: [
       {
         label: "Тунельні посудомийні машини",
-        src: "/catalog/tunnelDishwashers",
+        src: "/catalog/dishwasher/tunnelDishwashers",
         imageURL: "/images/productsCategoryImageURL/tunnelDishwashers.jpg",
       },
       {
         label: "Фронтальні посудомийні машини",
-        src: "/catalog/frontDishwashers",
+        src: "/catalog/dishwasher/frontDishwashers",
         imageURL: "/images/productsCategoryImageURL/frontDishwashers.jpg",
       },
       {
         label: "Купольні посудомийні машини",
-        src: "/catalog/domeDishwashers",
+        src: "/catalog/dishwasher/domeDishwashers",
         imageURL: "/images/productsCategoryImageURL/domeDishwashers.jpg",
       },
       {
         label: "Котломийні машини",
-        src: "/catalog/boilerWashingMachines",
+        src: "/catalog/dishwasher/boilerWashingMachines",
         imageURL: "/images/productsCategoryImageURL/boilerWashingMachines.jpg",
       },
       {
         label: "Фільтри для води",
-        src: "/catalog/filtersForWater",
+        src: "/catalog/dishwasher/filtersForWater",
         imageURL: "/images/productsCategoryImageURL/filtersForWater.jpg",
       },
     ],
@@ -393,37 +393,37 @@ export const categoryList = [
     subCategory: [
       {
         label: "Блендери професійні",
-        src: "/catalog/blenders",
+        src: "/catalog/barsEquipment/blenders",
         imageURL: "/images/productsCategoryImageURL/blenders.jpg",
       },
       {
         label: "Соковитискалки",
-        src: "/catalog/juicers",
+        src: "/catalog/barsEquipment/juicers",
         imageURL: "/images/productsCategoryImageURL/juicers.jpg",
       },
       {
         label: "Кавомашини професійні",
-        src: "/catalog/coffeeMachines",
+        src: "/catalog/barsEquipment/coffeeMachines",
         imageURL: "/images/productsCategoryImageURL/coffeeMachines.jpg",
       },
       {
         label: "Подрібнювачі льоду",
-        src: "/catalog/iceCrushers",
+        src: "/catalog/barsEquipment/iceCrushers",
         imageURL: "/images/productsCategoryImageURL/iceCrushers.jpg",
       },
       {
         label: "Електрокип'ятильники",
-        src: "/catalog/electricBoilers",
+        src: "/catalog/barsEquipment/electricBoilers",
         imageURL: "/images/productsCategoryImageURL/electricBoilers.jpg",
       },
       {
         label: "Кавомолки професійні",
-        src: "/catalog/coffeeGrinders",
+        src: "/catalog/barsEquipment/coffeeGrinders",
         imageURL: "/images/productsCategoryImageURL/coffeeGrinders.jpg",
       },
       {
         label: "Міксери для молочних коктейлей",
-        src: "/catalog/milkshakesMixers",
+        src: "/catalog/barsEquipment/milkshakesMixers",
         imageURL: "/images/productsCategoryImageURL/milkshakesMixers.jpg",
       },
     ],
@@ -436,22 +436,22 @@ export const categoryList = [
     subCategory: [
       {
         label: "Пральні машини промислові",
-        src: "/catalog/washingMachines",
+        src: "/catalog/laundryEquipment/washingMachines",
         imageURL: "/images/productsCategoryImageURL/washingMachines.jpg",
       },
       {
         label: "Сушильні машини промислові",
-        src: "/catalog/dryers",
+        src: "/catalog/laundryEquipment/dryers",
         imageURL: "/images/productsCategoryImageURL/dryers.jpg",
       },
       {
         label: "Прасувальні машини",
-        src: "/catalog/ironingMachines",
+        src: "/catalog/laundryEquipment/ironingMachines",
         imageURL: "/images/productsCategoryImageURL/ironingMachines.jpg",
       },
       {
         label: "Прасувальне обладнання",
-        src: "/catalog/ironingEquipment",
+        src: "/catalog/laundryEquipment/ironingEquipment",
         imageURL: "/images/productsCategoryImageURL/ironingEquipment.jpg",
       },
     ],
@@ -464,47 +464,47 @@ export const categoryList = [
     subCategory: [
       {
         label: "Печі ротаційні",
-        src: "/catalog/rotaryOvens",
+        src: "/catalog/bakeriesEquipment/rotaryOvens",
         imageURL: "/images/productsCategoryImageURL/rotaryOvens.jpg",
       },
       {
         label: "Печі подові",
-        src: "/catalog/podOvens",
+        src: "/catalog/bakeriesEquipment/podOvens",
         imageURL: "/images/productsCategoryImageURL/podOvens.jpg",
       },
       {
         label: "Камери розстійні",
-        src: "/catalog/spacedCameras",
+        src: "/catalog/bakeriesEquipment/spacedCameras",
         imageURL: "/images/productsCategoryImageURL/spacedCameras.jpg",
       },
       {
         label: "Планетарні міксери пекарські",
-        src: "/catalog/bakeryMixers",
+        src: "/catalog/bakeriesEquipment/bakeryMixers",
         imageURL: "/images/productsCategoryImageURL/bakeryMixers.jpg",
       },
       {
         label: "Тістоміси пекарські",
-        src: "/catalog/bakingDoughBowls",
+        src: "/catalog/bakeriesEquipment/bakingDoughBowls",
         imageURL: "/images/productsCategoryImageURL/bakingDoughBowls.jpg",
       },
       {
         label: "Тісторозкатки пекарські",
-        src: "/catalog/bakingDoughRolls",
+        src: "/catalog/bakeriesEquipment/bakingDoughRolls",
         imageURL: "/images/productsCategoryImageURL/bakingDoughRolls.jpg",
       },
       {
         label: "Тісторозподілювачі пекарські",
-        src: "/catalog/bakeryDoughDividers",
+        src: "/catalog/bakeriesEquipment/bakeryDoughDividers",
         imageURL: "/images/productsCategoryImageURL/bakeryDoughDividers.jpg",
       },
       {
         label: "Багетоформувальники пекарськi",
-        src: "/catalog/bakerBaguetteFormers",
+        src: "/catalog/bakeriesEquipment/bakerBaguetteFormers",
         imageURL: "/images/productsCategoryImageURL/bakerBaguetteFormers.jpg",
       },
       {
         label: "Ферментатори пекарськi",
-        src: "/catalog/bakeryFermenters",
+        src: "/catalog/bakeriesEquipment/bakeryFermenters",
         imageURL: "/images/productsCategoryImageURL/bakeryFermenters.jpg",
       },
     ],
@@ -517,54 +517,54 @@ export const categoryList = [
     subCategory: [
       {
         label: "М'ясорубки виробничі",
-        src: "/catalog/meatGrinders2",
+        src: "/catalog/meatShopEquipment/meatGrinders2",
         imageURL: "/images/productsCategoryImageURL/meatGrinders2.jpg",
       },
       {
         label: "Слайсери виробничі",
-        src: "/catalog/slicersIndustrial",
+        src: "/catalog/meatShopEquipment/slicersIndustrial",
         imageURL: "/images/productsCategoryImageURL/slicersIndustrial.jpg",
       },
       {
         label: "Фаршемiшалки виробничі",
-        src: "/catalog/meatMixers",
+        src: "/catalog/meatShopEquipment/meatMixers",
         imageURL: "/images/productsCategoryImageURL/meatMixers.jpg",
       },
       {
         label: "Подрібнювачі м'яса виробничі",
-        src: "/catalog/meatGrindersIndustrial2",
+        src: "/catalog/meatShopEquipment/meatGrindersIndustrial2",
         imageURL:
           "/images/productsCategoryImageURL/meatGrindersIndustrial2.jpg",
       },
       {
         label: "Пили для різки м'яса виробничі",
-        src: "/catalog/cuttingMeatSaws",
+        src: "/catalog/meatShopEquipment/cuttingMeatSaws",
         imageURL: "/images/productsCategoryImageURL/cuttingMeatSaws.jpg",
       },
       {
         label: "Стерилізатори для ножів",
-        src: "/catalog/knivesSterilizers",
+        src: "/catalog/meatShopEquipment/knivesSterilizers",
         imageURL: "/images/productsCategoryImageURL/knivesSterilizers.jpg",
       },
       {
         label: "Інсектицидні лампи",
-        src: "/catalog/insecticidalLamps",
+        src: "/catalog/meatShopEquipment/insecticidalLamps",
         imageURL: "/images/productsCategoryImageURL/insecticidalLamps.jpg",
       },
       {
         label: "Розрихлювач для м'яса",
-        src: "/catalog/meatTenderizer",
+        src: "/catalog/meatShopEquipment/meatTenderizer",
         imageURL: "/images/productsCategoryImageURL/meatTenderizer.jpg",
       },
       {
         label: "Шприцi ковбаснi виробничі",
-        src: "/catalog/sausageSyringesIndustrial",
+        src: "/catalog/meatShopEquipment/sausageSyringesIndustrial",
         imageURL:
           "/images/productsCategoryImageURL/sausageSyringesIndustrial.jpg",
       },
       {
         label: "Вакууматори виробничі",
-        src: "/catalog/vacuumators",
+        src: "/catalog/meatShopEquipment/vacuumators",
         imageURL: "/images/productsCategoryImageURL/vacuumators.jpg",
       },
     ],

@@ -2,15 +2,13 @@ import Link from "next/link";
 import { Mail, MapPinned, Phone } from "lucide-react";
 
 import { Map } from "@/components/Map";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactForm } from "@/components/ContactForm";
 
 const ContactPage = () => {
   return (
     <section className="mx-auto w-full py-5">
       <ul className="grid md:grid-cols-2 gap-5">
-        <li className="flex flex-col justify-center gap-5 rounded-lg p-8 bg-zinc-200/50 dark:bg-transparent">
+        <li className="flex flex-col min-h-[430px] justify-center gap-5 rounded-lg p-5 bg-zinc-200/50 dark:bg-transparent">
           <div className="flex items-center ml-10 gap-5">
             <Phone className="w-7 h-7" />
             <div>
@@ -38,14 +36,9 @@ const ContactPage = () => {
             </p>
           </div>
         </li>
-        <li className="rounded-lg p-8 bg-zinc-200/50 dark:bg-transparent">
+        <li className="min-h-[430px] flex flex-col items-center justify-center rounded-lg p-5 bg-zinc-200/50 dark:bg-transparent">
           <h2 className="text-center font-bold mb-5">Зворотній з&apos;вязок</h2>
-          <form className="flex flex-col gap-10">
-            <Input placeholder="Ведіть Ваше і'мя" />
-            <Input placeholder="Введіть e-mail" />
-            <Textarea placeholder="Введіть текст повідомлення" />
-            <Button>Надіслати</Button>
-          </form>
+          <ContactForm />
         </li>
         <li className="col-span-2 rounded-lg bg-zinc-200/50 dark:bg-transparent">
           <Map />

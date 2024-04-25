@@ -2,11 +2,11 @@ import { categoryList } from "@/lib/data";
 import CategoryItem from "@/components/CategoryItem";
 
 type Props = {
-  params: { slug: string };
+  params: { cat: string };
 };
 
-const CategoryPage = ({ params: { slug } }: Props) => {
-  const index = categoryList.findIndex((item) => item.category === slug);
+const CategoryPage = ({ params: { cat } }: Props) => {
+  const index = categoryList.findIndex((item) => item.category === cat);
   const { subCategory } = categoryList[index];
 
   return (
