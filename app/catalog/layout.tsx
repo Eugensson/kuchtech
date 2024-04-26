@@ -40,6 +40,7 @@ const CatalogLayout = ({ children }: { children: React.ReactNode }) => {
           </li>
         ))}
       </ul>
+
       {/* <Accordion
         className="col-span-1 max-h-[500px] overflow-y-scroll"
         type="single"

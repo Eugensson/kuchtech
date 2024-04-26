@@ -13,26 +13,32 @@ const ContactPage = () => {
             <Phone />
             <div>
               <Link
-                href="tel:+380671234567"
+                href="tel:+380938803787"
                 className="block transition hover:text-rose-700"
               >
-                +38 067 123 45 67
+                +38 093 880 37 87
               </Link>
               <Link
-                href="tel:+380671234567"
+                href="tel:+380973940015"
                 className="block transition hover:text-rose-700"
               >
-                +38 067 123 45 67
+                +38 097 394 00 15
+              </Link>
+              <Link
+                href="tel:+380631068008"
+                className="block transition hover:text-rose-700"
+              >
+                +38 063 106 80 08
               </Link>
             </div>
           </div>
           <div className="flex items-center ml-10 gap-5">
             <Mail />
             <Link
-              href="mailto:test@test.com"
+              href="mailto:daksa1974@gmail.com"
               className="block transition hover:text-rose-700"
             >
-              test@test.com
+              daksa1974@gmail.com
             </Link>
           </div>
           <div className="flex items-center ml-10 gap-5">
@@ -40,7 +46,7 @@ const ContactPage = () => {
             <p>
               Черкаська обл., м. Черкаси,
               <br />
-              вул. Остафія Дашкевича, 10
+              вул. Остафія Дашкевича, 29
               <br />
             </p>
           </div>

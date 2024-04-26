@@ -187,21 +187,21 @@ export const Footer = () => {
             <ul className="flex flex-col gap-2 mt-2 md:mt-4 xl:mt-8 text-xs xl:text-sm">
               <li>
                 <Link
-                  href="mailto:test@test.com"
+                  href="mailto:daksa1974@gmail.com"
                   className="flex justify-start items-center gap-2 text-gray-600 transition hover:text-red-500"
                 >
                   <Mail />
-                  test@test.com
+                  daksa1974@gmail.com
                 </Link>
               </li>
 
               <li>
                 <Link
-                  href="tel:+380671234567"
+                  href="tel:+380938803787"
                   className="flex justify-start items-center gap-2 text-gray-600 transition hover:text-red-500"
                 >
                   <Phone />
-                  +380671234567
+                  +38 093 880 37 87
                 </Link>
               </li>
 
@@ -209,7 +209,7 @@ export const Footer = () => {
                 <MapPin />
                 <address className="not-italic text-left">
                   <p>м. Черкаси,</p>
-                  <p>вул. О.Дашкевича, 10</p>
+                  <p>вул. О.Дашкевича, 29</p>
                 </address>
               </li>
             </ul>

@@ -6,6 +6,7 @@ import { AlignJustify, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "@/components/MobileMenu";
+import LogInButton from "@/components/LogInButton";
 import { Navigation } from "@/components/Navigation";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -29,7 +30,10 @@ export const Header = () => {
         </Button>
         {isVisible && <MobileMenu toggleMobileMenu={toggleMobileMenu} />}
         <Navigation />
-        <ThemeToggle />
+        <div className="flex gap-2">
+          <ThemeToggle />
+          <LogInButton />
+        </div>
       </div>
     </header>
   );
