@@ -7,27 +7,36 @@ import { ContactForm } from "@/components/ContactForm";
 const ContactPage = () => {
   return (
     <section className="mx-auto w-full py-5">
-      <ul className="grid md:grid-cols-2 gap-5">
-        <li className="flex flex-col min-h-[430px] justify-center gap-5 rounded-lg p-5 bg-zinc-200/50 dark:bg-transparent">
+      <ul className="grid md:grid-cols-2 gap-5 font-semibold text-gray-500">
+        <li className="flex flex-col min-h-[430px] justify-center gap-5 rounded-lg p-5">
           <div className="flex items-center ml-10 gap-5">
-            <Phone className="w-7 h-7" />
+            <Phone />
             <div>
-              <Link href="tel:+380671234567" className="block hover:underline">
+              <Link
+                href="tel:+380671234567"
+                className="block transition hover:text-rose-700"
+              >
                 +38 067 123 45 67
               </Link>
-              <Link href="tel:+380671234567" className="block hover:underline">
+              <Link
+                href="tel:+380671234567"
+                className="block transition hover:text-rose-700"
+              >
                 +38 067 123 45 67
               </Link>
             </div>
           </div>
           <div className="flex items-center ml-10 gap-5">
-            <Mail className="w-7 h-7" />
-            <Link href="mailto:test@test.com" className="block hover:underline">
+            <Mail />
+            <Link
+              href="mailto:test@test.com"
+              className="block transition hover:text-rose-700"
+            >
               test@test.com
             </Link>
           </div>
           <div className="flex items-center ml-10 gap-5">
-            <MapPinned className="w-7 h-7" />
+            <MapPinned />
             <p>
               Черкаська обл., м. Черкаси,
               <br />
@@ -36,11 +45,13 @@ const ContactPage = () => {
             </p>
           </div>
         </li>
-        <li className="min-h-[430px] flex flex-col items-center justify-center rounded-lg p-5 bg-zinc-200/50 dark:bg-transparent">
-          <h2 className="text-center font-bold mb-5">Зворотній з&apos;вязок</h2>
+        <li className="min-h-[430px] flex flex-col items-center justify-center rounded-lg p-5 ">
+          <h2 className="text-gray-500 text-center font-bold mb-5">
+            Зворотній з&apos;вязок
+          </h2>
           <ContactForm />
         </li>
-        <li className="col-span-2 rounded-lg bg-zinc-200/50 dark:bg-transparent">
+        <li className="col-span-2 rounded-lg">
           <Map />
         </li>
       </ul>

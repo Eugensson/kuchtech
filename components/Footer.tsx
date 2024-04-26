@@ -12,17 +12,17 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="mx-auto max-w-screen-xl pb-6 pt-10 lg:pt-12">
+    <footer className="mx-auto max-w-screen-xl py-2 lg:py-4 mt-2 border-t-2">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-        <div>
-          <div className="flex justify-center text-teal-600 sm:justify-start">
+        <div className="flex flex-col gap-2 md:gap-4">
+          <div className="flex justify-center lg:justify-start">
             <Logo />
           </div>
-          <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
+          <p className="max-w-sm text-xs md:text-sm text-center leading-relaxed text-gray-500 sm:max-w-lg md:text-left">
             Постачальник професійного обладнання для кафе, барів та ресторанів.
           </p>
 
-          <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+          <ul className="flex justify-center xl:justify-start gap-6 md:gap-8">
             <li>
               <Link
                 href={"https://www.facebook.com"}
@@ -30,7 +30,7 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Посилання на Facebook"
               >
-                <FaFacebook className="w-5 h-5 text-teal-700 transition hover:text-teal-700/75" />
+                <FaFacebook className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
 
@@ -41,7 +41,7 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Посилання на Instagram"
               >
-                <FaInstagram className="w-5 h-5 text-teal-700 transition hover:text-teal-700/75" />
+                <FaInstagram className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
             <li>
@@ -51,7 +51,7 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Посилання на Telegram"
               >
-                <FaTelegram className="w-5 h-5 text-teal-700 transition hover:text-teal-700/75" />
+                <FaTelegram className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
 
@@ -64,7 +64,7 @@ export const Footer = () => {
               >
                 <FaViber
                   aria-label="Viber icon"
-                  className="w-5 h-5 text-teal-700 transition hover:text-teal-700/75"
+                  className="w-5 h-5 text-teal-700 transition hover:text-red-500"
                 />
               </Link>
             </li>
@@ -76,21 +76,23 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Whatsapp контакт"
               >
-                <FaWhatsapp className="w-5 h-5 text-teal-700 transition hover:text-teal-700/75" />
+                <FaWhatsapp className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
+        <div className="hidden md:grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
           <div className="text-center sm:text-left">
-            <p className="text-lg font-medium text-gray-900">Про нас</p>
+            <p className="text-sm md:test-base font-medium text-gray-500">
+              Про нас
+            </p>
 
-            <ul className="mt-8 space-y-4 text-sm">
+            <ul className="flex flex-col gap-2 mt-2 md:mt-4 xl:mt-8 text-xs xl:text-sm">
               <li>
                 <Link
                   href={"/about"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Загальна інформація
                 </Link>
@@ -99,7 +101,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href={"/about/brands"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Марки обладнання
                 </Link>
@@ -108,13 +110,15 @@ export const Footer = () => {
           </div>
 
           <div className="text-center sm:text-left">
-            <p className="text-lg font-medium text-gray-900">Послуги</p>
+            <p className="text-sm md:test-base font-medium text-gray-500">
+              Послуги
+            </p>
 
-            <ul className="mt-8 space-y-4 text-sm">
+            <ul className="flex flex-col gap-2 mt-2 md:mt-4 xl:mt-8 text-xs xl:text-sm">
               <li>
                 <Link
                   href={"/catalog"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Продукція
                 </Link>
@@ -123,7 +127,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href={"/service"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Сервіс
                 </Link>
@@ -132,7 +136,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href={"/payment"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Оплата та доставка
                 </Link>
@@ -141,13 +145,15 @@ export const Footer = () => {
           </div>
 
           <div className="text-center sm:text-left">
-            <p className="text-lg font-medium text-gray-900">Корисне</p>
+            <p className="text-sm md:test-base font-medium text-gray-500">
+              Корисне
+            </p>
 
-            <ul className="mt-8 space-y-4 text-sm">
+            <ul className="flex flex-col gap-2 mt-2 md:mt-4 xl:mt-8 text-xs xl:text-sm">
               <li>
                 <Link
                   href={"/helpful/faq"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Запитання клієнтів
                 </Link>
@@ -156,7 +162,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href={"/helpful/support"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Підтримка
                 </Link>
@@ -165,7 +171,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href={"/helpful/articles"}
-                  className="text-gray-700 transition hover:text-gray-700/75"
+                  className="text-gray-600 transition hover:text-red-500"
                 >
                   Статті
                 </Link>
@@ -174,52 +180,56 @@ export const Footer = () => {
           </div>
 
           <div className="text-center sm:text-left">
-            <p className="text-lg font-medium text-gray-900">Контакти</p>
+            <p className="text-sm md:test-base font-medium text-gray-500">
+              Контакти
+            </p>
 
-            <ul className="mt-8 space-y-4 text-sm">
+            <ul className="flex flex-col gap-2 mt-2 md:mt-4 xl:mt-8 text-xs xl:text-sm">
               <li>
-                <a
-                  className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                  href="#"
+                <Link
+                  href="mailto:test@test.com"
+                  className="flex justify-start items-center gap-2 text-gray-600 transition hover:text-red-500"
                 >
-                  <Mail className="w-5 h-5" />
-                  <span className="flex-1 text-gray-700">john@doe.com</span>
-                </a>
+                  <Mail />
+                  test@test.com
+                </Link>
               </li>
 
               <li>
-                <a
-                  className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                  href="#"
+                <Link
+                  href="tel:+380671234567"
+                  className="flex justify-start items-center gap-2 text-gray-600 transition hover:text-red-500"
                 >
-                  <Phone className="w-5 h-5" />
-                  <span className="flex-1 text-gray-700">0123456789</span>
-                </a>
+                  <Phone />
+                  +380671234567
+                </Link>
               </li>
 
-              <li className="flex items-start justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
-                <MapPin className="w-5 h-5" />
-                <address className="-mt-0.5 flex-1 not-italic text-gray-700">
-                  213 Lane, Cherkassy, Ukraine
+              <li className="flex justify-start items-center gap-2 text-gray-600">
+                <MapPin />
+                <address className="not-italic text-left">
+                  <p>м. Черкаси,</p>
+                  <p>вул. О.Дашкевича, 10</p>
                 </address>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="mt-2 border-t border-gray-100 pt-6">
+
+      <div className="border-gray-100 pt-6">
         <div className="text-center sm:flex sm:justify-between sm:text-left">
-          <p className="text-sm text-gray-500">
+          <p className="text-xs text-gray-500">
             <span className="block sm:inline">Development & Design by</span>{" "}
             <Link
               href={"/"}
-              className="inline-block text-teal-900 transition hover:text-teal-900/75"
+              className="inline-block text-teal-900 transition hover:text-red-500"
             >
               @Eugenssson
             </Link>
           </p>
 
-          <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
+          <p className="mt-2 text-xs text-gray-500 sm:order-first sm:mt-0">
             &copy; KuchTech - 2024. All rights reserved.
           </p>
         </div>

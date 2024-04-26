@@ -1,36 +1,34 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { navLinks } from "@/lib/data";
 
 export const Navigation = () => {
+  const pathname = usePathname();
+
   return (
-    <nav>
-      <ul className="flex items-center gap-10">
-        <li>
-          <Link href={"/catalog"} className="p-4">
-            Каталог
-          </Link>
-        </li>
-        <li>
-          <Link href={"/about"} className="p-4">
-            Про нас
-          </Link>
-        </li>
-        <li>
-          <Link href={"/service"} className="p-4">
-            Сервіс
-          </Link>
-        </li>
-        <li>
-          <Link href={"/payment"} className="p-4">
-            Оплата та доставка
-          </Link>
-        </li>
-        <li>
-          <Link href={"/contact"} className="p-4">
-            Контакти
-          </Link>
-        </li>
+    <nav className="text-sm xl:text-base">
+      <ul className="hidden md:flex items-center md:gap-5 xl:gap-10">
+        {navLinks.map(({ label, src }) => {
+          const isActive = pathname === src;
+
+          return (
+            <li key={label}>
+              <Link
+                href={src}
+                className={`py-4 ${
+                  isActive
+                    ? "hover:underline text-red-500 font-semibold"
+                    : "hover:text-red-500"
+                }`}
+              >
+                {label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

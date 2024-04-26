@@ -1,3 +1,11 @@
+export const navLinks = [
+  { label: "Каталог", src: "/catalog" },
+  { label: "Про нас", src: "/about" },
+  { label: "Сервіс", src: "/service" },
+  { label: "Оплата та доставка", src: "/payment" },
+  { label: "Контакти", src: "/contact" },
+];
+
 export const categoryList = [
   {
     label: "Печі та пароконвектомати",

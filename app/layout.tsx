@@ -32,7 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="w-full max-w-screen-xl mx-auto p-2 flex grow justify-center items-center text-xs md:text-sm lg:text-base">
+          <main className="w-full max-w-screen-xl mx-auto flex grow justify-center items-center text-xs md:text-sm lg:text-base">
             {children}
           </main>
           <Footer />
