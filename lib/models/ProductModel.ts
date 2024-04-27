@@ -2,26 +2,21 @@ import { Schema, model, models } from "mongoose";
 
 const productSchema = new Schema(
   {
-    slug: { type: String, required: true, unique: true },
     name: { type: String, required: true },
+    slug: { type: String, required: true, unique: true },
     category: { type: String, required: true },
-    brand: { type: String, required: true },
-    country: { type: String, required: true },
-    size: { type: String, required: true },
+    image: { type: String, required: true },
     price: { type: Number, required: true },
-    power: { type: Number, required: true },
-    voltage: { type: String, required: true },
-    weight: { type: Number, required: true },
-    steamHumidificationType: { type: String },
-    numberOfLevels: { type: Number, required: true },
-    connectionType: { type: String, required: true },
-    controlPanel: { type: String, required: true },
+    brand: { type: String, required: true },
+    rating: { type: Number, required: true, default: 0 },
+    numReviews: { type: Number, required: true, default: 0 },
+    countInStock: { type: Number, required: true, default: 0 },
     description: { type: String, required: true },
-    imageURL: { type: String, required: true },
+    isFeatured: { type: Boolean, default: false },
+    banner: String,
   },
   {
     timestamps: true,
-    versionKey: false,
   }
 );
 
@@ -31,20 +26,17 @@ export default ProductModel;
 
 export type Product = {
   _id?: string;
-  slug: string;
   name: string;
-  category: string;
-  brand: string;
-  country: string;
-  size: string;
+  slug: string;
+  image: string;
+  banner?: string;
   price: number;
-  power: number;
-  voltage: string;
-  weight: number;
-  numberOfLevels: number;
-  steamHumidificationType?: string;
-  connectionType: string;
-  controlPanel: string;
+  brand: string;
   description: string;
-  imageURL: string;
+  category: string;
+  rating: number;
+  numReviews: number;
+  countInStock: number;
+  colors?: [];
+  sizes?: [];
 };
