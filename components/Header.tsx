@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { AlignJustify, UserRoundCog } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -15,7 +16,6 @@ import { Button } from "@/components/ui/button";
 import MobileMenu from "@/components/MobileMenu";
 import { Navigation } from "@/components/Navigation";
 import { ThemeToggle } from "@/components/theme-toggle";
-import Link from "next/link";
 
 export const Header = () => {
   const { data: session } = useSession();
