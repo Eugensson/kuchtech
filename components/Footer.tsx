@@ -30,7 +30,7 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Посилання на Facebook"
               >
-                <FaFacebook className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
+                <FaFacebook className="w-6 h-6 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
 
@@ -41,7 +41,7 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Посилання на Instagram"
               >
-                <FaInstagram className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
+                <FaInstagram className="w-6 h-6 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
             <li>
@@ -51,7 +51,7 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Посилання на Telegram"
               >
-                <FaTelegram className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
+                <FaTelegram className="w-6 h-6 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
 
@@ -64,7 +64,7 @@ export const Footer = () => {
               >
                 <FaViber
                   aria-label="Viber icon"
-                  className="w-5 h-5 text-teal-700 transition hover:text-red-500"
+                  className="w-6 h-6 text-teal-700 transition hover:text-red-500"
                 />
               </Link>
             </li>
@@ -76,7 +76,7 @@ export const Footer = () => {
                 target="_blank"
                 aria-label="Whatsapp контакт"
               >
-                <FaWhatsapp className="w-5 h-5 text-teal-700 transition hover:text-red-500" />
+                <FaWhatsapp className="w-6 h-6 text-teal-700 transition hover:text-red-500" />
               </Link>
             </li>
           </ul>
@@ -217,22 +217,20 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="border-gray-100 pt-6">
-        <div className="text-center sm:flex sm:justify-between sm:text-left">
-          <p className="text-xs text-gray-500">
-            <span className="block sm:inline">Development & Design by</span>{" "}
-            <Link
-              href={"/"}
-              className="inline-block text-teal-900 transition hover:text-red-500"
-            >
-              @Eugenssson
-            </Link>
-          </p>
+      <div className="pt-5 text-center sm:flex sm:justify-between sm:text-left text-gray-500">
+        <p className="text-xs">
+          <span className="block sm:inline">Development & Design by</span>{" "}
+          <Link
+            href={"/"}
+            className="inline-block transition hover:text-red-500"
+          >
+            Eugenssson
+          </Link>
+        </p>
 
-          <p className="mt-2 text-xs text-gray-500 sm:order-first sm:mt-0">
-            &copy; KuchTech - 2024. All rights reserved.
-          </p>
-        </div>
+        <p className="mt-2 text-xs sm:order-first sm:mt-0">
+          &copy; KuchTech - 2024. All rights reserved.
+        </p>
       </div>
     </footer>
   );

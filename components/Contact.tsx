@@ -3,7 +3,7 @@ import { CallBackForm } from "./CallBackForm";
 
 export const Contact = () => {
   return (
-    <section className="grid grid-cols-2">
+    <section className="grid grid-cols-2 dark:bg-white/5">
       <Image
         src={"/images/contact.jpg"}
         width={600}

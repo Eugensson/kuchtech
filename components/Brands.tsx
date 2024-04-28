@@ -36,12 +36,13 @@ export const Brands = () => {
         <CarouselContent className="-ml-1">
           {brandList.map(({ name, imageURL }) => (
             <CarouselItem key={name} className="pl-5 md:basis-1/3 lg:basis-1/5">
-              <div className="p-4 flex items-center justify-center border-2 rounded-lg">
+              <div className="p-4 flex items-center justify-center border-2 rounded-lg dark:bg-white/5">
                 <Image
                   src={imageURL}
                   width={150}
                   height={75}
                   alt="Логотип компанії"
+                  className="w-full h-auto "
                 />
               </div>
             </CarouselItem>
