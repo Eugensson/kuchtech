@@ -16,6 +16,16 @@ const getLatest = cache(async () => {
   return products as Product[];
 });
 
+const getFeatured = cache(async () => {
+  await dbConnect();
+
+  const products = await ProductModel.find({ isFeatured: true })
+    .limit(3)
+    .lean();
+
+  return products as Product[];
+});
+
 const getBySlug = cache(async (slug: string) => {
   await dbConnect();
 
@@ -24,7 +34,7 @@ const getBySlug = cache(async (slug: string) => {
   return product as Product;
 });
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 3;
 
 const getByQuery = cache(
   async ({
@@ -125,6 +135,7 @@ const getCategories = cache(async () => {
 
 const productService = {
   getLatest,
+  getFeatured,
   getBySlug,
   getByQuery,
   getCategories,

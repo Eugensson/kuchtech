@@ -5,7 +5,7 @@ const authConfig = {
   providers: [],
   callbacks: {
     authorized({ request, auth }: any) {
-      const protectedPaths = [/\/profile/, /\/admin/];
+      const protectedPaths = [/\/admin\/(.*)/];
       const { pathname } = request.nextUrl;
       if (protectedPaths.some((p) => p.test(pathname))) return !!auth;
       return true;

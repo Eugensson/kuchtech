@@ -1,15 +1,12 @@
 "use client";
 
-import useSWR from "swr";
-import Link from "next/link";
-import toast from "react-hot-toast";
-import useSWRMutation from "swr/mutation";
-import { useRouter } from "next/navigation";
-
-import { formatId } from "@/lib/utils";
 import { Product } from "@/lib/models/ProductModel";
-import { Button } from "@/components/ui/button";
-import { FolderPlus, SquarePen, Trash2 } from "lucide-react";
+import { formatId } from "@/lib/utils";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import useSWR from "swr";
+import useSWRMutation from "swr/mutation";
 
 export default function Products() {
   const { data: products, error } = useSWR(`/api/admin/products`);
@@ -19,7 +16,7 @@ export default function Products() {
   const { trigger: deleteProduct } = useSWRMutation(
     `/api/admin/products`,
     async (url, { arg }: { arg: { productId: string } }) => {
-      const toastId = toast.loading("Видалення продукту...");
+      const toastId = toast.loading("Deleting product...");
       const res = await fetch(`${url}/${arg.productId}`, {
         method: "DELETE",
         headers: {
@@ -28,7 +25,7 @@ export default function Products() {
       });
       const data = await res.json();
       res.ok
-        ? toast.success("Продукт успішно видалено", {
+        ? toast.success("Product deleted successfully", {
             id: toastId,
           })
         : toast.error(data.message, {
@@ -49,39 +46,39 @@ export default function Products() {
       const data = await res.json();
       if (!res.ok) return toast.error(data.message);
 
-      toast.success("Продукт успішно створено");
+      toast.success("Product created successfully");
       router.push(`/admin/products/${data.product._id}`);
     }
   );
 
-  if (error) return "Сталася помилка.";
-  if (!products) return "Завантаження...";
+  if (error) return "An error has occurred.";
+  if (!products) return "Loading...";
 
   return (
-    <div className="w-full">
+    <div>
       <div className="flex justify-between items-center">
-        <h1 className="py-4 text-2xl">Продукція</h1>
-        <Button
-          variant="outline"
-          size="icon"
+        <h1 className="py-4 text-2xl">Products</h1>
+        <button
           disabled={isCreating}
           onClick={() => createProduct()}
+          className="btn btn-primary btn-sm"
         >
-          <FolderPlus />
-        </Button>
+          {isCreating && <span className="loading loading-spinner"></span>}
+          Create
+        </button>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full table table-zebra">
+        <table className="table table-zebra">
           <thead>
             <tr>
-              <th className="text-start">Id</th>
-              <th className="text-start">Назва</th>
-              <th className="text-start">Ціна</th>
-              <th className="text-start">Категорія</th>
-              <th className="text-start">Кількість</th>
-              <th className="text-start">Рейтинг</th>
-              <th className="text-start">Дії</th>
+              <th>id</th>
+              <th>name</th>
+              <th>price</th>
+              <th>category</th>
+              <th>count in stock</th>
+              <th>rating</th>
+              <th>actions</th>
             </tr>
           </thead>
           <tbody>
@@ -93,18 +90,22 @@ export default function Products() {
                 <td>{product.category}</td>
                 <td>{product.countInStock}</td>
                 <td>{product.rating}</td>
-                <td className="flex gap-1 items-center">
-                  <Link href={`/admin/products/${product._id}`}>
-                    <SquarePen />
-                  </Link>
-                  <Button
-                    variant="outline"
-                    size="icon"
+                <td>
+                  <Link
+                    href={`/admin/products/${product._id}`}
                     type="button"
-                    onClick={() => deleteProduct({ productId: product._id! })}
+                    className="btn btn-ghost btn-sm"
                   >
-                    <Trash2 />
-                  </Button>
+                    Edit
+                  </Link>
+                  &nbsp;
+                  <button
+                    onClick={() => deleteProduct({ productId: product._id! })}
+                    type="button"
+                    className="btn btn-ghost btn-sm"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

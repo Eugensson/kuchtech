@@ -10,11 +10,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { data } from "@/lib/data";
+import { brandList } from "@/lib/data";
 
-const Brands = () => {
-  const { brandList } = data;
-
+export const Brands = () => {
   return (
     <section className="w-full py-10">
       <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 md:py-10 lg:px-8">
@@ -55,5 +53,3 @@ const Brands = () => {
     </section>
   );
 };
-
-export default Brands;

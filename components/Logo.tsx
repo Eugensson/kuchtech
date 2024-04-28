@@ -8,7 +8,7 @@ export const Logo = () => {
     <Link
       href={"/"}
       aria-label="Логотип компанії"
-      className={`${julee.className} text-teal-600 font-bold sm:text-xs md:text-2xl xl:text-4xl`}
+      className={`${julee.className} flex items-center justify-center text-teal-600 font-bold text-2xl xl:text-3xl p-1`}
     >
       Kuch<span className="text-rose-700">Tech</span>.com
     </Link>

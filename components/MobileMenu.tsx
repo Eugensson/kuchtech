@@ -9,7 +9,7 @@ interface MobileMenuProps {
   toggleMobileMenu: () => void;
 }
 
-const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
+export const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
   const pathname = usePathname();
 
   return (
@@ -42,36 +42,8 @@ const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
               </li>
             );
           })}
-
-          {/* <li>
-            <Link href={"/catalog"} onClick={toggleMobileMenu} className="p-4">
-              Каталог
-            </Link>
-          </li>
-          <li>
-            <Link href={"/about"} onClick={toggleMobileMenu} className="p-4">
-              Про нас
-            </Link>
-          </li>
-          <li>
-            <Link href={"/service"} onClick={toggleMobileMenu} className="p-4">
-              Сервіс
-            </Link>
-          </li>
-          <li>
-            <Link href={"/payment"} onClick={toggleMobileMenu} className="p-4">
-              Оплата та доставка
-            </Link>
-          </li>
-          <li>
-            <Link href={"/contact"} onClick={toggleMobileMenu} className="p-4">
-              Контакти
-            </Link>
-          </li> */}
         </ul>
       </nav>
     </div>
   );
 };
-
-export default MobileMenu;

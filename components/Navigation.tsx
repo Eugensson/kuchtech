@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 import { navLinks } from "@/lib/data";
 
 export const Navigation = () => {
+  const { data: session } = useSession();
   const pathname = usePathname();
 
   return (
-    <nav className="text-sm xl:text-base">
-      <ul className="hidden md:flex items-center md:gap-5 xl:gap-10">
+    <nav className="text-xs md:text-sm xl:text-base">
+      <ul className="flex items-center gap-2 lg:gap-8">
         {navLinks.map(({ label, src }) => {
           const isActive = pathname === src;
 
@@ -29,6 +31,34 @@ export const Navigation = () => {
             </li>
           );
         })}
+        {session?.user && (
+          <li key="profile">
+            <Link
+              href="/admin/profile"
+              className={`py-4 ${
+                pathname === "/admin/profile"
+                  ? "hover:underline text-red-500 font-semibold"
+                  : "hover:text-red-500"
+              }`}
+            >
+              Профіль
+            </Link>
+          </li>
+        )}
+        {session?.user?.isAdmin && (
+          <li key="products">
+            <Link
+              href="/admin/products"
+              className={`py-4 ${
+                pathname === "/admin/products"
+                  ? "hover:underline text-red-500 font-semibold"
+                  : "hover:text-red-500"
+              }`}
+            >
+              Товари
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

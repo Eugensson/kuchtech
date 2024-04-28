@@ -1,8 +1,10 @@
+import bcrypt from "bcryptjs";
+
 export const navLinks = [
   { label: "Каталог", src: "/catalog" },
   { label: "Про нас", src: "/about" },
   { label: "Сервіс", src: "/service" },
-  { label: "Оплата та доставка", src: "/payment" },
+  { label: "Оплата/доставка", src: "/payment" },
   { label: "Контакти", src: "/contact" },
 ];
 
@@ -579,44 +581,53 @@ export const categoryList = [
   },
 ];
 
-export const data = {
-  brandList: [
-    { name: "Adler", imageURL: "/images/logos/adler.svg" },
-    { name: "Arris", imageURL: "/images/logos/arris.svg" },
-    { name: "Astoria", imageURL: "/images/logos/astoria.svg" },
-    { name: "Bartscher", imageURL: "/images/logos/bartscher.svg" },
-    { name: "Brema", imageURL: "/images/logos/brema.svg" },
-    { name: "Casta", imageURL: "/images/logos/casta.svg" },
-    { name: "Ceado", imageURL: "/images/logos/ceado.svg" },
-    { name: "Cold", imageURL: "/images/logos/cold.svg" },
-    { name: "Conti", imageURL: "/images/logos/conti.svg" },
-    { name: "Cuppone", imageURL: "/images/logos/cuppone.svg" },
-    { name: "Dihr", imageURL: "/images/logos/dihr.svg" },
-    { name: "Elettrobar", imageURL: "/images/logos/elettrobar.svg" },
-    { name: "Empero", imageURL: "/images/logos/empero.svg" },
-    { name: "Europa", imageURL: "/images/logos/europa.svg" },
-    { name: "Fama", imageURL: "/images/logos/fama.svg" },
-    { name: "Hoshizaki", imageURL: "/images/logos/hoshizaki.svg" },
-    { name: "Josper", imageURL: "/images/logos/josper.svg" },
-    { name: "Kopa", imageURL: "/images/logos/kopa.svg" },
-    { name: "Mac-Pan", imageURL: "/images/logos/macpan.svg" },
-    { name: "MBM", imageURL: "/images/logos/mbm.svg" },
-    { name: "Morello-Forni", imageURL: "/images/logos/morelloforni.svg" },
-    { name: "NTF", imageURL: "/images/logos/ntf.svg" },
-    { name: "Orved", imageURL: "/images/logos/orved.svg" },
-    { name: "Pavesi", imageURL: "/images/logos/pavesi.svg" },
-    { name: "Prisma-Food", imageURL: "/images/logos/prismafood.svg" },
-    { name: "Rational", imageURL: "/images/logos/rational.svg" },
-    { name: "RobotCoupe", imageURL: "/images/logos/robotcoupe.svg" },
-    { name: "ScanDomestic", imageURL: "/images/logos/scandomestic.svg" },
-    { name: "Sidi", imageURL: "/images/logos/sidi.svg" },
-    { name: "Silko", imageURL: "/images/logos/silko.svg" },
-    { name: "SinMag", imageURL: "/images/logos/sinmag.svg" },
-    { name: "Sirman", imageURL: "/images/logos/sirman.svg" },
-    { name: "Tecnodom", imageURL: "/images/logos/tecnodom.svg" },
-    { name: "Venix", imageURL: "/images/logos/venix.svg" },
-    { name: "XTS", imageURL: "/images/logos/xts.svg" },
-    { name: "Zernike", imageURL: "/images/logos/zernike.svg" },
+export const brandList = [
+  { name: "Adler", imageURL: "/images/logos/adler.svg" },
+  { name: "Arris", imageURL: "/images/logos/arris.svg" },
+  { name: "Astoria", imageURL: "/images/logos/astoria.svg" },
+  { name: "Bartscher", imageURL: "/images/logos/bartscher.svg" },
+  { name: "Brema", imageURL: "/images/logos/brema.svg" },
+  { name: "Casta", imageURL: "/images/logos/casta.svg" },
+  { name: "Ceado", imageURL: "/images/logos/ceado.svg" },
+  { name: "Cold", imageURL: "/images/logos/cold.svg" },
+  { name: "Conti", imageURL: "/images/logos/conti.svg" },
+  { name: "Cuppone", imageURL: "/images/logos/cuppone.svg" },
+  { name: "Dihr", imageURL: "/images/logos/dihr.svg" },
+  { name: "Elettrobar", imageURL: "/images/logos/elettrobar.svg" },
+  { name: "Empero", imageURL: "/images/logos/empero.svg" },
+  { name: "Europa", imageURL: "/images/logos/europa.svg" },
+  { name: "Fama", imageURL: "/images/logos/fama.svg" },
+  { name: "Hoshizaki", imageURL: "/images/logos/hoshizaki.svg" },
+  { name: "Josper", imageURL: "/images/logos/josper.svg" },
+  { name: "Kopa", imageURL: "/images/logos/kopa.svg" },
+  { name: "Mac-Pan", imageURL: "/images/logos/macpan.svg" },
+  { name: "MBM", imageURL: "/images/logos/mbm.svg" },
+  { name: "Morello-Forni", imageURL: "/images/logos/morelloforni.svg" },
+  { name: "NTF", imageURL: "/images/logos/ntf.svg" },
+  { name: "Orved", imageURL: "/images/logos/orved.svg" },
+  { name: "Pavesi", imageURL: "/images/logos/pavesi.svg" },
+  { name: "Prisma-Food", imageURL: "/images/logos/prismafood.svg" },
+  { name: "Rational", imageURL: "/images/logos/rational.svg" },
+  { name: "RobotCoupe", imageURL: "/images/logos/robotcoupe.svg" },
+  { name: "ScanDomestic", imageURL: "/images/logos/scandomestic.svg" },
+  { name: "Sidi", imageURL: "/images/logos/sidi.svg" },
+  { name: "Silko", imageURL: "/images/logos/silko.svg" },
+  { name: "SinMag", imageURL: "/images/logos/sinmag.svg" },
+  { name: "Sirman", imageURL: "/images/logos/sirman.svg" },
+  { name: "Tecnodom", imageURL: "/images/logos/tecnodom.svg" },
+  { name: "Venix", imageURL: "/images/logos/venix.svg" },
+  { name: "XTS", imageURL: "/images/logos/xts.svg" },
+  { name: "Zernike", imageURL: "/images/logos/zernike.svg" },
+];
+
+const data = {
+  users: [
+    {
+      name: "John",
+      email: "admin@example.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
+    },
   ],
   products: [
     {
@@ -697,3 +708,5 @@ export const data = {
     },
   ],
 };
+
+export default data;
