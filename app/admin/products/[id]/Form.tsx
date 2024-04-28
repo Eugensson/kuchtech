@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Product } from "@/lib/models/ProductModel";
 import { formatId } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export default function ProductEditForm({ productId }: { productId: string }) {
   const { data: product, error } = useSWR(`/api/admin/products/${productId}`);
@@ -25,7 +26,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
       const data = await res.json();
       if (!res.ok) return toast.error(data.message);
 
-      toast.success("Product updated successfully");
+      toast.success("Дані про товар успішно оновлено");
       router.push("/admin/products");
     }
   );
@@ -54,7 +55,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
   };
 
   if (error) return error.message;
-  if (!product) return "Loading...";
+  if (!product) return "Завантаження...";
 
   const FormInput = ({
     id,
@@ -89,7 +90,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
   );
 
   const uploadHandler = async (e: any) => {
-    const toastId = toast.loading("Uploading image...");
+    const toastId = toast.loading("Оновлення зображення...");
     try {
       const resSign = await fetch("/api/cloudinary-sign", {
         method: "POST",
@@ -110,7 +111,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
       );
       const data = await res.json();
       setValue("image", data.secure_url);
-      toast.success("File uploaded successfully", {
+      toast.success("Зображення успішно оновлено", {
         id: toastId,
       });
     } catch (err: any) {
@@ -130,7 +131,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
           <FormInput name="Image" id="image" required />
           <div className="md:flex mb-6">
             <label className="label md:w-1/5" htmlFor="imageFile">
-              Upload Image
+              Оновити зображення
             </label>
             <div className="md:w-4/5">
               <input
@@ -147,17 +148,10 @@ export default function ProductEditForm({ productId }: { productId: string }) {
           <FormInput name="Description" id="description" required />
           <FormInput name="Count In Stock" id="countInStock" required />
 
-          <button
-            type="submit"
-            disabled={isUpdating}
-            className="btn btn-primary"
-          >
-            {isUpdating && <span className="loading loading-spinner"></span>}
-            Update
-          </button>
-          <Link className="btn ml-4 " href="/admin/products">
-            Cancel
-          </Link>
+          <Button type="submit" size="lg" variant="outline" className="mr-4">
+            Оновити
+          </Button>
+          <Link href="/admin/products">Відмінити</Link>
         </form>
       </div>
     </div>

@@ -1,7 +1,7 @@
-import Products from "./Products";
+import Products from "@/app/admin/products/Products";
 
 export const metadata = {
-  title: "KuchTech | Система керування",
+  title: "KuchTech | База даних товарів ",
 };
 const AdminProductsPage = () => {
   return <Products />;

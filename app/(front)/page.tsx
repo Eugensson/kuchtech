@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 
 const HomePage = () => {
   return (
-    <>
+    <section className="flex flex-col">
       <Hero />
       <Stats />
       <Brands />
       <Contact />
-    </>
+    </section>
   );
 };
 

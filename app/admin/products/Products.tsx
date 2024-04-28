@@ -1,12 +1,15 @@
 "use client";
 
-import { Product } from "@/lib/models/ProductModel";
-import { formatId } from "@/lib/utils";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 import useSWR from "swr";
+import Link from "next/link";
+import toast from "react-hot-toast";
 import useSWRMutation from "swr/mutation";
+import { useRouter } from "next/navigation";
+import { FilePlus2, SquarePen, Trash2 } from "lucide-react";
+
+import { formatId } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Product } from "@/lib/models/ProductModel";
 
 export default function Products() {
   const { data: products, error } = useSWR(`/api/admin/products`);
@@ -25,7 +28,7 @@ export default function Products() {
       });
       const data = await res.json();
       res.ok
-        ? toast.success("Product deleted successfully", {
+        ? toast.success("Товар успішно видалено", {
             id: toastId,
           })
         : toast.error(data.message, {
@@ -46,39 +49,34 @@ export default function Products() {
       const data = await res.json();
       if (!res.ok) return toast.error(data.message);
 
-      toast.success("Product created successfully");
+      toast.success("Товар успішно створено");
       router.push(`/admin/products/${data.product._id}`);
     }
   );
 
-  if (error) return "An error has occurred.";
-  if (!products) return "Loading...";
+  if (error) return "Сталася помилка.";
+  if (!products) return "Завантаження...";
 
   return (
     <div>
       <div className="flex justify-between items-center">
-        <h1 className="py-4 text-2xl">Products</h1>
-        <button
-          disabled={isCreating}
-          onClick={() => createProduct()}
-          className="btn btn-primary btn-sm"
-        >
-          {isCreating && <span className="loading loading-spinner"></span>}
-          Create
-        </button>
+        <h1 className="py-4 text-2xl">Товари</h1>
+        <Button size="icon" variant="outline" onClick={() => createProduct()}>
+          <FilePlus2 />
+        </Button>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="table table-zebra">
+        <table className="table table-zebra w-full">
           <thead>
             <tr>
-              <th>id</th>
-              <th>name</th>
-              <th>price</th>
-              <th>category</th>
-              <th>count in stock</th>
-              <th>rating</th>
-              <th>actions</th>
+              <th className="text-left">Id</th>
+              <th className="text-left">Назва</th>
+              <th className="text-left">Ціна</th>
+              <th className="text-left">Категорія</th>
+              <th className="text-left">Кількість</th>
+              <th className="text-left">Рейтинг</th>
+              <th className="text-left">Дії</th>
             </tr>
           </thead>
           <tbody>
@@ -90,22 +88,17 @@ export default function Products() {
                 <td>{product.category}</td>
                 <td>{product.countInStock}</td>
                 <td>{product.rating}</td>
-                <td>
-                  <Link
-                    href={`/admin/products/${product._id}`}
-                    type="button"
-                    className="btn btn-ghost btn-sm"
-                  >
-                    Edit
+                <td className="flex items-center g-2">
+                  <Link href={`/admin/products/${product._id}`}>
+                    <SquarePen />
                   </Link>
-                  &nbsp;
-                  <button
+                  <Button
+                    variant="outline"
+                    size="icon"
                     onClick={() => deleteProduct({ productId: product._id! })}
-                    type="button"
-                    className="btn btn-ghost btn-sm"
                   >
-                    Delete
-                  </button>
+                    <Trash2 />
+                  </Button>
                 </td>
               </tr>
             ))}
