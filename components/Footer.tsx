@@ -12,7 +12,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="mx-auto max-w-screen-xl py-2 lg:py-4 mt-2 border-t-2">
+    <footer className="mx-auto max-w-screen-xl py-2 lg:py-4 border-t-2">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div className="flex flex-col gap-2 md:gap-4">
           <div className="flex justify-center lg:justify-start">

@@ -94,6 +94,7 @@ const Form = () => {
             <input
               type="text"
               id="name"
+              autoComplete="off"
               {...register("name", {
                 required: "Name is required",
               })}
@@ -110,6 +111,7 @@ const Form = () => {
             <input
               type="text"
               id="email"
+              autoComplete="off"
               {...register("email", {
                 required: "Email is required",
                 pattern: {
@@ -130,6 +132,7 @@ const Form = () => {
             <input
               type="password"
               id="password"
+              autoComplete="off"
               {...register("password", {})}
               className="input input-bordered w-full max-w-sm"
             />
@@ -144,6 +147,7 @@ const Form = () => {
             <input
               type="password"
               id="confirmPassword"
+              autoComplete="off"
               {...register("confirmPassword", {
                 validate: (value) => {
                   const { password } = getValues();

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-import { navLinks } from "@/lib/data";
+import { navLinks } from "@/constants/index";
 import { Button } from "@/components/ui/button";
 
 interface MobileMenuProps {

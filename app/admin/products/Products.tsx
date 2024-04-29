@@ -74,8 +74,6 @@ export default function Products() {
               <th className="text-left">Назва</th>
               <th className="text-left">Ціна</th>
               <th className="text-left">Категорія</th>
-              <th className="text-left">Кількість</th>
-              <th className="text-left">Рейтинг</th>
               <th className="text-left">Дії</th>
             </tr>
           </thead>
@@ -84,10 +82,8 @@ export default function Products() {
               <tr key={product._id}>
                 <td>{formatId(product._id!)}</td>
                 <td>{product.name}</td>
-                <td>${product.price}</td>
+                <td>&#8372; {product.price}</td>
                 <td>{product.category}</td>
-                <td>{product.countInStock}</td>
-                <td>{product.rating}</td>
                 <td className="flex items-center g-2">
                   <Link href={`/admin/products/${product._id}`}>
                     <SquarePen />

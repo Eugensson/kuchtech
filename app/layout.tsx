@@ -32,7 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Providers>
-            <div className="min-h-screen flex flex-col w-full max-w-[320px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] mx-auto p-2">
+            <div className="min-h-screen flex flex-col w-full max-w-[320px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] mx-auto px-1">
               <Header />
               {children}
               <Footer />

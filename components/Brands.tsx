@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { brandList } from "@/lib/data";
+import { brandList } from "@/constants/index";
 
 export const Brands = () => {
   return (

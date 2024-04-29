@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
-import { navLinks } from "@/lib/data";
+import { navLinks } from "@/constants/index";
 
 export const Navigation = () => {
   const { data: session } = useSession();

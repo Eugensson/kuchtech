@@ -1,14 +1,16 @@
 "use client";
-import useSWRMutation from "swr/mutation";
+
 import useSWR from "swr";
-import toast from "react-hot-toast";
 import Link from "next/link";
-import { ValidationRule, useForm } from "react-hook-form";
 import { useEffect } from "react";
-import { Product } from "@/lib/models/ProductModel";
+import toast from "react-hot-toast";
+import useSWRMutation from "swr/mutation";
+import { ValidationRule, useForm } from "react-hook-form";
+
 import { formatId } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { Product } from "@/lib/models/ProductModel";
 
 export default function ProductEditForm({ productId }: { productId: string }) {
   const { data: product, error } = useSWR(`/api/admin/products/${productId}`);
@@ -46,7 +48,6 @@ export default function ProductEditForm({ productId }: { productId: string }) {
     setValue("image", product.image);
     setValue("category", product.category);
     setValue("brand", product.brand);
-    setValue("countInStock", product.countInStock);
     setValue("description", product.description);
   }, [product, setValue]);
 
@@ -146,8 +147,6 @@ export default function ProductEditForm({ productId }: { productId: string }) {
           <FormInput name="Category" id="category" required />
           <FormInput name="Brand" id="brand" required />
           <FormInput name="Description" id="description" required />
-          <FormInput name="Count In Stock" id="countInStock" required />
-
           <Button type="submit" size="lg" variant="outline" className="mr-4">
             Оновити
           </Button>

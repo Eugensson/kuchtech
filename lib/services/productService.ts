@@ -42,13 +42,11 @@ const getByQuery = cache(
     category,
     sort,
     price,
-    rating,
     page = "1",
   }: {
     q: string;
     category: string;
     price: string;
-    rating: string;
     sort: string;
     page: string;
   }) => {
@@ -66,15 +64,6 @@ const getByQuery = cache(
 
     const categoryFilter = category && category !== "all" ? { category } : {};
 
-    const ratingFilter =
-      rating && rating !== "all"
-        ? {
-            rating: {
-              $gte: Number(rating),
-            },
-          }
-        : {};
-
     // 10-50
     const priceFilter =
       price && price !== "all"
@@ -85,6 +74,7 @@ const getByQuery = cache(
             },
           }
         : {};
+
     const order: Record<string, 1 | -1> =
       sort === "lowest"
         ? { price: 1 }
@@ -101,7 +91,6 @@ const getByQuery = cache(
         ...queryFilter,
         ...categoryFilter,
         ...priceFilter,
-        ...ratingFilter,
       },
       "-reviews"
     )
@@ -114,7 +103,6 @@ const getByQuery = cache(
       ...queryFilter,
       ...categoryFilter,
       ...priceFilter,
-      ...ratingFilter,
     });
 
     return {
@@ -126,6 +114,13 @@ const getByQuery = cache(
     };
   }
 );
+
+const getCategoriesGroupe = cache(async () => {
+  await dbConnect();
+
+  const categoriesGroupe = await ProductModel.find().distinct("categoryGroup");
+  return categoriesGroupe;
+});
 
 const getCategories = cache(async () => {
   await dbConnect();
@@ -139,6 +134,7 @@ const productService = {
   getBySlug,
   getByQuery,
   getCategories,
+  getCategoriesGroupe,
 };
 
 export default productService;
