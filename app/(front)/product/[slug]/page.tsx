@@ -56,13 +56,13 @@ export default async function ProductDetails({
           </li>
           {product?.power && (
             <li className="flex justify-between">
-              <p>Потужність</p>
+              <p>Потужність, кВт</p>
               <p className="font-semibold">{product.power}</p>
             </li>
           )}
           {product?.voltage && (
             <li className="flex justify-between">
-              <p>Напруга</p>
+              <p>Напруга, В</p>
               <p className="font-semibold">{product.voltage}</p>
             </li>
           )}
@@ -92,8 +92,8 @@ export default async function ProductDetails({
           )}
           {product?.dimensions && (
             <li className="flex justify-between">
-              <p>Розміри</p>
-              <p className="font-semibold">{product.dimensions} мм</p>
+              <p>Розміри (ш*г*в), мм</p>
+              <p className="font-semibold">{product.dimensions}</p>
             </li>
           )}
           <li className="flex justify-between">
