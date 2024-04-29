@@ -625,6 +625,42 @@ const data = {
       dimensions: "937*885*875",
       humidification: "Інжекторний",
     },
+    {
+      categoryGroup: "Теплове обладнання",
+      category: "Індукційні плити",
+      brand: "Hurakan",
+      country: "Китай",
+      name: "Плита індукційна Hurakan HKN-ICF35M",
+      slug: "hurakan-hkn-icf35m",
+      image:
+        "https://res.cloudinary.com/dbwzfevx3/image/upload/v1714407091/kuchtech/hurakan-hkn-icf35m_b8g5y7.jpg",
+      price: 7108,
+      description:
+        "Кількість конфорок: 1. Матеріал корпусу: нержавіюча сталь. Температурний режим: +60/+280°С. Одна зона нагріву. 13 рівнів потужності нагріву (0.4-3.5 кВт). Захист від перегріву. Електронний таймер до 120 хвилин. Тип управління: механічний. Габарити: 330*420*110мм. Діаметр нагріву малого кола: 150 мм. Діаметр нагріву великого кола: 240 мм. Діаметр дна посуду: 120-240 мм. Підключення: 3.5 кВт, 220 В. Вага: 4.7 кг.",
+      voltage: 220,
+      power: 3.5,
+      weight: 4.7,
+      connectionType: "Електрика",
+      dimensions: "330*420*110",
+    },
+    {
+      categoryGroup: "Теплове обладнання",
+      category: "Печі для піци",
+      brand: "Apach",
+      country: "Італія",
+      name: "Піч для піци Apach AML-44X",
+      slug: "apach-aml-44x",
+      image:
+        "https://res.cloudinary.com/dbwzfevx3/image/upload/v1714407974/kuchtech/apach-aml-44x_xn4x7i.jpg",
+      price: 75002,
+      description:
+        "Місткість піци 4+4. Діаметр піци (см): 36. Розміри камери Ш*Г*В 720*720*140мм. Зовнішні розміри Ш*Г*В 1010*850*750мм. Напруга (В/Гц) 400/50 В/Гц. Потужність: 12 кВт. Робоча температура: 50-500°С. Маса 165 кг.",
+      voltage: 380,
+      power: 12,
+      weight: 165,
+      connectionType: "Електрика",
+      dimensions: "1010*850*750",
+    },
   ],
 };
 
