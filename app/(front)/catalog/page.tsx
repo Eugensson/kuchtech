@@ -53,7 +53,7 @@ export async function generateMetadata({
     };
   } else {
     return {
-      title: "Search Products",
+      title: "KuchTech | Каталог продукції",
     };
   }
 }

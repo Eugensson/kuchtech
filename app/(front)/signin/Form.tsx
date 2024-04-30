@@ -52,7 +52,7 @@ export const LoginForm = () => {
   return (
     <div className="w-[300px] mx-auto card bg-base-300 my-4 bg-zinc-200 dark:bg-white/5 p-5 rounded-xl">
       <div className="flex flex-col gap-5">
-        <h1 className="flex gap-3 text-lg font-bold mx-auto">
+        <h1 className="flex items-center gap-3 text-lg font-bold mx-auto">
           <LockKeyholeOpen />
           Вхід
         </h1>
@@ -87,26 +87,28 @@ export const LoginForm = () => {
               </span>
             )}
           </div>
-          <div className="relative flex flex-col gap-2">
-            <Input
-              type={isVisiblePass ? "text" : "password"}
-              placeholder="******"
-              autoComplete="off"
-              {...register("password", {
-                required: "Поле обов`зкове до заповнення",
-              })}
-            />
-            {isVisiblePass ? (
-              <EyeOff
-                className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
-                onClick={toggleVisblePass}
+          <div className="flex flex-col gap-2">
+            <div className="relative">
+              <Input
+                type={isVisiblePass ? "text" : "password"}
+                placeholder="******"
+                autoComplete="off"
+                {...register("password", {
+                  required: "Поле обов`зкове до заповнення",
+                })}
               />
-            ) : (
-              <Eye
-                className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
-                onClick={toggleVisblePass}
-              />
-            )}
+              {isVisiblePass ? (
+                <EyeOff
+                  className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
+                  onClick={toggleVisblePass}
+                />
+              ) : (
+                <Eye
+                  className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
+                  onClick={toggleVisblePass}
+                />
+              )}
+            </div>
             {errors.password?.message && (
               <span className="text-xs text-red-500">
                 {errors.password.message}

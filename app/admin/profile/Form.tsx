@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Eye, EyeOff, UserCog } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 type Inputs = {
   name: string;
@@ -14,9 +17,9 @@ type Inputs = {
 };
 
 const Form = () => {
-  const { data: session, update } = useSession();
-
   const router = useRouter();
+  const { data: session, update } = useSession();
+  const [isVisiblePass, setIsVisiblePass] = useState(false);
 
   const {
     register,
@@ -56,7 +59,7 @@ const Form = () => {
       });
 
       if (res.status === 200) {
-        toast.success("Profile updated successfully");
+        toast.success("Профіль успішно оновлено!");
 
         const newSession = {
           ...session,
@@ -82,97 +85,97 @@ const Form = () => {
       toast.error(error);
     }
   };
+
+  const toggleVisblePass = () => setIsVisiblePass((prev) => !prev);
+
   return (
-    <div className="max-w-sm  mx-auto card bg-base-300 my-4">
-      <div className="card-body">
-        <h1 className="card-title">Profile</h1>
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="my-2">
-            <label className="label" htmlFor="name">
-              Name
-            </label>
-            <input
+    <div className="w-[350px] mx-auto card bg-base-300 my-4 bg-zinc-200 dark:bg-white/5 p-5 rounded-xl">
+      <div className="flex flex-col gap-5">
+        <h1 className="flex items-center gap-3 text-lg font-bold mx-auto">
+          <UserCog />
+          Профіль
+        </h1>
+        <form
+          onSubmit={handleSubmit(formSubmit)}
+          className="flex flex-col gap-5"
+        >
+          <div className="flex flex-col gap-2">
+            <Input
               type="text"
-              id="name"
+              placeholder="Ведіть Ваше ім'я"
               autoComplete="off"
               {...register("name", {
-                required: "Name is required",
+                required: "Поле обов'зкове до заповнення",
               })}
-              className="input input-bordered w-full max-w-sm"
             />
             {errors.name?.message && (
-              <div className="text-error">{errors.name.message}</div>
+              <span className="text-xs text-red-500">
+                {errors.name.message}
+              </span>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="email">
-              Email
-            </label>
-            <input
+          <div className="flex flex-col gap-2">
+            <Input
               type="text"
-              id="email"
+              placeholder="Ведіть Ваш новий email"
               autoComplete="off"
               {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  message: "Email is invalid",
-                },
+                required: "Поле обов'зкове до заповнення",
               })}
-              className="input input-bordered w-full max-w-sm"
             />
             {errors.email?.message && (
-              <div className="text-error">{errors.email.message}</div>
+              <span className="text-xs text-red-500">
+                {errors.email.message}
+              </span>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="password">
-              New Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              autoComplete="off"
-              {...register("password", {})}
-              className="input input-bordered w-full max-w-sm"
-            />
+          <div className="flex flex-col gap-2">
+            <div className="relative">
+              <Input
+                type={isVisiblePass ? "text" : "password"}
+                placeholder="Ведіть Ваш новий пароль"
+                autoComplete="off"
+                {...register("password", {})}
+              />
+              {isVisiblePass ? (
+                <EyeOff
+                  className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
+                  onClick={toggleVisblePass}
+                />
+              ) : (
+                <Eye
+                  className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
+                  onClick={toggleVisblePass}
+                />
+              )}
+            </div>
             {errors.password?.message && (
-              <div className="text-error">{errors.password.message}</div>
+              <span className="text-xs text-red-500">
+                {errors.password.message}
+              </span>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="confirmPassword">
-              Confirm New Password
-            </label>
-            <input
-              type="password"
-              id="confirmPassword"
+          <div className="flex flex-col gap-2">
+            <Input
+              type={isVisiblePass ? "text" : "password"}
+              placeholder="Підтвердіть Ваш новий пароль"
               autoComplete="off"
               {...register("confirmPassword", {
                 validate: (value) => {
                   const { password } = getValues();
-                  return password === value || "Passwords should match!";
+                  return password === value || "Паролі повинні співпадати!";
                 },
               })}
-              className="input input-bordered w-full max-w-sm"
             />
             {errors.confirmPassword?.message && (
-              <div className="text-error">{errors.confirmPassword.message}</div>
+              <span className="text-xs text-red-500">
+                {errors.confirmPassword.message}
+              </span>
             )}
           </div>
-
-          <div className="my-2">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="btn btn-primary w-full"
-            >
-              {isSubmitting && (
-                <span className="loading loading-spinner"></span>
-              )}
-              Update
-            </button>
-          </div>
+          <Button type="submit" className="mt-5 w-full">
+            Оновити дані
+          </Button>
         </form>
       </div>
     </div>

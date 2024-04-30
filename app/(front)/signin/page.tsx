@@ -7,9 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default async function Signin() {
-  return (
-    <section className="flex items-center justify-center">
-      <LoginForm />
-    </section>
-  );
+  return <LoginForm />;
 }
