@@ -1,24 +1,25 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Eye, EyeOff, LockKeyholeOpen } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter, useSearchParams } from "next/navigation";
+
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 type Inputs = {
   email: string;
   password: string;
 };
 
-const Form = () => {
-  const { data: session } = useSession();
-
-  const params = useSearchParams();
-
-  let callbackUrl = params.get("callbackUrl") || "/";
-
+export const LoginForm = () => {
   const router = useRouter();
+  const params = useSearchParams();
+  const { data: session } = useSession();
+  let callbackUrl = params.get("callbackUrl") || "/";
+  const [isVisiblePass, setIsVisiblePass] = useState(false);
 
   const {
     register,
@@ -46,78 +47,77 @@ const Form = () => {
     });
   };
 
+  const toggleVisblePass = () => setIsVisiblePass((prev) => !prev);
+
   return (
-    <div className="max-w-sm  mx-auto card bg-base-300 my-4">
-      <div className="card-body">
-        <h1 className="card-title">Sign in</h1>
+    <div className="w-[300px] mx-auto card bg-base-300 my-4 bg-zinc-200 dark:bg-white/5 p-5 rounded-xl">
+      <div className="flex flex-col gap-5">
+        <h1 className="flex gap-3 text-lg font-bold mx-auto">
+          <LockKeyholeOpen />
+          Вхід
+        </h1>
         {params.get("error") && (
-          <div className="alert text-error">
+          <span className="text-sm text-center text-red-500">
             {params.get("error") === "CredentialsSignin"
-              ? "Invalid email or password"
+              ? "Email або паспорт невірний"
               : params.get("error")}
-          </div>
+          </span>
         )}
         {params.get("success") && (
-          <div className="alert text-success">{params.get("success")}</div>
+          <span className="text-sm text-center text-green-500">
+            {params.get("success")}
+          </span>
         )}
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="my-2">
-            <label className="label" htmlFor="email">
-              Email
-            </label>
-            <input
+        <form
+          onSubmit={handleSubmit(formSubmit)}
+          className="flex flex-col gap-5"
+        >
+          <div className="flex flex-col gap-2">
+            <Input
               type="text"
-              id="email"
+              placeholder="Ведіть Ваш email"
+              autoComplete="off"
               {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  message: "Email is invalid",
-                },
+                required: "Поле обов`зкове до заповнення",
               })}
-              className="input input-bordered w-full max-w-sm"
             />
             {errors.email?.message && (
-              <div className="text-error">{errors.email.message}</div>
+              <span className="text-xs text-red-500">
+                {errors.email.message}
+              </span>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
+          <div className="relative flex flex-col gap-2">
+            <Input
+              type={isVisiblePass ? "text" : "password"}
+              placeholder="******"
+              autoComplete="off"
               {...register("password", {
-                required: "Password is required",
+                required: "Поле обов`зкове до заповнення",
               })}
-              className="input input-bordered w-full max-w-sm"
             />
+            {isVisiblePass ? (
+              <EyeOff
+                className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
+                onClick={toggleVisblePass}
+              />
+            ) : (
+              <Eye
+                className="absolute bottom-3 right-2 w-4 h-4 text-muted-foreground cursor-pointer"
+                onClick={toggleVisblePass}
+              />
+            )}
             {errors.password?.message && (
-              <div className="text-error">{errors.password.message}</div>
+              <span className="text-xs text-red-500">
+                {errors.password.message}
+              </span>
             )}
           </div>
-          <div className="my-4">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="btn btn-primary w-full"
-            >
-              {isSubmitting && (
-                <span className="loading loading-spinner"></span>
-              )}
-              Sign in
-            </button>
-          </div>
+          <Button type="submit" className="mt-5 w-full">
+            Увійти
+          </Button>
         </form>
-        <div>
-          Need an account?{" "}
-          <Link className="link" href={`/register?callbackUrl=${callbackUrl}`}>
-            Register
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
-export default Form;
