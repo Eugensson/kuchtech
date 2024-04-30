@@ -16,8 +16,8 @@ export default function ProductItem({ product }: { product: Product }) {
             className="object-cover h-60 w-full"
           />
         </figure>
-        <div className="py-3 px-5 flex flex-col gap-2 font-semibold bg-zinc-100/10">
-          <h2 className="text-lg">{product.name}</h2>
+        <div className="py-3 px-5 flex flex-col justify-between gap-2 min-h-[120px] font-semibold bg-zinc-100/10">
+          <h2 className="text-sm">{product.name}</h2>
           <div className="flex items-center justify-between">
             <span>Ціна, &#8372;</span>
             <span>{product.price}</span>

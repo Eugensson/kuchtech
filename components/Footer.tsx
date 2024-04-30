@@ -57,7 +57,7 @@ export const Footer = () => {
 
             <li>
               <Link
-                href="viber://chat?number=+380633062931"
+                href="viber://chat?number=+380938803787"
                 aria-label="Viber"
                 rel="noreferrer"
                 target="_blank"
@@ -71,7 +71,7 @@ export const Footer = () => {
 
             <li>
               <Link
-                href="whatsapp://send?phone=+380633062931"
+                href="whatsapp://send?phone=+380938803787"
                 rel="noreferrer"
                 target="_blank"
                 aria-label="Whatsapp контакт"

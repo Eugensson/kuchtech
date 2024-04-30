@@ -55,18 +55,28 @@ export default function Products() {
   );
 
   if (error) return "Сталася помилка.";
-  if (!products) return "Завантаження...";
+  if (!products)
+    return (
+      <div className="flex justify-center items-center h-[395px]">
+        <p>Завантаження...</p>
+      </div>
+    );
 
   return (
     <div>
       <div className="flex justify-between items-center">
         <h1 className="py-4 text-2xl">Товари</h1>
-        <Button size="icon" variant="outline" onClick={() => createProduct()}>
+        <Button
+          size="icon"
+          variant="outline"
+          aria-label="Кнопка додавання продукту"
+          onClick={() => createProduct()}
+        >
           <FilePlus2 />
         </Button>
       </div>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto overflow-y-scroll h-[330px]">
         <table className="table table-zebra w-full">
           <thead>
             <tr>
@@ -90,6 +100,7 @@ export default function Products() {
                   </Link>
                   <Button
                     variant="outline"
+                    aria-label="Кнопка видалення продукту"
                     size="icon"
                     onClick={() => deleteProduct({ productId: product._id! })}
                   >

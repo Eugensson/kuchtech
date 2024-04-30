@@ -51,52 +51,6 @@ export default async function ProductDetails({
             <p className="font-semibold">{product.brand}</p>
           </li>
           <li className="flex justify-between">
-            <p>Країна</p>
-            <p className="font-semibold">{product.country}</p>
-          </li>
-          {product?.power && (
-            <li className="flex justify-between">
-              <p>Потужність, кВт</p>
-              <p className="font-semibold">{product.power}</p>
-            </li>
-          )}
-          {product?.voltage && (
-            <li className="flex justify-between">
-              <p>Напруга, В</p>
-              <p className="font-semibold">{product.voltage}</p>
-            </li>
-          )}
-          {product?.numberOfLevels && (
-            <li className="flex justify-between">
-              <p>Кількість рівнів</p>
-              <p className="font-semibold">{product.numberOfLevels}</p>
-            </li>
-          )}
-          {product?.controlPanel && (
-            <li className="flex justify-between">
-              <p>Панель керування</p>
-              <p className="font-semibold">{product.controlPanel}</p>
-            </li>
-          )}
-          {product?.humidification && (
-            <li className="flex justify-between">
-              <p>Тип парозволоження</p>
-              <p className="font-semibold">{product.humidification}</p>
-            </li>
-          )}
-          {product?.connectionType && (
-            <li className="flex justify-between">
-              <p>Тип підключення</p>
-              <p className="font-semibold">{product.connectionType}</p>
-            </li>
-          )}
-          {product?.dimensions && (
-            <li className="flex justify-between">
-              <p>Розміри (ш*г*в), мм</p>
-              <p className="font-semibold">{product.dimensions}</p>
-            </li>
-          )}
-          <li className="flex justify-between">
             <p>Ціна, &#8372;</p>
             <p className="font-semibold">{product.price}</p>
           </li>

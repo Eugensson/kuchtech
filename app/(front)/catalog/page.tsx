@@ -107,7 +107,7 @@ export default async function SearchPage({
   return (
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
       <aside className="p-1">
-        <ul className="flex flex-col col-span-1 gap-4 h-[250px] overflow-y-scroll">
+        <ul className="flex flex-col col-span-1 gap-4 h-[100px] md:h-[250px] lg:h-[450px] overflow-y-scroll">
           {categories.map((c: string) => (
             <li key={c}>
               <Link
@@ -193,7 +193,7 @@ export default async function SearchPage({
             </li>
           ))}
         </ul>
-        <Pagination>
+        <Pagination className="my-10">
           <PaginationContent>
             <PaginationItem>
               {products.length > 0 &&
