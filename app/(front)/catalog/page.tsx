@@ -111,8 +111,8 @@ export default async function SearchPage({
           {categories.map((c: string) => (
             <li key={c}>
               <Link
-                className={`link link-hover ${
-                  c === category && "link-primary"
+                className={`text-sm link link-hover ${
+                  c === category && "text-rose-700"
                 }`}
                 href={getFilterUrl({ c })}
               >
@@ -183,17 +183,17 @@ export default async function SearchPage({
             ))}
           </div>
         </div>
-        <ul className="flex flex-wrap items-center justify-center p-1 gap-1 md:gap-3 xl:gap-6">
+        <ul className="flex flex-wrap items-center justify-center p-1 gap-1 md:gap-2">
           {products.map((product) => (
             <li
               key={product.slug}
-              className="w-full max-w-[300px] md:max-w-[270px] xl:max-w-[255px]"
+              className="w-full max-w-[300px] md:max-w-[240px]"
             >
               <ProductItem product={product} />
             </li>
           ))}
         </ul>
-        <Pagination className="my-10">
+        <Pagination className="my-5">
           <PaginationContent>
             <PaginationItem>
               {products.length > 0 &&

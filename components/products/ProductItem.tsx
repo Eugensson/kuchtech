@@ -5,10 +5,11 @@ import { Product } from "@/lib/models/ProductModel";
 
 export default function ProductItem({ product }: { product: Product }) {
   return (
-    <article className="cursor-pointer rounded-md overflow-hidden hover:shadow-xl">
+    <article className="cursor-pointer rounded-md overflow-hidden hover:shadow-xl border-2 border-zinc-300">
       <Link href={`/product/${product.slug}`}>
         <figure>
           <Image
+            priority
             src={product.image}
             alt={product.name}
             width={200}

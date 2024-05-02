@@ -9,7 +9,7 @@ export const Contact = () => {
         width={600}
         height={600}
         alt="Світлина чоловіка перед ноутбуком з телефоном"
-        className="rounded-lg"
+        className="rounded-lg w-full h-auto"
       />
       <div className="flex flex-col gap-5 mx-auto max-w-screen-xl p-10 w-full">
         <h2 className="text-3xl font-bold text-center sm:text-4xl">
