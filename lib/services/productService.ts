@@ -34,18 +34,20 @@ const getBySlug = cache(async (slug: string) => {
   return product as Product;
 });
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE = 12;
 
 const getByQuery = cache(
   async ({
     q,
     category,
+    brand,
     sort,
     price,
     page = "1",
   }: {
     q: string;
     category: string;
+    brand: string;
     price: string;
     sort: string;
     page: string;
@@ -63,6 +65,8 @@ const getByQuery = cache(
         : {};
 
     const categoryFilter = category && category !== "all" ? { category } : {};
+
+    const brandFilter = brand && brand !== "all" ? { brand } : {};
 
     // 10-50
     const priceFilter =
@@ -90,6 +94,7 @@ const getByQuery = cache(
       {
         ...queryFilter,
         ...categoryFilter,
+        ...brandFilter,
         ...priceFilter,
       },
       "-reviews"
@@ -102,6 +107,7 @@ const getByQuery = cache(
     const countProducts = await ProductModel.countDocuments({
       ...queryFilter,
       ...categoryFilter,
+      ...brandFilter,
       ...priceFilter,
     });
 
@@ -115,17 +121,16 @@ const getByQuery = cache(
   }
 );
 
-const getCategoriesGroupe = cache(async () => {
-  await dbConnect();
-
-  const categoriesGroupe = await ProductModel.find().distinct("categoryGroup");
-  return categoriesGroupe;
-});
-
 const getCategories = cache(async () => {
   await dbConnect();
   const categories = await ProductModel.find().distinct("category");
   return categories;
+});
+
+const getBrands = cache(async () => {
+  await dbConnect();
+  const brands = await ProductModel.find().distinct("brand");
+  return brands;
 });
 
 const productService = {
@@ -134,7 +139,7 @@ const productService = {
   getBySlug,
   getByQuery,
   getCategories,
-  getCategoriesGroupe,
+  getBrands,
 };
 
 export default productService;

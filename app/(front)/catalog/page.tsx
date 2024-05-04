@@ -62,6 +62,7 @@ export default async function SearchPage({
   searchParams: {
     q = "all",
     category = "all",
+    brand = "all",
     price = "all",
     sort = "newest",
     page = "1",
@@ -70,6 +71,7 @@ export default async function SearchPage({
   searchParams: {
     q: string;
     category: string;
+    brand: string;
     price: string;
     sort: string;
     page: string;
@@ -77,17 +79,20 @@ export default async function SearchPage({
 }) {
   const getFilterUrl = ({
     c,
+    b,
     s,
     p,
     pg,
   }: {
     c?: string;
+    b?: string;
     s?: string;
     p?: string;
     pg?: string;
   }) => {
-    const params = { q, category, price, sort, page };
+    const params = { q, category, brand, price, sort, page };
     if (c) params.category = c;
+    if (b) params.brand = b;
     if (p) params.price = p;
     if (pg) params.page = pg;
     if (s) params.sort = s;
@@ -95,9 +100,11 @@ export default async function SearchPage({
   };
 
   const categories = await productServices.getCategories();
+  const brands = await productServices.getBrands();
 
   const { countProducts, products, pages } = await productServices.getByQuery({
     category,
+    brand,
     q,
     price,
     page,
@@ -106,8 +113,8 @@ export default async function SearchPage({
 
   return (
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
-      <aside className="p-1">
-        <ul className="flex flex-col col-span-1 gap-4 h-[100px] md:h-[250px] lg:h-[450px] overflow-y-scroll">
+      <aside className="p-1 flex flex-col gap-2 md:gap-5">
+        <ul className="flex flex-col col-span-1 gap-4 h-[100px] md:h-[250px] lg:h-[300px] overflow-y-scroll">
           {categories.map((c: string) => (
             <li key={c}>
               <Link
@@ -117,6 +124,20 @@ export default async function SearchPage({
                 href={getFilterUrl({ c })}
               >
                 {c}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ul className="flex flex-col col-span-1 gap-4 h-[50px] md:h-[150px] overflow-y-scroll">
+          {brands.map((b: string) => (
+            <li key={b}>
+              <Link
+                className={`text-sm link link-hover ${
+                  b === brand && "text-rose-700"
+                }`}
+                href={getFilterUrl({ b })}
+              >
+                {b}
               </Link>
             </li>
           ))}
@@ -145,10 +166,12 @@ export default async function SearchPage({
             </span>
             {q !== "all" && q !== "" && " : " + q}
             {category !== "all" && " : " + category}
+            {brand !== "all" && " : " + brand}
             {price !== "all" && " : Ціна " + price}
             &nbsp;
             {(q !== "all" && q !== "") ||
             category !== "all" ||
+            brand !== "all" ||
             price !== "all" ? (
               <Link className="btn btn-sm btn-ghost" href="/catalog">
                 Очистити
