@@ -65,7 +65,10 @@ export const CallBackForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 w-full">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-2 lg:space-y-5 w-full"
+      >
         <FormField
           control={form.control}
           name="username"
@@ -84,10 +87,7 @@ export const CallBackForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input
-                  placeholder="Ведіть Ваш телефон у форматі +38-067-123-45-67"
-                  {...field}
-                />
+                <Input placeholder="+38-067-123-45-67" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

@@ -14,7 +14,7 @@ import { brandList } from "@/constants/index";
 
 export const Brands = () => {
   return (
-    <section className="w-full py-10">
+    <section className="w-full py-2 md:py-5 lg:py-10">
       <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 md:py-10 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">Торгівельні марки</h2>
@@ -42,7 +42,7 @@ export const Brands = () => {
                   width={150}
                   height={75}
                   alt="Логотип компанії"
-                  className="w-full h-auto "
+                  className="w-full h-auto"
                 />
               </div>
             </CarouselItem>

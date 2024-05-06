@@ -1,53 +1,35 @@
 export const Stats = () => {
   return (
-    <section className="w-full">
-      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">Бізнес обирає нас</h2>
-
-          <p className="mt-4 text-gray-500">
-            Ми є надійним постачальником для бізнесу завдяки реалізації
-            високоякісних товарів широкого асортименту з індивідуальним підходом
-            до потреб кожного клієнта. Наш багаторічний досвід та ефективна
-            служба підтримки гарантують успішну співпрацю на довгостроковій
-            основі.
-          </p>
-        </div>
-
-        <div className="mt-8 sm:mt-12">
-          <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="flex flex-col rounded-lg bg-zinc-200 dark:bg-white/5 px-4 py-8 text-center">
-              <dt className="order-last text-lg font-medium text-zinc-800 dark:text-white">
-                Обсяги продаж понад
-              </dt>
-
-              <dd className="text-4xl font-extrabold text-red-600 md:text-5xl">
-                $2.0m
-              </dd>
-            </div>
-
-            <div className="flex flex-col rounded-lg bg-zinc-200 dark:bg-white/5 px-4 py-8 text-center">
-              <dt className="order-last text-lg font-medium text-zinc-800 dark:text-white">
-                Років на ринку
-              </dt>
-
-              <dd className="text-4xl font-extrabold text-red-600 md:text-5xl">
-                10+
-              </dd>
-            </div>
-
-            <div className="flex flex-col rounded-lg bg-zinc-200 dark:bg-white/5 px-4 py-8 text-center">
-              <dt className="order-last text-lg font-medium text-zinc-800 dark:text-white">
-                Задоволених клієнтів
-              </dt>
-
-              <dd className="text-4xl font-extrabold text-red-600 md:text-5xl">
-                180+
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
+    <section className="flex flex-col gap-2 md:gap-4 lg:gap-6 w-full mx-auto py-1 md:py-2 lg:py-4">
+      <h2 className="md:text-xl lg:text-2xl font-bold text-center">
+        Бізнес обирає нас
+      </h2>
+      <p className="text-xs md:text-sm lg:text-base xl:text-lg text-center text-gray-500">
+        Ми є надійним постачальником для бізнесу завдяки реалізації
+        високоякісних товарів широкого асортименту з індивідуальним підходом до
+        потреб кожного клієнта. Наш багаторічний досвід та ефективна служба
+        підтримки гарантують успішну співпрацю на довгостроковій основі.
+      </p>
+      <ul className="grid md:grid-cols-3 gap-2 md:gap-5">
+        <li className="flex flex-col gap-2 p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
+          <p className="text-4xl font-bold text-red-600">$2.0m</p>
+          <h3 className="text-sm md:text-base lg:text-lg font-semibold">
+            Обсяги продаж понад
+          </h3>
+        </li>
+        <li className="flex flex-col gap-2 p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
+          <p className="text-4xl font-bold text-red-600">10+</p>
+          <h3 className="text-sm md:text-base lg:text-lg font-semibold">
+            Років на ринку
+          </h3>
+        </li>
+        <li className="flex flex-col gap-2 p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
+          <p className="text-4xl font-bold text-red-600">180+</p>
+          <h3 className="text-sm md:text-base lg:text-lg font-semibold">
+            Задоволених клієнтів
+          </h3>
+        </li>
+      </ul>
     </section>
   );
 };
