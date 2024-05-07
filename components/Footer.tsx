@@ -1,14 +1,12 @@
+import Link from "next/link";
 import {
   FaFacebook,
   FaInstagram,
   FaTelegram,
-  FaViber,
-  FaWhatsapp,
+  FaLinkedinIn,
 } from "react-icons/fa6";
 
-import { Logo } from "./Logo";
-import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 export const Footer = () => {
   return (
@@ -48,6 +46,16 @@ export const Footer = () => {
             aria-label="Посилання на Telegram"
           >
             <FaTelegram className="w-8 h-8 transition hover:text-red-500" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={"https://www.linkedin.com/"}
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Посилання на LinkedIn"
+          >
+            <FaLinkedinIn className="w-8 h-8 transition hover:text-red-500" />
           </Link>
         </li>
       </ul>
