@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Product } from "@/lib/models/ProductModel";
 
-export default function ProductItem({ product }: { product: Product }) {
+export const ProductItem = ({ product }: { product: Product }) => {
   return (
     <article className="cursor-pointer rounded-md overflow-hidden hover:shadow-xl border border-zinc-200 dark:border-zinc-200/15">
       <Link href={`/product/${product.slug}`}>
@@ -25,4 +25,4 @@ export default function ProductItem({ product }: { product: Product }) {
       </Link>
     </article>
   );
-}
+};

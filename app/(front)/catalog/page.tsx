@@ -13,9 +13,9 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
-
+import { SearchBox } from "@/components/SearchBox";
+import { ProductItem } from "@/components/ProductItem";
 import productServices from "@/lib/services/productService";
-import ProductItem from "@/components/ProductItem";
 
 const sortOrders = ["newest", "lowest", "highest"];
 
@@ -114,6 +114,7 @@ export default async function SearchPage({
   return (
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
       <aside className="p-1 flex flex-col gap-1 md:gap-2">
+        <SearchBox />
         <h2 className="text-base">Категорія</h2>
         <ul className="flex flex-col gap-1 h-[120px] md:h-[240px] lg:h-[300px] overflow-y-scroll border-y-2">
           {categories.map((c: string) => (
