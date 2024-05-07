@@ -63,7 +63,7 @@ export default function Products() {
     );
 
   return (
-    <div>
+    <div className="w-full">
       <div className="flex justify-between items-center">
         <h1 className="py-4 text-2xl">Товари</h1>
         <Button
@@ -75,7 +75,6 @@ export default function Products() {
           <FilePlus2 />
         </Button>
       </div>
-
       <div className="overflow-x-auto overflow-y-scroll h-[440px]">
         <table className="table table-zebra w-full">
           <thead>

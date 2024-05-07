@@ -4,7 +4,11 @@ export const metadata = {
   title: "KuchTech | База даних товарів ",
 };
 const AdminProductsPage = () => {
-  return <Products />;
+  return (
+    <section className="h-[500px] flex items-center justify-center">
+      <Products />
+    </section>
+  );
 };
 
 export default AdminProductsPage;
