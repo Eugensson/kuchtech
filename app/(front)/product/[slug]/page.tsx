@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronsLeft } from "lucide-react";
 
 import productService from "@/lib/services/productService";
 
@@ -32,33 +33,37 @@ export default async function ProductDetails({
   }
 
   return (
-    <section className="grid md:grid-cols-3 md:gap-5 w-full min-h-[400px]">
-      <figure className="w-full">
-        <Image
-          src={product.image}
-          alt={product.name}
-          width={500}
-          height={500}
-          className="object-cover h-auto"
-        />
-      </figure>
-      <div className="p-2 md:p-5 lg:p-10">
-        <h1 className="font-bold text-lg mb-5">{product.name}</h1>
-        <h2 className="font-semibold mb-2 lg:mb-4">Основні характеристики:</h2>
-        <ul className="flex flex-col gap-2 text-xs lg:text-sm">
+    <section className="grid md:grid-cols-2 gap-2 md:gap-5">
+      <Image
+        priority
+        src={product.image}
+        alt={product.name}
+        width={500}
+        height={500}
+        className="rounded object-cover h-auto"
+      />
+      <div className="flex flex-col gap-4 p-2 md:p-5 lg:p-10 rounded bg-zinc-100/5 text-sm md:text-base lg:text-xl">
+        <h1 className="font-bold">{product.name}</h1>
+        <ul className="flex flex-col gap-2">
           <li className="flex justify-between">
             <p>Бренд</p>
-            <p className="font-semibold">{product.brand}</p>
+            <p>{product.brand}</p>
           </li>
           <li className="flex justify-between">
             <p>Ціна, &#8372;</p>
-            <p className="font-semibold">{product.price}</p>
+            <p>{product.price}</p>
           </li>
         </ul>
-      </div>
-      <div className="md:col-span-3">
-        <h2 className="font-semibold mb-2 lg:mb-4">Опис товару:</h2>
-        <p className="text-xs lg:text-sm">{product.description}</p>
+        <h2 className="font-semibold">Опис товару:</h2>
+        <p className="md:text-sm lg:text-base">{product.description}</p>
+
+        <Link
+          href="/catalog"
+          className="flex items-center gap-1 font-semibold lg:text-base hover:text-rose-700 mt-auto"
+        >
+          <ChevronsLeft className="w-7 h-7" />
+          Каталог
+        </Link>
       </div>
     </section>
   );

@@ -2,6 +2,8 @@
 
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { IoIosSend } from "react-icons/io";
+
 import { useToast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -74,7 +76,10 @@ export const ContactForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 w-full">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-3 md:space-y-5 w-full flex flex-col justify-center"
+      >
         <FormField
           control={form.control}
           name="username"
@@ -111,7 +116,13 @@ export const ContactForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Надіслати</Button>
+        <Button
+          type="submit"
+          className="dark:bg-gray-500 dark:hover:bg-gray-400 w-[200px] mx-auto flex items-center gap-2"
+        >
+          Надіслати
+          <IoIosSend className="w-6 h-6" />
+        </Button>
       </form>
     </Form>
   );

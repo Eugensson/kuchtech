@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/pagination";
 
 import productServices from "@/lib/services/productService";
-import ProductItem from "@/components/products/ProductItem";
+import ProductItem from "@/components/ProductItem";
 
 const sortOrders = ["newest", "lowest", "highest"];
 
@@ -113,13 +113,14 @@ export default async function SearchPage({
 
   return (
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
-      <aside className="p-1 flex flex-col gap-2 md:gap-5">
-        <ul className="flex flex-col col-span-1 gap-4 h-[100px] md:h-[250px] lg:h-[300px] overflow-y-scroll">
+      <aside className="p-1 flex flex-col gap-1 md:gap-2">
+        <h2 className="text-base">Категорія</h2>
+        <ul className="flex flex-col gap-1 h-[120px] md:h-[240px] lg:h-[300px] overflow-y-scroll border-y-2">
           {categories.map((c: string) => (
             <li key={c}>
               <Link
-                className={`text-sm link link-hover ${
-                  c === category && "text-rose-700"
+                className={`text-xs md:text-sm ${
+                  c === category && "font-semibold text-rose-700"
                 }`}
                 href={getFilterUrl({ c })}
               >
@@ -128,12 +129,13 @@ export default async function SearchPage({
             </li>
           ))}
         </ul>
-        <ul className="flex flex-col col-span-1 gap-4 h-[50px] md:h-[150px] overflow-y-scroll">
+        <h2>Бренд</h2>
+        <ul className="flex flex-col gap-1 h-[60px] md:h-[120px] overflow-y-scroll border-y-2">
           {brands.map((b: string) => (
             <li key={b}>
               <Link
-                className={`text-sm link link-hover ${
-                  b === brand && "text-rose-700"
+                className={`text-xs md:text-sm ${
+                  b === brand && "font-semibold text-rose-700"
                 }`}
                 href={getFilterUrl({ b })}
               >
@@ -157,8 +159,8 @@ export default async function SearchPage({
         </Accordion>
       </aside>
 
-      <div className="md:col-span-3 xl:col-span-4 flex flex-col gap-2 items-center justify-center border-l-2">
-        <div className="flex flex-col gap-2 w-full md:p-2 lg:p-4 lg:flex-row lg:justify-between">
+      <div className="md:col-span-3 xl:col-span-4 flex flex-col gap-2  border-l-2">
+        <div className="flex flex-col gap-2 w-full md:p-2 lg:p-4 xl:flex-row lg:justify-between">
           <div className="flex items-center gap-2 text-xs md:text-sm xl:text-base">
             <p>Результат:</p>
             <span className="ml-1 font-semibold">
@@ -206,7 +208,7 @@ export default async function SearchPage({
             ))}
           </div>
         </div>
-        <ul className="flex flex-wrap items-center justify-center p-1 gap-1 md:gap-2">
+        <ul className="flex flex-wrap items-center justify-center gap-1 md:gap-2 h-[200px] md:h-[350px] lg:h-auto overflow-y-scroll lg:overflow-y-hidden">
           {products.map((product) => (
             <li
               key={product.slug}
@@ -216,14 +218,15 @@ export default async function SearchPage({
             </li>
           ))}
         </ul>
-        <Pagination className="my-5">
+        <Pagination className="my-4">
           <PaginationContent>
-            <PaginationItem>
+            <PaginationItem className="flex flex-wrap justify-center gap-3">
               {products.length > 0 &&
                 Array.from(Array(pages).keys()).map((p) => (
                   <PaginationLink
                     key={p}
                     href={getFilterUrl({ pg: `${p + 1}` })}
+                    className="m-1 p-1 w-1 h-1 text-xs md:text-sm"
                   >
                     {p + 1}
                   </PaginationLink>
