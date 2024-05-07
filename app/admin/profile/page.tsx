@@ -7,5 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Profile() {
-  return <Form />;
+  return (
+    <section className="h-[500px] flex justify-center items-center">
+      <Form />
+    </section>
+  );
 }

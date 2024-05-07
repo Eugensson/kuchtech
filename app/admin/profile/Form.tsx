@@ -4,8 +4,9 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { Eye, EyeOff, UserCog } from "lucide-react";
+import { SubmitHandler, useForm } from "react-hook-form";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 

@@ -76,7 +76,7 @@ export default function Products() {
         </Button>
       </div>
 
-      <div className="overflow-x-auto overflow-y-scroll h-[330px]">
+      <div className="overflow-x-auto overflow-y-scroll h-[440px]">
         <table className="table table-zebra w-full">
           <thead>
             <tr>
