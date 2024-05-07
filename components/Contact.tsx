@@ -5,6 +5,7 @@ export const Contact = () => {
   return (
     <section className="grid md:grid-cols-2 dark:bg-white/5 text-xs md:text-sm lg:text-lg">
       <Image
+        priority
         src={"/images/contact.jpg"}
         width={600}
         height={600}

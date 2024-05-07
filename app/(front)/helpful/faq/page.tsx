@@ -2,7 +2,7 @@ import { Devider } from "@/components/Devider";
 
 const FaqPage = () => {
   return (
-    <div className="space-y-2">
+    <section className="space-y-2">
       <Devider text="Часті запитання від клієнтів" />
       <details className="group [&_summary::-webkit-details-marker]:hidden">
         <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900 w-full md:w-[750px]">
@@ -147,7 +147,7 @@ const FaqPage = () => {
           м&apos;ясорубки, овочерізки, хліборізки, каттери та багато іншого.
         </p>
       </details>
-    </div>
+    </section>
   );
 };
 

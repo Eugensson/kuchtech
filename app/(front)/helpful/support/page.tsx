@@ -1,5 +1,5 @@
 const SupportPage = () => {
-  return <div>Підтримка</div>;
+  return <section>Підтримка</section>;
 };
 
 export default SupportPage;

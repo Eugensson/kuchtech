@@ -1,5 +1,5 @@
 const helpfulLayout = ({ children }: { children: React.ReactNode }) => {
-  return <section>{children}</section>;
+  return <>{children}</>;
 };
 
 export default helpfulLayout;
