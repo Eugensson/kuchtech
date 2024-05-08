@@ -1,578 +1,5 @@
 import bcrypt from "bcryptjs";
 
-export const categoryList = [
-  {
-    label: "Печі та пароконвектомати",
-    category: "ovens",
-    src: "/catalog/ovens",
-    imageURL: "/images/productsCategoryImageURL/steamCombiOvens.jpg",
-    subCategory: [
-      {
-        label: "Конвекційні печі",
-        src: "/catalog/ovens/convectionOvens",
-        imageURL: "/images/productsCategoryImageURL/convectionOvens.jpg",
-      },
-      {
-        label: "Пароконвектомати",
-        src: "/catalog/ovens/steamCombiOvens",
-        imageURL: "/images/productsCategoryImageURL/steamCombiOvens.jpg",
-      },
-    ],
-  },
-  {
-    label: "Теплове обладнання",
-    category: "thermal",
-    src: "/catalog/thermal",
-    imageURL: "/images/productsCategoryImageURL/inductionPlates.jpg",
-    subCategory: [
-      {
-        label: "Індукційні плити",
-        src: "/catalog/thermal/inductionPlates",
-        imageURL: "/images/productsCategoryImageURL/inductionPlates.jpg",
-      },
-      {
-        label: "Печі для піци",
-        src: "/catalog/thermal/pizzaOvens",
-        imageURL: "/images/productsCategoryImageURL/pizzaOvens.jpg",
-      },
-      {
-        label: "Апарати Sous-Vide",
-        src: "/catalog/thermal/sousVideDevices",
-        imageURL: "/images/productsCategoryImageURL/sousVideDevices.jpg",
-      },
-      {
-        label: "Грилі контактні професійні",
-        src: "/catalog/thermal/contactGrills",
-        imageURL: "/images/productsCategoryImageURL/contactGrills.jpg",
-      },
-      {
-        label: "Фритюрниці професійні",
-        src: "/catalog/thermal/fryers",
-        imageURL: "/images/productsCategoryImageURL/fryers.jpg",
-      },
-      {
-        label: "Рисоварки професійні",
-        src: "/catalog/thermal/riceCookers",
-        imageURL: "/images/productsCategoryImageURL/riceCookers.jpg",
-      },
-      {
-        label: "Грилі для шаурми",
-        src: "/catalog/thermal/shawarmaGrills",
-        imageURL: "/images/productsCategoryImageURL/shawarmaGrills.jpg",
-      },
-      {
-        label: "Макароноварки",
-        src: "/catalog/thermal/pastaCookers",
-        imageURL: "/images/productsCategoryImageURL/pastaCookers.jpg",
-      },
-      {
-        label: "Розстійні шафи",
-        src: "/catalog/thermal/spaceSavingCabinets",
-        imageURL: "/images/productsCategoryImageURL/spaceSavingCabinets.jpg",
-      },
-      {
-        label: "Роликові грилі",
-        src: "/catalog/thermal/rollerGrills",
-        imageURL: "/images/productsCategoryImageURL/rollerGrills.jpg",
-      },
-      {
-        label: "Підігрівачі настільні",
-        src: "/catalog/thermal/tableHeaters",
-        imageURL: "/images/productsCategoryImageURL/tableHeaters.jpg",
-      },
-      {
-        label: "Електричні плити промислові",
-        src: "/catalog/thermal/electricStoves",
-        imageURL: "/images/productsCategoryImageURL/electricStoves.jpg",
-      },
-      {
-        label: "Газові плити професійні",
-        src: "/catalog/thermal/gasStoves",
-        imageURL: "/images/productsCategoryImageURL/gasStoves.jpg",
-      },
-      {
-        label: "Печі на вугіллі та дровах",
-        src: "/catalog/thermal/coalAndWoodStoves",
-        imageURL: "/images/productsCategoryImageURL/coalAndWoodStoves.jpg",
-      },
-      {
-        label: "Дров'яні печі для піци",
-        src: "/catalog/thermal/woodOvensForPizza",
-        imageURL: "/images/productsCategoryImageURL/woodOvensForPizza.jpg",
-      },
-      {
-        label: "Поверхні для смаження",
-        src: "/catalog/thermal/surfacesForFrying",
-        imageURL: "/images/productsCategoryImageURL/surfacesForFrying.jpg",
-      },
-      {
-        label: "Вапо-грилі",
-        src: "/catalog/thermal/vapoGrills",
-        imageURL: "/images/productsCategoryImageURL/vapoGrills.jpg",
-      },
-      {
-        label: "Теплові вітрини",
-        src: "/catalog/thermal/thermalShowcases",
-        imageURL: "/images/productsCategoryImageURL/thermalShowcases.jpg",
-      },
-      {
-        label: "Грилі Salamandra",
-        src: "/catalog/thermal/salamandraGrills",
-        imageURL: "/images/productsCategoryImageURL/salamandraGrills.jpg",
-      },
-      {
-        label: "Вафельниці професійні",
-        src: "/catalog/thermal/waffleMakers",
-        imageURL: "/images/productsCategoryImageURL/waffleMakers.jpg",
-      },
-      {
-        label: "Дегідратори",
-        src: "/catalog/thermal/dehydrators",
-        imageURL: "/images/productsCategoryImageURL/dehydrators.jpg",
-      },
-      {
-        label: "Котли варочні",
-        src: "/catalog/thermal/cookingBoilers",
-        imageURL: "/images/productsCategoryImageURL/cookingBoilers.jpg",
-      },
-      {
-        label: "Марміти",
-        src: "/catalog/thermal/marmite",
-        imageURL: "/images/productsCategoryImageURL/marmite.jpg",
-      },
-      {
-        label: "Паназійська кухня",
-        src: "/catalog/thermal/panAsianCuisine",
-        imageURL: "/images/productsCategoryImageURL/panAsianCuisine.jpg",
-      },
-      {
-        label: "Грилі лавові",
-        src: "/catalog/thermal/lavaGrills",
-        imageURL: "/images/productsCategoryImageURL/lavaGrills.jpg",
-      },
-      {
-        label: "Печі мікрохвильові професійні",
-        src: "/catalog/thermal/microwaveOvens",
-        imageURL: "/images/productsCategoryImageURL/microwaveOvens.jpg",
-      },
-      {
-        label: "Апарати для попкорну",
-        src: "/catalog/thermal/popcornMachines",
-        imageURL: "/images/productsCategoryImageURL/popcornMachines.jpg",
-      },
-      {
-        label: "Апарати для солодкої вати",
-        src: "/catalog/thermal/apparatusForCottonCandy",
-        imageURL:
-          "/images/productsCategoryImageURL/apparatusForCottonCandy.jpg",
-      },
-      {
-        label: "Сковороди перекидні",
-        src: "/catalog/thermal/flipPans",
-        imageURL: "/images/productsCategoryImageURL/flipPans.jpg",
-      },
-      {
-        label: "Тостери професійні",
-        src: "/catalog/thermal/toasters",
-        imageURL: "/images/productsCategoryImageURL/toasters.jpg",
-      },
-    ],
-  },
-  {
-    label: "Холодильне обладнання",
-    category: "refrigeration",
-    src: "/catalog/refrigeration",
-    imageURL:
-      "/images/productsCategoryImageURL/refrigeratorsAndFreezersTables.jpg",
-    subCategory: [
-      {
-        label: "Холодильні та морозильні шафи",
-        src: "/catalog/refrigeration/refrigerators",
-        imageURL:
-          "/images/productsCategoryImageURL/refrigeratorsAndFreezers.jpg",
-      },
-      {
-        label: "Холодильні та морозильні столи",
-        src: "/catalog/refrigeration/tables",
-        imageURL:
-          "/images/productsCategoryImageURL/refrigeratorsAndFreezersTables.jpg",
-      },
-      {
-        label: "Шафи шокової заморозки",
-        src: "/catalog/refrigeration/shockFreezing",
-        imageURL:
-          "/images/productsCategoryImageURL/cabinetsOfShockFreezing.jpg",
-      },
-      {
-        label: "Саладети",
-        src: "/catalog/refrigeration/salads",
-        imageURL: "/images/productsCategoryImageURL/salads.jpg",
-      },
-      {
-        label: "Льодогенератори",
-        src: "/catalog/refrigeration/iceMakers",
-        imageURL: "/images/productsCategoryImageURL/iceMakers.jpg",
-      },
-      {
-        label: "Барні холодильники",
-        src: "/catalog/refrigeration/barFridges",
-        imageURL: "/images/productsCategoryImageURL/barFridges.jpg",
-      },
-      {
-        label: "Шафи для вина",
-        src: "/catalog/refrigeration/wineCabinets",
-        imageURL: "/images/productsCategoryImageURL/wineCabinets.jpg",
-      },
-      {
-        label: "Кондитерські вітрини",
-        src: "/catalog/refrigeration/showcases",
-        imageURL: "/images/productsCategoryImageURL/confectioneryShowcases.jpg",
-      },
-      {
-        label: "Холодильні вітрини настільні",
-        src: "/catalog/refrigeration/showcasesTabletop",
-        imageURL:
-          "/images/productsCategoryImageURL/refrigeratedShowcasesTabletop.jpg",
-      },
-      {
-        label: "Холодильні вітрини-надставки",
-        src: "/catalog/refrigeration/showcasesExtensions",
-        imageURL:
-          "/images/productsCategoryImageURL/refrigeratedShowcasesExtensions.jpg",
-      },
-      {
-        label: "Апарати для виготовлення морозива",
-        src: "/catalog/refrigeration/iceCreamMachines",
-        imageURL: "/images/productsCategoryImageURL/iceCreamMachines.jpg",
-      },
-    ],
-  },
-  {
-    label: "Електромеханічне обладнання",
-    category: "electromechanicalEquipment",
-    src: "/catalog/electromechanicalEquipment",
-    imageURL: "/images/productsCategoryImageURL/doughMixers.jpg",
-    subCategory: [
-      {
-        label: "М'ясорубки промислові",
-        src: "/catalog/electromechanicalEquipment/meatGrindersIndustrial",
-        imageURL: "/images/productsCategoryImageURL/meatGrindersIndustrial.jpg",
-      },
-      {
-        label: "Тістоміси промислові",
-        src: "/catalog/electromechanicalEquipment/doughMixers",
-        imageURL: "/images/productsCategoryImageURL/doughMixers.jpg",
-      },
-      {
-        label: "Слайсери промислові",
-        src: "/catalog/electromechanicalEquipment/slicers",
-        imageURL: "/images/productsCategoryImageURL/slicers.jpg",
-      },
-      {
-        label: "Овочерізки професійні",
-        src: "/catalog/electromechanicalEquipment/vegetableChopper",
-        imageURL: "/images/productsCategoryImageURL/vegetableChopper.jpg",
-      },
-      {
-        label: "Планетарні міксери",
-        src: "/catalog/electromechanicalEquipment/planetaryMixers",
-        imageURL: "/images/productsCategoryImageURL/planetaryMixers.jpg",
-      },
-      {
-        label: "Ручні міксери професійні",
-        src: "/catalog/electromechanicalEquipment/handMixers",
-        imageURL: "/images/productsCategoryImageURL/handMixers.jpg",
-      },
-      {
-        label: "Кутери професійні",
-        src: "/catalog/electromechanicalEquipment/cutters",
-        imageURL: "/images/productsCategoryImageURL/cutters.jpg",
-      },
-      {
-        label: "Картоплечистки промислові",
-        src: "/catalog/electromechanicalEquipment/potatoPeelers",
-        imageURL: "/images/productsCategoryImageURL/potatoPeelers.jpg",
-      },
-      {
-        label: "Тісторозкаточні машини",
-        src: "/catalog/electromechanicalEquipment/doughRoMachines",
-        imageURL: "/images/productsCategoryImageURL/doughRoMachines.jpg",
-      },
-      {
-        label: "Преси для піци та гамбургерів",
-        src: "/catalog/electromechanicalEquipment/pizzaAndHamburgerPresses",
-        imageURL:
-          "/images/productsCategoryImageURL/pizzaAndHamburgerPresses.jpg",
-      },
-      {
-        label: "Шприці ковбасні",
-        src: "/catalog/electromechanicalEquipment/sausageSyringes",
-        imageURL: "/images/productsCategoryImageURL/sausageSyringes.jpg",
-      },
-      {
-        label: "Пили для м'яса",
-        src: "/catalog/electromechanicalEquipment/meatSaw",
-        imageURL: "/images/productsCategoryImageURL/meatSaw.jpg",
-      },
-      {
-        label: "Подрібнювачі спецій",
-        src: "/catalog/electromechanicalEquipment/spiceGrinders",
-        imageURL: "/images/productsCategoryImageURL/spiceGrinders.jpg",
-      },
-      {
-        label: "Подрібнювачі відходів",
-        src: "/catalog/electromechanicalEquipment/wasteShredders",
-        imageURL: "/images/productsCategoryImageURL/wasteShredders.jpg",
-      },
-      {
-        label: "Хліборізки промислові",
-        src: "/catalog/electromechanicalEquipment/breadCutters",
-        imageURL: "/images/productsCategoryImageURL/breadCutters.jpg",
-      },
-      {
-        label: "Фаршемішалки",
-        src: "/catalog/electromechanicalEquipment/meatGrinders",
-        imageURL: "/images/productsCategoryImageURL/meatGrinders.jpg",
-      },
-    ],
-  },
-  {
-    label: "Пакувальне обладнання",
-    category: "packagingEquipment",
-    src: "/catalog/packagingEquipment",
-    imageURL: "/images/productsCategoryImageURL/vacuumPackers.jpg",
-    subCategory: [
-      {
-        label: "Вакуумні пакувальники",
-        src: "/catalog/packagingEquipment/vacuumPackers",
-        imageURL: "/images/productsCategoryImageURL/vacuumPackers.jpg",
-      },
-      {
-        label: "Апарати термопакувальні",
-        src: "/catalog/packagingEquipment/thermalPackaging",
-        imageURL: "/images/productsCategoryImageURL/thermalPackaging.jpg",
-      },
-    ],
-  },
-  {
-    label: "Посудомийне обладнання",
-    category: "dishwasher",
-    src: "/catalog/dishwasher",
-    imageURL: "/images/productsCategoryImageURL/tunnelDishwashers.jpg",
-    subCategory: [
-      {
-        label: "Тунельні посудомийні машини",
-        src: "/catalog/dishwasher/tunnelDishwashers",
-        imageURL: "/images/productsCategoryImageURL/tunnelDishwashers.jpg",
-      },
-      {
-        label: "Фронтальні посудомийні машини",
-        src: "/catalog/dishwasher/frontDishwashers",
-        imageURL: "/images/productsCategoryImageURL/frontDishwashers.jpg",
-      },
-      {
-        label: "Купольні посудомийні машини",
-        src: "/catalog/dishwasher/domeDishwashers",
-        imageURL: "/images/productsCategoryImageURL/domeDishwashers.jpg",
-      },
-      {
-        label: "Котломийні машини",
-        src: "/catalog/dishwasher/boilerWashingMachines",
-        imageURL: "/images/productsCategoryImageURL/boilerWashingMachines.jpg",
-      },
-      {
-        label: "Фільтри для води",
-        src: "/catalog/dishwasher/filtersForWater",
-        imageURL: "/images/productsCategoryImageURL/filtersForWater.jpg",
-      },
-    ],
-  },
-  {
-    label: "Обладнання для барів",
-    category: "barsEquipment",
-    src: "/catalog/barsEquipment",
-    imageURL: "/images/productsCategoryImageURL/coffeeMachines.jpg",
-    subCategory: [
-      {
-        label: "Блендери професійні",
-        src: "/catalog/barsEquipment/blenders",
-        imageURL: "/images/productsCategoryImageURL/blenders.jpg",
-      },
-      {
-        label: "Соковитискалки",
-        src: "/catalog/barsEquipment/juicers",
-        imageURL: "/images/productsCategoryImageURL/juicers.jpg",
-      },
-      {
-        label: "Кавомашини професійні",
-        src: "/catalog/barsEquipment/coffeeMachines",
-        imageURL: "/images/productsCategoryImageURL/coffeeMachines.jpg",
-      },
-      {
-        label: "Подрібнювачі льоду",
-        src: "/catalog/barsEquipment/iceCrushers",
-        imageURL: "/images/productsCategoryImageURL/iceCrushers.jpg",
-      },
-      {
-        label: "Електрокип'ятильники",
-        src: "/catalog/barsEquipment/electricBoilers",
-        imageURL: "/images/productsCategoryImageURL/electricBoilers.jpg",
-      },
-      {
-        label: "Кавомолки професійні",
-        src: "/catalog/barsEquipment/coffeeGrinders",
-        imageURL: "/images/productsCategoryImageURL/coffeeGrinders.jpg",
-      },
-      {
-        label: "Міксери для молочних коктейлей",
-        src: "/catalog/barsEquipment/milkshakesMixers",
-        imageURL: "/images/productsCategoryImageURL/milkshakesMixers.jpg",
-      },
-    ],
-  },
-  {
-    label: "Обладнання для пралень",
-    category: "laundryEquipment",
-    src: "/catalog/laundryEquipment",
-    imageURL: "/images/productsCategoryImageURL/ironingEquipment.jpg",
-    subCategory: [
-      {
-        label: "Пральні машини промислові",
-        src: "/catalog/laundryEquipment/washingMachines",
-        imageURL: "/images/productsCategoryImageURL/washingMachines.jpg",
-      },
-      {
-        label: "Сушильні машини промислові",
-        src: "/catalog/laundryEquipment/dryers",
-        imageURL: "/images/productsCategoryImageURL/dryers.jpg",
-      },
-      {
-        label: "Прасувальні машини",
-        src: "/catalog/laundryEquipment/ironingMachines",
-        imageURL: "/images/productsCategoryImageURL/ironingMachines.jpg",
-      },
-      {
-        label: "Прасувальне обладнання",
-        src: "/catalog/laundryEquipment/ironingEquipment",
-        imageURL: "/images/productsCategoryImageURL/ironingEquipment.jpg",
-      },
-    ],
-  },
-  {
-    label: "Обладнання для пекарень",
-    category: "bakeriesEquipment",
-    src: "/catalog/bakeriesEquipment",
-    imageURL: "/images/productsCategoryImageURL/rotaryOvens.jpg",
-    subCategory: [
-      {
-        label: "Печі ротаційні",
-        src: "/catalog/bakeriesEquipment/rotaryOvens",
-        imageURL: "/images/productsCategoryImageURL/rotaryOvens.jpg",
-      },
-      {
-        label: "Печі подові",
-        src: "/catalog/bakeriesEquipment/podOvens",
-        imageURL: "/images/productsCategoryImageURL/podOvens.jpg",
-      },
-      {
-        label: "Камери розстійні",
-        src: "/catalog/bakeriesEquipment/spacedCameras",
-        imageURL: "/images/productsCategoryImageURL/spacedCameras.jpg",
-      },
-      {
-        label: "Планетарні міксери пекарські",
-        src: "/catalog/bakeriesEquipment/bakeryMixers",
-        imageURL: "/images/productsCategoryImageURL/bakeryMixers.jpg",
-      },
-      {
-        label: "Тістоміси пекарські",
-        src: "/catalog/bakeriesEquipment/bakingDoughBowls",
-        imageURL: "/images/productsCategoryImageURL/bakingDoughBowls.jpg",
-      },
-      {
-        label: "Тісторозкатки пекарські",
-        src: "/catalog/bakeriesEquipment/bakingDoughRolls",
-        imageURL: "/images/productsCategoryImageURL/bakingDoughRolls.jpg",
-      },
-      {
-        label: "Тісторозподілювачі пекарські",
-        src: "/catalog/bakeriesEquipment/bakeryDoughDividers",
-        imageURL: "/images/productsCategoryImageURL/bakeryDoughDividers.jpg",
-      },
-      {
-        label: "Багетоформувальники",
-        src: "/catalog/bakeriesEquipment/bakerBaguetteFormers",
-        imageURL: "/images/productsCategoryImageURL/bakerBaguetteFormers.jpg",
-      },
-      {
-        label: "Ферментатори пекарськi",
-        src: "/catalog/bakeriesEquipment/bakeryFermenters",
-        imageURL: "/images/productsCategoryImageURL/bakeryFermenters.jpg",
-      },
-    ],
-  },
-  {
-    label: "Обладнання для м'ясного цеху",
-    category: "meatShopEquipment",
-    src: "/catalog/meatShopEquipment",
-    imageURL: "/images/productsCategoryImageURL/meatMixers.jpg",
-    subCategory: [
-      {
-        label: "М'ясорубки виробничі",
-        src: "/catalog/meatShopEquipment/meatGrinders2",
-        imageURL: "/images/productsCategoryImageURL/meatGrinders2.jpg",
-      },
-      {
-        label: "Слайсери виробничі",
-        src: "/catalog/meatShopEquipment/slicersIndustrial",
-        imageURL: "/images/productsCategoryImageURL/slicersIndustrial.jpg",
-      },
-      {
-        label: "Фаршемiшалки виробничі",
-        src: "/catalog/meatShopEquipment/meatMixers",
-        imageURL: "/images/productsCategoryImageURL/meatMixers.jpg",
-      },
-      {
-        label: "Подрібнювачі м'яса виробничі",
-        src: "/catalog/meatShopEquipment/meatGrindersIndustrial2",
-        imageURL:
-          "/images/productsCategoryImageURL/meatGrindersIndustrial2.jpg",
-      },
-      {
-        label: "Пили для різки м'яса виробничі",
-        src: "/catalog/meatShopEquipment/cuttingMeatSaws",
-        imageURL: "/images/productsCategoryImageURL/cuttingMeatSaws.jpg",
-      },
-      {
-        label: "Стерилізатори для ножів",
-        src: "/catalog/meatShopEquipment/knivesSterilizers",
-        imageURL: "/images/productsCategoryImageURL/knivesSterilizers.jpg",
-      },
-      {
-        label: "Інсектицидні лампи",
-        src: "/catalog/meatShopEquipment/insecticidalLamps",
-        imageURL: "/images/productsCategoryImageURL/insecticidalLamps.jpg",
-      },
-      {
-        label: "Розрихлювач для м'яса",
-        src: "/catalog/meatShopEquipment/meatTenderizer",
-        imageURL: "/images/productsCategoryImageURL/meatTenderizer.jpg",
-      },
-      {
-        label: "Шприцi ковбаснi виробничі",
-        src: "/catalog/meatShopEquipment/sausageSyringesIndustrial",
-        imageURL:
-          "/images/productsCategoryImageURL/sausageSyringesIndustrial.jpg",
-      },
-      {
-        label: "Вакууматори виробничі",
-        src: "/catalog/meatShopEquipment/vacuumators",
-        imageURL: "/images/productsCategoryImageURL/vacuumators.jpg",
-      },
-    ],
-  },
-];
-
 const data = {
   users: [
     {
@@ -4676,6 +4103,259 @@ const data = {
       brand: "Astoria (Італія)",
       description:
         "Пом'якшувач води механічний, ємністю 12 літрів. Фільтрує солі жорсткості Ca2+, Mg2+. Обсяг смоли, що міститься в фільтрі: 9 л. Пом'якшує 1500 л води за t = 30 °С. Діапазон тиску: 1.5-8.0 бар.  Габарити моделі (д*г*в): 200*280*515 мм. Вага: 7 кг.",
+    },
+    {
+      category: "Фризери",
+      name: "Машина для морозива BARSCHER 135002",
+      slug: "barscher-135002",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715153804/barscher-135002_ikbrdu.jpg",
+      price: 15931,
+      brand: "Barscher (Німеччина)",
+      description:
+        "Апарат для виготовлення морозива. Матеріал корпусу: нержавіюча сталь + пластик. Контейнер для морозива алюмінієвий. Обсяг контейнера близько 1.4 л. Температура заморожування до мінус 35 °С. Холодоагент: R134a. Охолодження: динамічне. Час приготування морозива: 30-60 хвилин. Таймер до 60 хвилин. Панель керування: цифрова. У комплекті: мірний стакан, ложка для морозива. Потужність: 0.15 кВт. Напруга підключення: 220 В. Габарити: 395*315*295 мм. Вага: 10.6 кг.",
+    },
+    {
+      category: "Фризери",
+      name: "Фризер для морозива HURAKAN HKN-BQ22CT",
+      slug: "hurakan-hknbq22ct",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715153805/hurakan-hknbq22ct_oukso3.jpg",
+      price: 68275,
+      brand: "Hurakan (Китай)",
+      description:
+        "Апарат для виготовлення морозива. Продуктивність: 25 л/годину. Кількість бункерів: 2. Об'єм бункера: 3 л. Кількість дозаторів: 3. Без функції нічного зберігання. Без помпи. Підключення: 1.8 кВт, 220 В. Габарити: 715*560*800 мм. Вага: 105 кг.",
+    },
+    {
+      category: "Фризери",
+      name: "Фризер для морозива HURAKAN HURAKAN HKN-BQ58P",
+      slug: "hurakan-hknbq58p",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715153805/hurakan-hknbq58p_csne6q.jpg",
+      price: 77850,
+      brand: "Hurakan (Китай)",
+      description:
+        "Апарат для виготовлення морозива. Продуктивність 18...20 л/годину. Кількість бункерів: 2. Об'єм бункера: 5.8 л. Об'єм загальний: 11.6 л. Кількість дозаторів: 3. Режиму зберігання не має. Підключення: 1.95 кВт, 220 В. Габарити: 540*720*850 мм. Вага: 117 кг.",
+    },
+    {
+      category: "Вітрини кондитерські",
+      name: "Вітрина кондитерська COLD С-09 PN-w",
+      slug: "cold-c09pnw",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715155546/cold-cpnw_eh3ab6.jpg",
+      price: 188077,
+      brand: "Cold (Польща)",
+      description:
+        "Вітрина кондитерська.  Ширина викладки: 500 мм. Температурний режим: 5...15 °С (за температури навколишнього середовища + 25 °С та вологості повітря 60 %). Агрегат - Danfoss (Німеччина). Хладогент - R507. Охолодження динамічне, розморожування автоматичне. Система контролю вологості, що підтримує вологість повітря в діапазоні 30...80 %. Обігрів фронтального скла теплим повітрям. Система видалення конденсату, що не вимагає додаткового обслуговування. Фронтальна панель вітрини з підсвічуванням. Внутрішнє освітлення вітрини для ефектного представлення товару. Додаткове підсвічування кожної полиці. Потужність: 8 кВт. Напруга підключення: 220 В. Габарити: 940*780*1400 мм. Вага: 215 кг. Колір: бронза.",
+    },
+    {
+      category: "Вітрини кондитерські",
+      name: "Вітрина кондитерська COLD С-13 PN-w",
+      slug: "cold-c13pnw",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715155546/cold-cpnw_eh3ab6.jpg",
+      price: 206541,
+      brand: "Cold (Польща)",
+      description:
+        "Вітрина кондитерська.  Площа експозиції: 2.1 кв. м. Температурний режим: 5...15 °С (за температури навколишнього середовища + 25 °С та вологості повітря 60 %). Агрегат - Danfoss (Німеччина). Хладогент - R507. Охолодження динамічне, розморожування автоматичне. Система контролю вологості, що підтримує вологість повітря в діапазоні 30...80 %. Обігрів фронтального скла теплим повітрям. Система видалення конденсату, що не вимагає додаткового обслуговування. Фронтальна панель вітрини з підсвічуванням. Внутрішнє освітлення вітрини для ефектного представлення товару. Додаткове підсвічування кожної полиці. Потужність: 1.12 кВт. Напруга підключення: 220 В. Габарити: 1340*780*1400 мм. Вага: 260 кг. Колір: бронза.",
+    },
+    {
+      category: "Вітрини кондитерські",
+      name: "Вітрина кондитерська COLD С-17 PN-w",
+      slug: "cold-c17pnw",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715155546/cold-cpnw_eh3ab6.jpg",
+      price: 220926,
+      brand: "Cold (Польща)",
+      description:
+        "Вітрина кондитерська.  Площа експозиції: 3.12 кв. м. Температурний режим: 5...15 °С (за температури навколишнього середовища + 25 °С та вологості повітря 60 %). Агрегат - Danfoss (Німеччина). Хладогент - R507. Охолодження динамічне, розморожування автоматичне. Система контролю вологості, що підтримує вологість повітря в діапазоні 30...80 %. Обігрів фронтального скла теплим повітрям. Система видалення конденсату, що не вимагає додаткового обслуговування. Фронтальна панель вітрини з підсвічуванням. Внутрішнє освітлення вітрини для ефектного представлення товару. Додаткове підсвічування кожної полиці. Потужність: 1.43 кВт. Напруга підключення: 220 В. Габарити: 1740*780*1400 мм. Вага: 280 кг. Колір: бронза. Зовнішні фасади: дерево. Опціонально - під золото або срібло.",
+    },
+    {
+      category: "Вітрини кондитерські",
+      name: "Шафа холодильна SCAN RTC 237 WE",
+      slug: "scan-rtc237we",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715155546/scan-rtc237we_wmiurs.jpg",
+      price: 63337,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа-вітрина холодильна 1-камерна. Об'єм внутрішньої камери 235 л. Діапазон робочої температури 0...12 °C. Кількість регульованих полиць - 4. Габарити полиці - 410*370 мм. Внутрішнє освітлення. Контролер цифровий. Підключення: 5.5 кВт, 220 В, 50 Гц. Габарити: 515х485х1690 мм. Вага: 76 кг.",
+    },
+    {
+      category: "Вітрини кондитерські",
+      name: "Шафа холодильна SCAN SD 430 BE",
+      slug: "scan-sd430be",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715155546/scan-sd430be_p0zsew.jpg",
+      price: 53890,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа холодильна демонстраційна. Загальний об'єм 360 л. Скляні двері на петлях, що самозакриваються, із замком. 5 регульованих дротяних полиць з покриттям. 2 вертикальних світлодіода спереду. Вентильоване охолодження. 4 міцних коліщатка. Температурний діапазон: 0...10 °C. Потужність: 1.95 кВт. Напруга підключення: 220 В. Габарити: 578*605*1980 мм. Вага: 68.5 кг.",
+    },
+    {
+      category: "Винні шафи",
+      name: "Шафа для вина HURAKAN HKN-WNC160CDW",
+      slug: "hurakan-hknwnc160cdw",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715157406/hurakan-hknwnc160cd_eppad3.jpg",
+      price: 46805,
+      brand: "Hurakan (Китай)",
+      description:
+        "Шафа для вина. Місткість: 55 пляшок. Температурний режим: 5...18 °С. Полиці: 3 + 6 +1 полімер. Комплектація: 10 полиць. Відстань між полицями: 90 мм. Cенсорне керування. Регулювальний термостат. Замок. Дверцята зі склом. Потужність: 0.08 кВт. Напруга підключення: 220 В. Габарити 510*485*1260 мм. Вага: 43.5 кг.",
+    },
+    {
+      category: "Винні шафи",
+      name: "Шафа для вина SCAN SV 45 B",
+      slug: "scan-sv45b",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715157407/scan-sv45b_btgfji.jpg",
+      price: 32420,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа винна. LED підсвічування. Загальний об'єм: 115 л. Пляшки для вина: 45 шт. Чорні скляні двері з тонкою рамою. Окремо стояча модель. Одна температурна зона. Діапазон температур 4...22 °C. Цифровий контролер з дисплеєм температури. Дерев'яні полички. Потужність 0.14 кВт. Напруга підключення: 220 В. Габарити 540*548*845 мм. Вага: 30.5 кг.",
+    },
+    {
+      category: "Винні шафи",
+      name: "Шафа для вина HURAKAN HKN-WNC50T",
+      slug: "hurakan-hknwnc50t",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715157405/hurakan-hknwnc50t_wnqzpv.jpg",
+      price: 8159,
+      brand: "Hurakan (Китай)",
+      description:
+        "Шафа для вина. Місткість: 18 пляшок. Температурний режим: 12-18 °С. Кількість полиць: 5. Регулювальний термостат. 1 температурна зона.  Дверцята зі склом. Термоелектричне охолодження. Потужність: 0.06 кВт. Напруга підключення: 220 В. Габарити: 345*520*645 мм. Вага: 14.5 кг.",
+    },
+    {
+      category: "Винні шафи",
+      name: "Шафа для вина HURAKAN HKN-WNC160CD",
+      slug: "hurakan-hknwnc160cd",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715157406/hurakan-hknwnc160cd_eppad3.jpg",
+      price: 30273,
+      brand: "Hurakan (Китай)",
+      description:
+        "Шафа для вина. Місткість: 55 пляшок. Температурний режим: 5...18 °С. Полиці: 3 + 6. Регулювальний термостат. Температурні зони: 2. Замок. Дверцята зі склом. Потужність 0.08 кВт. Напруга підключення: 220 В. Габарити: 510*480*1262 мм. Вага: 43.5 кг.",
+    },
+    {
+      category: "Винні шафи",
+      name: "Шафа для вина FAGOR CWC-180",
+      slug: "fagor-cwc180",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715157405/fagor-cwc180_uonhxx.jpg",
+      price: 55822,
+      brand: "Fagor (Іспанія)",
+      description:
+        "Шафа для вина. Температурний режим: 5...16 °С (за температури навколишнього середовища 32 °С). Об'єм: 130 л/25 пляшок. Холодоагент: R-600a. Електронний контроль температури. У комплекті 1 полиця. Світлодіодна система вертикального освітлення. Підключення: 0.23 кВт, 220 В. Габарити: 505*570*950 мм. Вага: 44 кг.",
+    },
+    {
+      category: "Винні шафи",
+      name: "Шафа для вина FAGOR CWC-300",
+      slug: "fagor-cwc300",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715157405/fagor-cwc300_icrh0q.jpg",
+      price: 80298,
+      brand: "Fagor (Іспанія)",
+      description:
+        "Шафа для вина. Температурний режим: 5...16 °С (за температури навколишнього середовища 32 °С). Об'єм: 400 л/72 пляшки. Холодоагент: R-600a. Електронний контроль температури. У комплекті 3 горизонтальні полиці та 1 бічна. Світлодіодна система вертикального освітлення. Підключення: 0.25 кВт, 220 В. Габарити: 620*655*1850 мм. Вага: 98 кг.",
+    },
+    {
+      category: "Винні шафи",
+      name: "Шафа винна SIRMAN MONFERRATO",
+      slug: "sirman-monferrato",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715157407/sirman-monferrato_moiec7.jpg",
+      price: 71280,
+      brand: "Sirman (Італія)",
+      description:
+        "Шафа для вина двозонна. Дверцята з подвійним загартованим склом із захистом від УФ випромінювання, система блокування з ключем. У комплекті реверсивна дверна петля. Висувні дерев'яні полиці. Цифрові сенсорні органи керування. Регулює термостат у градусах °C або °F. Дисплей та світлодіодне внутрішнє освітлення. Функція самовідтаювання. Активний вугільний фільтр. Внутрішня вентиляція. Рівень шуму: 40 дБ. Температурний режим: 5...12/12...18 °C. Вмістимість: 182 пляшки. Об'єм шафи: 450 л. Потужність: 0.16 кВт. Напруга підключення: 220 В. Габарити: 595*790*1800 мм. Вага: 89 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна HURAKAN HKN-GXDB150-H",
+      slug: "hurakan-hkngxdb150h",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162082/hurakan-hkngxdb150h_ndzkf6.jpg",
+      price: 25120,
+      brand: "Hurakan (Китай)",
+      description:
+        "Шафа барна холодильна зі скляними розпашними дверцятами. Об'єм: 133 л. Температурній режим: 2...10 °С. Місткість пляшок: 54. Матеріал корпусу: фарбований метал. Колір: чорний. Двері: скло. Підсвічування. Електронний термостат. Вбудована панель керування. Фреон: R600а. Марка сталі: AISI 201. Підключення: 0.16 кВт, 220 В. Габарити: 600*550*850 мм. Вага: 43 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна SCAN SF 115 X",
+      slug: "scan-sf115x",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162154/scan-sf115x_rubfon.jpg",
+      price: 38217,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа морозильна з глухими дверцятами. Об'єм 115 л. Діапазон температур -16...-22 °C. Клас енергоефективності В. Світлодіодний дисплей. Кількість ящиків 3 од. Самозакриваючі двері, модель має функцію блокування дверей. Охолодження: статичне. Потужність: 0.76 кВт. Напруга підключення: 220 В. Габарити: 595*595*820 мм. Вага: 39 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна SCAN SFS 140 W",
+      slug: "scan-sfs140w",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162201/scan-sfs140w_nlnsau.jpg",
+      price: 27052,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа барна морозильна. Загальний об'єм: 146 л. Можна розміщувати в сухому середовищі при температурі до -15 °C. Реверсивні двері. Регульовані ніжки. Прозорі ящики. 4 ящика, 1 полиця. Цільова температура -18 °C. Потужність: 0.452 кВт. Напруга підключення: 220В. Габарити 1250*545*566 мм.  Вага: 39 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна HURAKAN HKN-GXDB250-SL",
+      slug: "hurakan-hkngxdb250sl",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162106/hurakan-hkngxdb250sl_q89jxl.jpg",
+      price: 33708,
+      brand: "Hurakan (Китай)",
+      description:
+        "Шафа барна холодильна зі скляними розсувними дверцятами. Об'єм: 210 л. Температурний режим: 2...10 °С. Місткість пляшок/банок: 142 од. Підсвічування. Електронний термостат. Вбудована панель керування. Фреон: R600а. Марка сталі: AISI 201. Підключення: 0.25 кВт, 220 В. Габарити: 920*550*850 мм. Вага: 57 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна HURAKAN HKN-GXDB315-SL",
+      slug: "hurakan-hkngxdb315sl",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162123/hurakan-hkngxdb315sl_c7rygx.jpg",
+      price: 41867,
+      brand: "Hurakan (Китай)",
+      description:
+        "Шафа барна холодильна зі скляними розсувними дверцятами. Об'єм: 315 л. Температурний режим: 2...10 °С. Місткість пляшок/банок: 224 од. Підсвічування. Електронний термостат. Вбудована панель керування. Фреон: R600а. Марка сталі: AISI 201. Підключення: 0.32 кВт, 220 В. Габарити: 1350*515*850 мм. Вага: 77 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна SCAN DKS 142 BE",
+      slug: "scan-dks142be",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162139/scan-dks142be_ss7syw.jpg",
+      price: 24691,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа барна холодильна. Кліматичний клас 6. Загальний об'єм: 126 л. Розпашні скляні двері з замком. 4 регульовані дротяні полиці з покриттям. Світлодіодне внутрішнє освітлення. Статичне охолодження з підтримкою вентилятора. Електронний контролер. Температурний діапазон: 0...10 °C. Потужність: 0.55 кВт. Напруга підключення: 220 В. Габарити: 540*548*845 мм. Вага: 30 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна SCAN SK145 E",
+      slug: "scan-sk145e",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162221/scan-sk145e_nnlkdq.jpg",
+      price: 40793,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа барна холодильна. Загальний об'єм: 145 л. Самозакриваються розпашні суцільні двері з замком. Корпус: нержавіюча сталь. 3 регульовані дротяні полиці з покриттям. Цифровий контроль температури. Вентильоване охолодження. Міцна ручка. Температурний діапазон: 0...10 °C. Потужність: 1 кВт. Напруга підключення: 220 В. Габарити: 595*595*820 мм. Вага: 32.5 кг.",
+    },
+    {
+      category: "Холодильники барні",
+      name: "Шафа барна холодильна SCAN SFS 112 W",
+      slug: "scan-sfs112w",
+      image:
+        "https://res.cloudinary.com/duyol05ga/image/upload/v1715162181/scan-sfs112w_tya8a2.jpg",
+      price: 19323,
+      brand: "Scan (Данія)",
+      description:
+        "Шафа барна морозильна. Загальний об'єм: 90 л. Можна розміщувати в сухому середовищі за температури до - 15 °C. Реверсивні двері. Регульовані ніжки. Прозорі ящики. 2 ящика, 1 полиця. Цільова температура - 18 °C. Потужність: 0.16 кВт. Напруга підключення: 220 В. Габарити: 544*566*845 мм. Вага: 28 кг.",
     },
   ],
 };

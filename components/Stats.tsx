@@ -11,19 +11,19 @@ export const Stats = () => {
         підтримки гарантують успішну співпрацю на довгостроковій основі.
       </p>
       <ul className="grid md:grid-cols-3 gap-2 md:gap-5">
-        <li className="flex flex-col gap-2 p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
+        <li className="flex flex-col gap-2 p-2 lg:p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
           <p className="text-4xl font-bold text-red-600">$2.0m</p>
           <h3 className="text-sm md:text-base lg:text-lg font-semibold">
             Обсяги продаж понад
           </h3>
         </li>
-        <li className="flex flex-col gap-2 p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
+        <li className="flex flex-col gap-2 p-2 lg:p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
           <p className="text-4xl font-bold text-red-600">10+</p>
           <h3 className="text-sm md:text-base lg:text-lg font-semibold">
             Років на ринку
           </h3>
         </li>
-        <li className="flex flex-col gap-2 p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
+        <li className="flex flex-col gap-2 p-2 lg:p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
           <p className="text-4xl font-bold text-red-600">180+</p>
           <h3 className="text-sm md:text-base lg:text-lg font-semibold">
             Задоволених клієнтів

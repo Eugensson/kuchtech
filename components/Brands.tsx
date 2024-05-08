@@ -52,17 +52,15 @@ const brandList = [
 
 export const Brands = () => {
   return (
-    <section className="w-full py-2 md:py-5 lg:py-10">
-      <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 md:py-10 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">Торгівельні марки</h2>
-          <p className="mt-4 text-gray-500 text-base">
-            Наша компанія має можливість запропонувати вам продукцію від
-            світових лідерів у виробництві професійного виробничого та
-            торгівельного обладнання.
-          </p>
-        </div>
-      </div>
+    <section className="hidden xl:flex flex-col gap-2 md:gap-4 lg:gap-6 w-full mx-auto py-1 md:py-2 lg:py-4">
+      <h2 className="md:text-xl lg:text-2xl font-bold text-center">
+        Торгівельні марки
+      </h2>
+      <p className="text-xs md:text-sm lg:text-base xl:text-lg text-center text-gray-500">
+        Наша компанія має можливість запропонувати вам продукцію від світових
+        лідерів у виробництві професійного виробничого та торгівельного
+        обладнання.
+      </p>
       <Carousel
         plugins={[
           Autoplay({
@@ -74,11 +72,11 @@ export const Brands = () => {
         <CarouselContent className="-ml-1">
           {brandList.map(({ name, imageURL }) => (
             <CarouselItem key={name} className="pl-5 md:basis-1/3 lg:basis-1/5">
-              <div className="p-4 flex items-center justify-center border-2 rounded-lg dark:bg-white/5">
+              <div className="flex items-center justify-center p-4 border-2 rounded-lg dark:bg-white/5">
                 <Image
                   src={imageURL}
-                  width={150}
-                  height={75}
+                  width={75}
+                  height={50}
                   alt="Логотип компанії"
                   className="w-full h-auto"
                 />
