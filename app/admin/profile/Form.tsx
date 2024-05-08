@@ -174,7 +174,10 @@ const Form = () => {
               </span>
             )}
           </div>
-          <Button type="submit" className="mt-5 w-full">
+          <Button
+            type="submit"
+            className="dark:bg-gray-500 dark:hover:bg-gray-400 dark:text-white w-[200px] mx-auto mt-5"
+          >
             Оновити дані
           </Button>
         </form>

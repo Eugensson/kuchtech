@@ -1,15 +1,24 @@
 import Link from "next/link";
 import { X } from "lucide-react";
+import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
-import { navLinks } from "@/constants/index";
 import { Button } from "@/components/ui/button";
 
 interface MobileMenuProps {
   toggleMobileMenu: () => void;
 }
 
+const navLinks = [
+  { label: "Каталог", src: "/catalog" },
+  { label: "Про нас", src: "/about" },
+  { label: "Сервіс", src: "/service" },
+  { label: "Оплата/доставка", src: "/payment" },
+  { label: "Контакти", src: "/contact" },
+];
+
 export const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
+  const { data: session } = useSession();
   const pathname = usePathname();
 
   return (
@@ -34,7 +43,9 @@ export const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
                   href={src}
                   onClick={toggleMobileMenu}
                   className={`py-4 ${
-                    isActive ? "text-red-500 font-semibold" : ""
+                    isActive
+                      ? "text-rose-800 dark:text-rose-400 font-semibold"
+                      : ""
                   }`}
                 >
                   {label}
@@ -42,6 +53,36 @@ export const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
               </li>
             );
           })}
+          {session?.user && (
+            <li key="profile">
+              <Link
+                href="/admin/profile"
+                onClick={toggleMobileMenu}
+                className={`py-4 ${
+                  pathname === "/admin/profile"
+                    ? "hover:underline text-rose-800 dark:text-rose-400 font-semibold"
+                    : ""
+                }`}
+              >
+                Профіль
+              </Link>
+            </li>
+          )}
+          {session?.user?.isAdmin && (
+            <li key="products">
+              <Link
+                href="/admin/products"
+                onClick={toggleMobileMenu}
+                className={`py-4 ${
+                  pathname === "/admin/products"
+                    ? "hover:underline text-rose-800 dark:text-rose-400 font-semibold"
+                    : ""
+                }`}
+              >
+                Товари
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </div>

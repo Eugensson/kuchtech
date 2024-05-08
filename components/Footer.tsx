@@ -10,7 +10,7 @@ import { Logo } from "@/components/Logo";
 
 export const Footer = () => {
   return (
-    <footer className="grid md:grid-cols-3 gap-2 text-teal-700 text-xs lg:text-sm py-2 border-t-2 border-zinc-300 dark:border-zinc-300/15">
+    <footer className="grid md:grid-cols-3 gap-2 text-teal-700 dark:text-white text-xs lg:text-sm py-2 border-t-2 border-zinc-300 dark:border-zinc-300/15">
       <div>
         <Logo />
         <p className="text-xs text-center md:text-sm lg:text-base md:text-left">
@@ -61,7 +61,10 @@ export const Footer = () => {
       </ul>
       <span className="md:col-span-3 text-center">
         &copy; KuchTech - 2024. All rights reserved. Dev:{" "}
-        <Link href={"/"} className="transition hover:text-rose-700">
+        <Link
+          href={"/"}
+          className="transition hover:text-rose-800 dark:hover:text-rose-400"
+        >
           Eugensson
         </Link>
       </span>

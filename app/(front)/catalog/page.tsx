@@ -120,8 +120,9 @@ export default async function SearchPage({
           {categories.map((c: string) => (
             <li key={c}>
               <Link
-                className={`text-xs md:text-sm ${
-                  c === category && "font-semibold text-rose-700"
+                className={`text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                  c === category &&
+                  "font-semibold text-rose-800 dark:text-rose-400"
                 }`}
                 href={getFilterUrl({ c })}
               >
@@ -135,8 +136,9 @@ export default async function SearchPage({
           {brands.map((b: string) => (
             <li key={b}>
               <Link
-                className={`text-xs md:text-sm ${
-                  b === brand && "font-semibold text-rose-700"
+                className={`text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                  b === brand &&
+                  "font-semibold text-rose-800 dark:text-rose-400"
                 }`}
                 href={getFilterUrl({ b })}
               >
@@ -187,8 +189,8 @@ export default async function SearchPage({
             {sortOrders.map((s) => (
               <Link
                 key={s}
-                className={`font-semibold hover:text-rose-700 ${
-                  sort == s ? "text-rose-700" : ""
+                className={`font-semibold hover:text-rose-800 dark:hover:text-rose-400 ${
+                  sort == s ? "text-rose-800 dark:text-rose-400" : ""
                 } `}
                 href={getFilterUrl({ s })}
               >

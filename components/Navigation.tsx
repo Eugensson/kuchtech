@@ -4,7 +4,13 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
-import { navLinks } from "@/constants/index";
+const navLinks = [
+  { label: "Каталог", src: "/catalog" },
+  { label: "Про нас", src: "/about" },
+  { label: "Сервіс", src: "/service" },
+  { label: "Оплата/доставка", src: "/payment" },
+  { label: "Контакти", src: "/contact" },
+];
 
 export const Navigation = () => {
   const { data: session } = useSession();
@@ -22,8 +28,8 @@ export const Navigation = () => {
                 href={src}
                 className={`py-4 ${
                   isActive
-                    ? "hover:underline text-red-500 font-semibold"
-                    : "hover:text-red-500"
+                    ? "hover:underline text-rose-800 dark:text-rose-400 font-semibold"
+                    : "hover:text-rose-800 dark:hover:text-rose-400"
                 }`}
               >
                 {label}
@@ -37,8 +43,8 @@ export const Navigation = () => {
               href="/admin/profile"
               className={`py-4 ${
                 pathname === "/admin/profile"
-                  ? "hover:underline text-red-500 font-semibold"
-                  : "hover:text-red-500"
+                  ? "hover:underline text-rose-800 dark:text-rose-400 font-semibold"
+                  : "hover:text-rose-800 dark:hover:text-rose-400"
               }`}
             >
               Профіль
@@ -51,8 +57,8 @@ export const Navigation = () => {
               href="/admin/products"
               className={`py-4 ${
                 pathname === "/admin/products"
-                  ? "hover:underline text-red-500 font-semibold"
-                  : "hover:text-red-500"
+                  ? "hover:underline text-rose-800 dark:text-rose-400 font-semibold"
+                  : "hover:text-rose-800 dark:hover:text-rose-400"
               }`}
             >
               Товари

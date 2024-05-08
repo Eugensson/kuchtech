@@ -17,7 +17,7 @@ export const Header = () => {
     setIsVisible((prev) => (prev === false ? true : false));
 
   return (
-    <header className="flex items-center justify-between border-b-2 p-2">
+    <header className="flex items-center justify-between p-2 border-b-2 border-zinc-300 dark:border-zinc-300/15">
       <Logo />
       <Button
         variant="outline"

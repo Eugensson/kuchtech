@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { IoIosSend } from "react-icons/io";
 import { useToast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -93,7 +94,13 @@ export const CallBackForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Надіслати</Button>
+        <Button
+          type="submit"
+          className="dark:bg-gray-500 dark:hover:bg-gray-400 dark:text-white w-[200px] mx-auto flex items-center gap-2"
+        >
+          Надіслати
+          <IoIosSend className="w-6 h-6" />
+        </Button>
       </form>
     </Form>
   );

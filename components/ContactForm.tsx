@@ -118,7 +118,7 @@ export const ContactForm = () => {
         />
         <Button
           type="submit"
-          className="dark:bg-gray-500 dark:hover:bg-gray-400 w-[200px] mx-auto flex items-center gap-2"
+          className="dark:bg-gray-500 dark:hover:bg-gray-400 dark:text-white w-[200px] mx-auto flex items-center gap-2"
         >
           Надіслати
           <IoIosSend className="w-6 h-6" />

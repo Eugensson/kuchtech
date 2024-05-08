@@ -1,10 +1,11 @@
 "use client";
 
 import useSWR from "swr";
-import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { useSearchParams } from "next/navigation";
+
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export const SearchBox = () => {
   const searchParams = useSearchParams();
@@ -15,7 +16,7 @@ export const SearchBox = () => {
 
   if (error) return error.message;
 
-  if (!categories) return "Loading...";
+  if (!categories) return "Завантаження...";
 
   return (
     <form action="/catalog" method="GET">
@@ -26,7 +27,12 @@ export const SearchBox = () => {
           autoComplete="off"
           defaultValue={q}
         />
-        <Button size="icon" variant="outline" type="submit">
+        <Button
+          size="icon"
+          variant="outline"
+          type="submit"
+          aria-label="Кнопка пошуку"
+        >
           <Search />
         </Button>
       </div>

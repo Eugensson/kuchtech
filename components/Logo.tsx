@@ -10,7 +10,7 @@ export const Logo = () => {
       aria-label="Логотип компанії"
       className={`${julee.className} flex items-center justify-center md:justify-start text-teal-600 font-bold text-2xl xl:text-3xl`}
     >
-      Kuch<span className="text-rose-700">Tech</span>.com
+      Kuch<span className="text-rose-800 dark:text-rose-400">Tech</span>.com
     </Link>
   );
 };
