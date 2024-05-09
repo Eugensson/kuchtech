@@ -38,10 +38,7 @@ export const POST = auth(async (req: any) => {
     price: 0,
     category: "Категорія товару",
     brand: "Марка виробника товару (країна)",
-    // countInStock: 0,
     description: "Опис товару",
-    // rating: 0,
-    // numReviews: 0,
   });
 
   try {

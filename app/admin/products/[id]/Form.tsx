@@ -111,6 +111,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
         }
       );
       const data = await res.json();
+      console.log("Work!!!", data);
       setValue("image", data.secure_url);
       toast.success("Зображення успішно оновлено", {
         id: toastId,
