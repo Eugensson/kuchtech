@@ -1,57 +1,64 @@
-import { auth } from '@/lib/auth'
-import dbConnect from '@/lib/dbConnect'
-import ProductModel from '@/lib/models/ProductModel'
+import { auth } from "@/lib/auth";
+import dbConnect from "@/lib/dbConnect";
+import ProductModel from "@/lib/models/ProductModel";
 
 export const GET = auth(async (req: any) => {
   if (!req.auth || !req.auth.user?.isAdmin) {
     return Response.json(
-      { message: 'unauthorized' },
+      { message: "Будь-ласка, авторизуйтеся в системі" },
       {
         status: 401,
       }
-    )
+    );
   }
-  await dbConnect()
-  const products = await ProductModel.find()
-  return Response.json(products)
-}) as any
+
+  await dbConnect();
+
+  const products = await ProductModel.find();
+
+  return Response.json(products);
+}) as any;
 
 export const POST = auth(async (req: any) => {
   if (!req.auth || !req.auth.user?.isAdmin) {
     return Response.json(
-      { message: 'unauthorized' },
+      { message: "Будь-ласка, авторизуйтеся в системі" },
       {
         status: 401,
       }
-    )
+    );
   }
-  await dbConnect()
+
+  await dbConnect();
+
   const product = new ProductModel({
-    name: 'sample name',
-    slug: 'sample-name-' + Math.random(),
-    image: '/images/shirt1.jpg',
+    name: "Найменування товару",
+    slug: "найменування-товару-" + Math.random(),
+    image: "/images/placeholder.jpg",
     price: 0,
-    category: 'sample category',
-    brand: 'sample brand',
-    countInStock: 0,
-    description: 'sample description',
-    rating: 0,
-    numReviews: 0,
-  })
+    category: "Категорія товару",
+    brand: "Марка виробника товару (країна)",
+    // countInStock: 0,
+    description: "Опис товару",
+    // rating: 0,
+    // numReviews: 0,
+  });
+
   try {
-    await product.save()
+    await product.save();
+
     return Response.json(
-      { message: 'Product created successfully', product },
+      { message: "Продукт успішно створено", product },
       {
         status: 201,
       }
-    )
+    );
   } catch (err: any) {
     return Response.json(
       { message: err.message },
       {
         status: 500,
       }
-    )
+    );
   }
-}) as any
+}) as any;

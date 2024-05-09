@@ -23,6 +23,7 @@ export const Header = () => {
         variant="outline"
         size="icon"
         className="cursor-pointer md:hidden ml-auto"
+        aria-label="Кнопка відкриття мобільного меню"
         onClick={toggleMobileMenu}
       >
         <AlignJustify />
