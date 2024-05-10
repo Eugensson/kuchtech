@@ -157,7 +157,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
   return (
     <div className="flex flex-col gap-5 min-h-[500px]">
       <h1 className="text-2xl pt-2">
-        Редагувати продукт {formatId(productId)}
+        Редагувати товар ID {formatId(productId)}
       </h1>
       <div>
         <form
@@ -167,23 +167,11 @@ export default function ProductEditForm({ productId }: { productId: string }) {
           <div className="flex flex-col gap-4">
             <FormInput name="Найменування" id="name" required />
             <FormInput name="Slug" id="slug" required />
-            <FormInput name="Зображення" id="image" required />
+            <FormInput name="Категорія" id="category" required />
             <FormInput name="Ціна" id="price" required />
-            {/* <div className="md:flex mb-6">
-              <label className="label md:w-2/5" htmlFor="imageFile">
-                Оновити зображення
-              </label>
-              <div className="md:w-3/5">
-                <input
-                  type="file"
-                  className="file-input w-full max-w-md"
-                  id="imageFile"
-                  onChange={uploadHandler}
-                />
-              </div>
-            </div> */}
           </div>
           <div className="flex flex-col gap-4">
+            <FormInput name="Зображення" id="image" required />
             <label className="flex gap-5 items-center">
               Оновити зображення
               <input
@@ -192,7 +180,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
                 onChange={uploadHandler}
               />
             </label>
-            <FormInput name="Категорія" id="category" required />
+
             <FormInput name="Марка (країна)" id="brand" required />
             <FormTextArea name="Опис продукту" id="description" required />
             <div className="mt-2">
