@@ -33,7 +33,7 @@ export const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
   const pathname = usePathname();
 
   return (
-    <div className="absolute flex flex-col w-screen max-w-[430px] md:hidden h-screen z-50 top-0 right-0 bg-white dark:bg-zinc-800">
+    <div className="fixed flex flex-col w-screen max-w-[430px] md:hidden h-screen z-50 top-0 right-0 bg-white dark:bg-zinc-800">
       <div className="flex justify-between items-center p-2">
         <ThemeToggle />
         <Button
@@ -71,44 +71,6 @@ export const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
               </li>
             );
           })}
-          {session?.user && (
-            <li key="profile">
-              <Link
-                href="/admin/profile"
-                onClick={toggleMobileMenu}
-                className={`flex items-center justify-between py-3 px-5 ${
-                  pathname === "/admin/profile"
-                    ? "text-white bg-zinc-700 dark:text-white font-semibold"
-                    : ""
-                }`}
-              >
-                <div className="flex items-center gap-4">
-                  <UserCog />
-                  Профіль
-                </div>
-                <ChevronRight />
-              </Link>
-            </li>
-          )}
-          {session?.user?.isAdmin && (
-            <li key="products">
-              <Link
-                href="/admin/products"
-                onClick={toggleMobileMenu}
-                className={`flex items-center justify-between py-3 px-5 ${
-                  pathname === "/admin/products"
-                    ? "text-white bg-zinc-700 dark:text-white font-semibold"
-                    : ""
-                }`}
-              >
-                <div className="flex items-center gap-4">
-                  <List />
-                  Товари
-                </div>
-                <ChevronRight />
-              </Link>
-            </li>
-          )}
         </ul>
       </nav>
     </div>
