@@ -55,6 +55,10 @@ export const CallBackForm = () => {
         title: "Дякуємо! Запит відправлено.",
         description: "Менеджер найближчим часом зателефонує на Ваш номер.",
       });
+
+      form.reset();
+
+      form.clearErrors();
     } else if (error) {
       toast({
         variant: "destructive",

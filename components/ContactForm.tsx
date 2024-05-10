@@ -65,6 +65,10 @@ export const ContactForm = () => {
         description:
           "Менеджер найближчим часом надішле відповідь на Вашу пошту.",
       });
+
+      form.reset();
+
+      form.clearErrors();
     } else if (error) {
       toast({
         variant: "destructive",

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <section className="w-full text-xs md:text-sm lg:text-base text-gray-500 dark:text-white">
+    <section className="w-full text-xs md:text-sm lg:text-base text-gray-800 dark:text-white">
       <ul className="grid md:grid-cols-2 gap-2 md:gap-5">
         <li className="p-2 lg:p-4 rounded bg-zinc-100/5 flex items-center justify-center">
           <ul className="flex flex-col gap-2 md:gap-5 text-sm md:text-base">

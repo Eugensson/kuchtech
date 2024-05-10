@@ -16,7 +16,7 @@ const Map = () => {
       center={[49.44319969093555, 32.062166385171274]}
       zoom={20}
       scrollWheelZoom={false}
-      className="w-full h-[150px] md:h-[300px] lg:h-[400px]"
+      className="w-full h-[150px] md:h-[300px] lg:h-[400px] -z-10"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
