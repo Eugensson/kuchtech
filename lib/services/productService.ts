@@ -58,7 +58,6 @@ const getByQuery = cache(
 
     const brandFilter = brand && brand !== "all" ? { brand } : {};
 
-    // 10-50
     const priceFilter =
       price && price !== "all"
         ? {

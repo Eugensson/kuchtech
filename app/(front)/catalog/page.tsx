@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, MoveDown, MoveUp } from "lucide-react";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
 import { SearchBox } from "@/components/SearchBox";
 import { ProductItem } from "@/components/ProductItem";
 import productServices from "@/lib/services/productService";
@@ -16,16 +9,28 @@ const sortOrders = ["newest", "lowest", "highest"];
 
 const prices = [
   {
-    name: "$1 to $50",
-    value: "1-50",
+    name: "до 50",
+    value: "1-50000",
   },
   {
-    name: "$51 to $200",
-    value: "51-200",
+    name: "від 50 до 100",
+    value: "50001-100000",
   },
   {
-    name: "$201 to $1000",
-    value: "201-1000",
+    name: "від 100 до 250",
+    value: "100001-250000",
+  },
+  {
+    name: "від 250 до 500",
+    value: "250001-500000",
+  },
+  {
+    name: "від 500 до 1000",
+    value: "500001-1000000",
+  },
+  {
+    name: "понад 1000",
+    value: "1000000-3000000",
   },
 ];
 
@@ -53,7 +58,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function SearchPage({
+export default async function CatalogPage({
   searchParams: {
     q = "all",
     category = "all",
@@ -110,8 +115,8 @@ export default async function SearchPage({
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
       <aside className="flex flex-col gap-1 md:gap-2">
         <SearchBox />
-        <h2 className="text-xs md:text-base">Категорія</h2>
-        <ul className="flex flex-col gap-1 h-[120px] lg:h-[300px] overflow-y-scroll border-y-2">
+        <h2 className="text-xs md:text-base font-semibold">Категорія</h2>
+        <ul className="flex flex-col gap-1 h-[120px] lg:h-[240px] overflow-y-scroll border-y-2">
           {categories.map((c: string) => (
             <li key={c}>
               <Link
@@ -126,7 +131,7 @@ export default async function SearchPage({
             </li>
           ))}
         </ul>
-        <h2 className="text-xs md:text-base">Бренд</h2>
+        <h2 className="text-xs md:text-base font-semibold">Бренд</h2>
         <ul className="flex flex-col gap-1 h-[120px] overflow-y-scroll border-y-2">
           {brands.map((b: string) => (
             <li key={b}>
@@ -142,23 +147,28 @@ export default async function SearchPage({
             </li>
           ))}
         </ul>
-        <Accordion type="single" className="p-2" collapsible>
-          <AccordionItem value="price">
-            <AccordionTrigger>Ціна</AccordionTrigger>
-            <AccordionContent>
-              <Link href={getFilterUrl({ p: "all" })}>Будь-яка</Link>
-            </AccordionContent>
-            {prices.map((p) => (
-              <AccordionContent key={p.value}>
-                <Link href={getFilterUrl({ p: p.value })}>{p.name}</Link>
-              </AccordionContent>
-            ))}
-          </AccordionItem>
-        </Accordion>
+        <h2 className="text-xs md:text-base font-semibold">
+          Ціна, тис. &#8372;
+        </h2>
+        <ul className="flex flex-col gap-1 h-[120px] overflow-y-scroll border-y-2">
+          {prices.map((p) => (
+            <li key={p.name}>
+              <Link
+                className={`text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                  p.value === price &&
+                  "font-semibold text-rose-800 dark:text-rose-400"
+                }`}
+                href={getFilterUrl({ p: p.value })}
+              >
+                {p.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </aside>
 
       <div className="md:col-span-3 xl:col-span-4 flex flex-col gap-2  border-l-2">
-        <div className="flex flex-col gap-2 w-full md:p-2 lg:p-4 xl:flex-row lg:justify-between">
+        <div className="flex flex-col gap-2 w-full md:p-2 lg:p-4">
           <div className="flex items-center gap-2 text-xs md:text-sm xl:text-base">
             <p>Результат:</p>
             <span className="ml-1 font-semibold">
