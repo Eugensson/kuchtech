@@ -12,11 +12,9 @@ export const SearchBox = () => {
 
   const q = searchParams.get("q") || "";
 
-  const { data: categories, error } = useSWR("/api/products/categories");
+  const { error } = useSWR("/api/products/categories");
 
   if (error) return error.message;
-
-  if (!categories) return "Завантаження...";
 
   return (
     <form action="/catalog" method="GET">
@@ -25,7 +23,7 @@ export const SearchBox = () => {
           placeholder="Пошук"
           name="q"
           autoComplete="off"
-          defaultValue={q}
+          className="text-xs md:text-sm lg:text-base"
         />
         <Button
           size="icon"
@@ -33,7 +31,7 @@ export const SearchBox = () => {
           type="submit"
           aria-label="Кнопка пошуку"
         >
-          <Search />
+          <Search className="w-4 h-4" />
         </Button>
       </div>
     </form>

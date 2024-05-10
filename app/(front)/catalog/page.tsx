@@ -108,9 +108,9 @@ export default async function SearchPage({
 
   return (
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
-      <aside className="p-1 flex flex-col gap-1 md:gap-2">
+      <aside className="flex flex-col gap-1 md:gap-2">
         <SearchBox />
-        <h2 className="text-base">Категорія</h2>
+        <h2 className="text-xs md:text-base">Категорія</h2>
         <ul className="flex flex-col gap-1 h-[120px] lg:h-[300px] overflow-y-scroll border-y-2">
           {categories.map((c: string) => (
             <li key={c}>
@@ -126,7 +126,7 @@ export default async function SearchPage({
             </li>
           ))}
         </ul>
-        <h2>Бренд</h2>
+        <h2 className="text-xs md:text-base">Бренд</h2>
         <ul className="flex flex-col gap-1 h-[120px] overflow-y-scroll border-y-2">
           {brands.map((b: string) => (
             <li key={b}>
