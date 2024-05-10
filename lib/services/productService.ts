@@ -24,7 +24,7 @@ const getBySlug = cache(async (slug: string) => {
   return product as Product;
 });
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 8;
 
 const getByQuery = cache(
   async ({

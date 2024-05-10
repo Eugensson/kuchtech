@@ -62,7 +62,7 @@ export default async function ProductDetails({
           className="flex items-center gap-1 font-semibold lg:text-base hover:text-rose-700 mt-auto"
         >
           <ChevronsLeft className="w-7 h-7" />
-          Каталог
+          До каталогу
         </Link>
       </div>
     </section>

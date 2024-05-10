@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MoveDown, MoveUp } from "lucide-react";
+import { ChevronLeft, ChevronRight, MoveDown, MoveUp } from "lucide-react";
 
 import {
   Accordion,
@@ -7,12 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-} from "@/components/ui/pagination";
+
 import { SearchBox } from "@/components/SearchBox";
 import { ProductItem } from "@/components/ProductItem";
 import productServices from "@/lib/services/productService";
@@ -116,7 +111,7 @@ export default async function SearchPage({
       <aside className="p-1 flex flex-col gap-1 md:gap-2">
         <SearchBox />
         <h2 className="text-base">Категорія</h2>
-        <ul className="flex flex-col gap-1 h-[120px] md:h-[240px] lg:h-[300px] overflow-y-scroll border-y-2">
+        <ul className="flex flex-col gap-1 h-[120px] lg:h-[300px] overflow-y-scroll border-y-2">
           {categories.map((c: string) => (
             <li key={c}>
               <Link
@@ -132,7 +127,7 @@ export default async function SearchPage({
           ))}
         </ul>
         <h2>Бренд</h2>
-        <ul className="flex flex-col gap-1 h-[60px] md:h-[120px] overflow-y-scroll border-y-2">
+        <ul className="flex flex-col gap-1 h-[120px] overflow-y-scroll border-y-2">
           {brands.map((b: string) => (
             <li key={b}>
               <Link
@@ -178,7 +173,10 @@ export default async function SearchPage({
             category !== "all" ||
             brand !== "all" ||
             price !== "all" ? (
-              <Link className="btn btn-sm btn-ghost" href="/catalog">
+              <Link
+                className="btn btn-sm btn-ghost font-semibold"
+                href="/catalog"
+              >
                 Очистити
               </Link>
             ) : null}
@@ -211,32 +209,39 @@ export default async function SearchPage({
             ))}
           </div>
         </div>
-        <ul className="flex flex-wrap items-center justify-center gap-1 md:gap-2 h-[200px] md:h-[350px] lg:h-auto overflow-y-scroll lg:overflow-y-hidden">
-          {products.map((product) => (
-            <li
-              key={product.slug}
-              className="w-full max-w-[300px] md:max-w-[240px]"
-            >
-              <ProductItem product={product} />
-            </li>
-          ))}
-        </ul>
-        <Pagination className="my-4">
-          <PaginationContent>
-            <PaginationItem className="flex flex-wrap justify-center gap-3">
-              {products.length > 0 &&
-                Array.from(Array(pages).keys()).map((p) => (
-                  <PaginationLink
-                    key={p}
-                    href={getFilterUrl({ pg: `${p + 1}` })}
-                    className="m-1 p-1 w-1 h-1 text-xs md:text-sm"
-                  >
-                    {p + 1}
-                  </PaginationLink>
-                ))}
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+        {products.length === 0 ? (
+          <p className="flex flex-col gap-3 justify-center items-center h-full font-semibold text-lg text-center">
+            За даними критеріями пошуку не знайдено товарів.
+            <span className="text-gray-500 text-base">
+              Будь ласка, задайте інші критерії пошуку.
+            </span>
+          </p>
+        ) : (
+          <ul className="flex flex-wrap items-center justify-center gap-1 md:gap-2 h-[200px] md:h-[350px] lg:h-auto overflow-y-scroll lg:overflow-y-hidden">
+            {products.map((product) => (
+              <li
+                key={product.slug}
+                className="w-full max-w-[300px] md:max-w-[240px]"
+              >
+                <ProductItem product={product} />
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {pages > 1 && (
+          <div className="flex items-center gap-2 my-4 mx-auto">
+            <Link href={getFilterUrl({ pg: `${Number(page) - 1}` })}>
+              <ChevronLeft />
+            </Link>
+            <p className="flex items-center gap-1">
+              {page} <span>/</span> {pages}
+            </p>
+            <Link href={getFilterUrl({ pg: `${Number(page) + 1}` })}>
+              <ChevronRight />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
