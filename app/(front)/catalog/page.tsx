@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, MoveDown, MoveUp } from "lucide-react";
 
 import { SearchBox } from "@/components/SearchBox";
+import { Separator } from "@/components/ui/separator";
 import { ProductItem } from "@/components/ProductItem";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import productServices from "@/lib/services/productService";
 
 const sortOrders = ["newest", "lowest", "highest"];
@@ -115,56 +117,54 @@ export default async function CatalogPage({
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
       <aside className="flex flex-col gap-1 md:gap-2">
         <SearchBox />
-        <h2 className="text-xs md:text-base font-semibold">Категорія</h2>
-        <ul className="flex flex-col gap-1 h-[120px] lg:h-[240px] overflow-y-scroll border-y-2">
+        <h4 className="text-sm md:text-base font-medium leading-none">
+          Категорія
+        </h4>
+        <ScrollArea className="w-full h-[120px] lg:h-[245px] rounded-md border-2">
           {categories.map((c: string) => (
-            <li key={c}>
-              <Link
-                className={`text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
-                  c === category &&
-                  "font-semibold text-rose-800 dark:text-rose-400"
-                }`}
-                href={getFilterUrl({ c })}
-              >
-                {c}
-              </Link>
-            </li>
+            <Link
+              key={c}
+              href={getFilterUrl({ c })}
+              className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                c === category &&
+                "font-semibold text-rose-800 dark:text-rose-400"
+              }`}
+            >
+              {c}
+            </Link>
           ))}
-        </ul>
-        <h2 className="text-xs md:text-base font-semibold">Бренд</h2>
-        <ul className="flex flex-col gap-1 h-[120px] overflow-y-scroll border-y-2">
+        </ScrollArea>
+        <h4 className="text-sm md:text-base font-medium leading-none">Бренд</h4>
+        <ScrollArea className="w-full h-[120px] rounded-md border-2">
           {brands.map((b: string) => (
-            <li key={b}>
-              <Link
-                className={`text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
-                  b === brand &&
-                  "font-semibold text-rose-800 dark:text-rose-400"
-                }`}
-                href={getFilterUrl({ b })}
-              >
-                {b}
-              </Link>
-            </li>
+            <Link
+              key={b}
+              href={getFilterUrl({ b })}
+              className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                b === brand && "font-semibold text-rose-800 dark:text-rose-400"
+              }`}
+            >
+              {b}
+            </Link>
           ))}
-        </ul>
-        <h2 className="text-xs md:text-base font-semibold">
+        </ScrollArea>
+        <h4 className="text-sm md:text-base font-medium leading-none">
           Ціна, тис. &#8372;
-        </h2>
-        <ul className="flex flex-col gap-1 h-[120px] overflow-y-scroll border-y-2">
+        </h4>
+        <ScrollArea className="h-[100px] rounded-md border-2">
           {prices.map((p) => (
-            <li key={p.name}>
-              <Link
-                className={`text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
-                  p.value === price &&
-                  "font-semibold text-rose-800 dark:text-rose-400"
-                }`}
-                href={getFilterUrl({ p: p.value })}
-              >
-                {p.name}
-              </Link>
-            </li>
+            <Link
+              key={p.name}
+              href={getFilterUrl({ p: p.value })}
+              className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                p.value === price &&
+                "font-semibold text-rose-800 dark:text-rose-400"
+              }`}
+            >
+              {p.name}
+            </Link>
           ))}
-        </ul>
+        </ScrollArea>
       </aside>
 
       <div className="md:col-span-3 xl:col-span-4 flex flex-col gap-2  border-l-2">
