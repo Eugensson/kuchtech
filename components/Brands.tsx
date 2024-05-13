@@ -56,7 +56,7 @@ export const Brands = () => {
       <h2 className="md:text-xl lg:text-2xl font-bold text-center">
         Торгівельні марки
       </h2>
-      <p className="text-xs md:text-sm lg:text-base xl:text-lg text-center text-gray-500">
+      <p className="text-xs md:text-sm lg:text-base xl:text-lg text-center text-gray-500 dark:text-gray-300">
         Наша компанія має можливість запропонувати вам продукцію від світових
         лідерів у виробництві професійного виробничого та торгівельного
         обладнання.
@@ -77,7 +77,7 @@ export const Brands = () => {
                   src={imageURL}
                   width={75}
                   height={50}
-                  alt="Логотип компанії"
+                  alt={`Логотип компанії ${name}`}
                   className="w-full h-auto"
                 />
               </div>

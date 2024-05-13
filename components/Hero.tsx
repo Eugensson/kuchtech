@@ -1,15 +1,24 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <section className="flex items-center bg-[url('/images/banner.jpg')] bg-cover bg-center bg-no-repeat h-[250px] md:h-[400px] lg:h-[600px]">
-      <div className="w-full flex flex-col gap-2 md:gap-5 lg:gap-10 p-5 md:p-10 lg:p-20">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-zinc-950">
+    <section className="relative">
+      <Image
+        priority
+        width={2048}
+        height={1490}
+        alt=""
+        src={"/images/banner.jpg"}
+        className="object-cover h-[250px] md:h-[400px] lg:h-[600px]"
+      />
+      <div className="absolute top-0 left-0 w-full flex flex-col gap-2 md:gap-5 lg:gap-10 p-5 md:p-10 lg:p-20">
+        <h1 className="text-xl md:text-4xl lg:text-5xl font-extrabold text-zinc-950">
           Будуйте бізнес з<br />
           <span className="font-extrabold uppercase text-zinc-950">Kuch</span>
           <span className="font-extrabold uppercase text-rose-700">Tech</span>
         </h1>
-        <p className="w-[275px] md:w-[400px] lg:w-[475px] text-xs md:text-base lg:text-xl font-bold text-zinc-950 bg-zinc-300/75 p-2 rounded-md">
+        <p className="w-[270px] md:w-[400px] lg:w-[475px] text-xs md:text-base lg:text-xl font-semibold text-zinc-950 bg-zinc-100/50 p-2 rounded-md">
           Постачальник професійного обладнання
           <br /> для Вашого бізнесу
         </p>
