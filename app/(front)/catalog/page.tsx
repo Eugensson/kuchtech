@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, MoveDown, MoveUp } from "lucide-react";
 
 import { SearchBox } from "@/components/SearchBox";
-import { Separator } from "@/components/ui/separator";
 import { ProductItem } from "@/components/ProductItem";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import productServices from "@/lib/services/productService";
@@ -241,15 +240,19 @@ export default async function CatalogPage({
 
         {pages > 1 && (
           <div className="flex items-center gap-2 my-4 mx-auto">
-            <Link href={getFilterUrl({ pg: `${Number(page) - 1}` })}>
-              <ChevronLeft />
-            </Link>
+            {Number(page) > 1 && (
+              <Link href={getFilterUrl({ pg: `${Number(page) - 1}` })}>
+                <ChevronLeft />
+              </Link>
+            )}
             <p className="flex items-center gap-1">
               {page} <span>/</span> {pages}
             </p>
-            <Link href={getFilterUrl({ pg: `${Number(page) + 1}` })}>
-              <ChevronRight />
-            </Link>
+            {Number(page) < Number(pages) && (
+              <Link href={getFilterUrl({ pg: `${Number(page) + 1}` })}>
+                <ChevronRight />
+              </Link>
+            )}
           </div>
         )}
       </div>
