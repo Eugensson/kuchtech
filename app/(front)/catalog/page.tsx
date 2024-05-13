@@ -241,7 +241,10 @@ export default async function CatalogPage({
         {pages > 1 && (
           <div className="flex items-center gap-2 my-4 mx-auto">
             {Number(page) > 1 && (
-              <Link href={getFilterUrl({ pg: `${Number(page) - 1}` })}>
+              <Link
+                href={getFilterUrl({ pg: `${Number(page) - 1}` })}
+                aria-label="Навігація до попередньої сторінки"
+              >
                 <ChevronLeft />
               </Link>
             )}
@@ -249,7 +252,10 @@ export default async function CatalogPage({
               {page} <span>/</span> {pages}
             </p>
             {Number(page) < Number(pages) && (
-              <Link href={getFilterUrl({ pg: `${Number(page) + 1}` })}>
+              <Link
+                href={getFilterUrl({ pg: `${Number(page) + 1}` })}
+                aria-label="Навігація до наступної сторінки"
+              >
                 <ChevronRight />
               </Link>
             )}
