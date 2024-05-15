@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, MoveDown, MoveUp } from "lucide-react";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { SearchBox } from "@/components/SearchBox";
 import { ProductItem } from "@/components/ProductItem";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -116,54 +122,65 @@ export default async function CatalogPage({
     <section className="grid md:grid-cols-4 xl:grid-cols-5 w-full">
       <aside className="flex flex-col gap-1 md:gap-2">
         <SearchBox />
-        <h4 className="text-sm md:text-base font-medium leading-none">
-          Категорія
-        </h4>
-        <ScrollArea className="w-full h-[120px] lg:h-[245px] rounded-md border-2">
-          {categories.map((c: string) => (
-            <Link
-              key={c}
-              href={getFilterUrl({ c })}
-              className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
-                c === category &&
-                "font-semibold text-rose-800 dark:text-rose-400"
-              }`}
-            >
-              {c}
-            </Link>
-          ))}
-        </ScrollArea>
-        <h4 className="text-sm md:text-base font-medium leading-none">Бренд</h4>
-        <ScrollArea className="w-full h-[120px] rounded-md border-2">
-          {brands.map((b: string) => (
-            <Link
-              key={b}
-              href={getFilterUrl({ b })}
-              className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
-                b === brand && "font-semibold text-rose-800 dark:text-rose-400"
-              }`}
-            >
-              {b}
-            </Link>
-          ))}
-        </ScrollArea>
-        <h4 className="text-sm md:text-base font-medium leading-none">
-          Ціна, тис. &#8372;
-        </h4>
-        <ScrollArea className="h-[100px] rounded-md border-2">
-          {prices.map((p) => (
-            <Link
-              key={p.name}
-              href={getFilterUrl({ p: p.value })}
-              className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
-                p.value === price &&
-                "font-semibold text-rose-800 dark:text-rose-400"
-              }`}
-            >
-              {p.name}
-            </Link>
-          ))}
-        </ScrollArea>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Категорія</AccordionTrigger>
+            <AccordionContent>
+              <ScrollArea className="w-full h-[120px] lg:h-[180px]">
+                {categories.map((c: string) => (
+                  <Link
+                    key={c}
+                    href={getFilterUrl({ c })}
+                    className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                      c === category &&
+                      "font-semibold text-rose-800 dark:text-rose-400"
+                    }`}
+                  >
+                    {c}
+                  </Link>
+                ))}
+              </ScrollArea>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Бренд</AccordionTrigger>
+            <AccordionContent>
+              <ScrollArea className="w-full h-[120px]">
+                {brands.map((b: string) => (
+                  <Link
+                    key={b}
+                    href={getFilterUrl({ b })}
+                    className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                      b === brand &&
+                      "font-semibold text-rose-800 dark:text-rose-400"
+                    }`}
+                  >
+                    {b}
+                  </Link>
+                ))}
+              </ScrollArea>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>Ціна, тис. &#8372;</AccordionTrigger>
+            <AccordionContent>
+              <ScrollArea className="h-[100px]">
+                {prices.map((p) => (
+                  <Link
+                    key={p.name}
+                    href={getFilterUrl({ p: p.value })}
+                    className={`block my-1 text-xs md:text-sm hover:text-rose-800 dark:hover:text-rose-400 ${
+                      p.value === price &&
+                      "font-semibold text-rose-800 dark:text-rose-400"
+                    }`}
+                  >
+                    {p.name}
+                  </Link>
+                ))}
+              </ScrollArea>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </aside>
 
       <div className="md:col-span-3 xl:col-span-4 flex flex-col gap-2  border-l-2">
@@ -226,7 +243,7 @@ export default async function CatalogPage({
             </span>
           </p>
         ) : (
-          <ul className="flex flex-wrap items-center justify-center gap-1 md:gap-2 h-[200px] md:h-[350px] lg:h-auto overflow-y-scroll lg:overflow-y-hidden">
+          <ul className="flex flex-wrap items-center justify-center gap-2 md:gap-2 h-[330px] md:h-[350px] lg:h-auto overflow-y-scroll lg:overflow-y-hidden">
             {products.map((product) => (
               <li
                 key={product.slug}

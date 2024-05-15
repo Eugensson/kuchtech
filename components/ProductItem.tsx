@@ -15,7 +15,7 @@ export const ProductItem = ({ product }: { product: Product }) => {
           height={200}
           className="object-cover h-60 w-full"
         />
-        <div className="flex flex-col justify-between gap-4 px-4 py-2 text-sm bg-zinc-100/10">
+        <div className="flex flex-col min-h-[90px] justify-between gap-4 px-4 py-2 text-sm bg-zinc-100/10">
           <h2 className="font-semibold">{product.name}</h2>
           <div className="flex items-center justify-between">
             <span>Ціна, &#8372;</span>
