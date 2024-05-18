@@ -13,7 +13,7 @@ export const Stats = () => {
       <ul className="grid md:grid-cols-3 gap-2 md:gap-5">
         <li className="flex flex-col gap-2 p-2 lg:p-5 text-center w-full rounded-lg bg-zinc-200 dark:bg-white/5">
           <p className="text-4xl font-bold text-red-600 dark:text-rose-400">
-            $2.0m
+            &#8372;5.0m
           </p>
           <h3 className="text-sm md:text-base lg:text-lg font-semibold">
             Обсяги продаж понад

@@ -217,7 +217,6 @@ export default async function CatalogPage({
                 ) : null}
               </li>
             </ul>
-            {/* &nbsp; */}
           </div>
 
           <div className="flex items-center gap-2 text-xs md:text-sm xl:text-base">
