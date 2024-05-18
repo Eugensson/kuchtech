@@ -66,7 +66,7 @@ export async function generateMetadata({
     };
   } else {
     return {
-      title: "KuchTech | Каталог обладнання для кафе, барів та ресторанів",
+      title: "Каталог",
     };
   }
 }

@@ -5,7 +5,7 @@ import { Devider } from "@/components/Devider";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "KuchTech | Сервіс",
+  title: "Сервісне обслуговування",
   description:
     "Інформація про гарантію, умови гарантійного та післягарантійного обслуговування придбаного обладнання",
 };

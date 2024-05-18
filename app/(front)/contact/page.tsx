@@ -6,7 +6,7 @@ import Map from "@/components/Map/index";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "KuchTech | Контакти",
+  title: "Контакти",
   description: "Контактна інформація постачальника обладнання",
 };
 

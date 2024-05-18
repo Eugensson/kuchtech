@@ -6,7 +6,7 @@ import { Brands } from "@/components/Brands";
 import { Contact } from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "KuchTech | Головна",
+  title: "Головна",
   description:
     "Постачальник професійного обладнання для кафе, барів та ресторанів",
 };

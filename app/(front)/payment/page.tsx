@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Devider } from "@/components/Devider";
 
 export const metadata: Metadata = {
-  title: "KuchTech | Оплата та доставка",
+  title: "Оплата/доставка",
   description: "Умови оплати та доставки для покупця",
 };
 

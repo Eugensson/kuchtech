@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CallBackForm } from "./CallBackForm";
+import { CallBackForm } from "@/components/CallBackForm";
 
 export const Contact = () => {
   return (
@@ -7,8 +7,8 @@ export const Contact = () => {
       <Image
         priority
         src={"/images/contact.jpg"}
-        width={600}
-        height={600}
+        width={300}
+        height={300}
         alt="Світлина чоловіка перед ноутбуком з телефоном"
         className="rounded-lg w-full md:h-auto"
       />

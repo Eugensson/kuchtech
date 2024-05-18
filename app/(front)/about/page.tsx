@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { Devider } from "@/components/Devider";
 
 export const metadata: Metadata = {
-  title: "KuchTech | Про компанію",
+  title: "Про компанію",
   description: "Обладнання для кафе, барів та ресторанів",
 };
 
