@@ -13,7 +13,7 @@ export const Footer = () => {
     <footer className="grid md:grid-cols-3 gap-2 text-teal-700 dark:text-white text-xs lg:text-sm py-2 border-t-2 border-zinc-300 dark:border-zinc-300/15">
       <div>
         <Logo />
-        <p className="text-xs text-center md:text-sm lg:text-base md:text-left">
+        <p className="text-xs text-center lg:text-sm xl:text-base md:text-left">
           Постачальник професійного обладнання для кафе, барів та ресторанів.
         </p>
       </div>

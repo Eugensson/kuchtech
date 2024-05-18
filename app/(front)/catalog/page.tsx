@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, MoveDown, MoveUp } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  MoveDown,
+  MoveUp,
+  SquareX,
+} from "lucide-react";
 
 import {
   Accordion,
@@ -60,7 +66,7 @@ export async function generateMetadata({
     };
   } else {
     return {
-      title: "KuchTech | Каталог продукції",
+      title: "KuchTech | Каталог обладнання для кафе, барів та ресторанів",
     };
   }
 }
@@ -106,8 +112,8 @@ export default async function CatalogPage({
     return `/catalog?${new URLSearchParams(params).toString()}`;
   };
 
-  const categories = await productServices.getCategories();
   const brands = await productServices.getBrands();
+  const categories = await productServices.getCategories();
 
   const { countProducts, products, pages } = await productServices.getByQuery({
     category,
@@ -185,27 +191,33 @@ export default async function CatalogPage({
 
       <div className="md:col-span-3 xl:col-span-4 flex flex-col gap-2  border-l-2">
         <div className="flex flex-col gap-2 w-full md:p-2 lg:p-4">
-          <div className="flex items-center gap-2 text-xs md:text-sm xl:text-base">
-            <p>Результат:</p>
-            <span className="ml-1 font-semibold">
-              {products.length === 0 ? 0 : countProducts}
-            </span>
-            {q !== "all" && q !== "" && " : " + q}
-            {category !== "all" && " : " + category}
-            {brand !== "all" && " : " + brand}
-            {price !== "all" && " : Ціна " + price}
-            &nbsp;
-            {(q !== "all" && q !== "") ||
-            category !== "all" ||
-            brand !== "all" ||
-            price !== "all" ? (
-              <Link
-                className="btn btn-sm btn-ghost font-semibold"
-                href="/catalog"
-              >
-                Очистити
-              </Link>
-            ) : null}
+          <div className="flex flex-col xl:flex-row gap-2 text-xs md:text-sm xl:text-base">
+            <p className="flex gap-1">
+              Результат:
+              <span className="ml-1 font-semibold">
+                {products.length === 0 ? 0 : countProducts}
+              </span>
+            </p>
+            <ul className="flex flex-col md:flex-row md:items-center gap-1">
+              <li>{q !== "all" && q !== "" && " : " + q}</li>
+              <li>{category !== "all" && " : " + category}</li>
+              <li>{brand !== "all" && " : " + brand}</li>
+              <li>{price !== "all" && " : Ціна " + price}</li>
+              <li>
+                {(q !== "all" && q !== "") ||
+                category !== "all" ||
+                brand !== "all" ||
+                price !== "all" ? (
+                  <Link
+                    className="btn btn-sm btn-ghost font-semibold"
+                    href="/catalog"
+                  >
+                    <SquareX className="w-4 h-4 md:w-5 md:h-5" />
+                  </Link>
+                ) : null}
+              </li>
+            </ul>
+            {/* &nbsp; */}
           </div>
 
           <div className="flex items-center gap-2 text-xs md:text-sm xl:text-base">
@@ -236,9 +248,9 @@ export default async function CatalogPage({
           </div>
         </div>
         {products.length === 0 ? (
-          <p className="flex flex-col gap-3 justify-center items-center h-full font-semibold text-lg text-center">
+          <p className="flex flex-col gap-3 justify-center items-center h-full md:min-h-[280px] lg:min-h-[350px] font-semibold text-center">
             За даними критеріями пошуку не знайдено товарів.
-            <span className="text-gray-500 text-base">
+            <span className="text-gray-500">
               Будь ласка, задайте інші критерії пошуку.
             </span>
           </p>

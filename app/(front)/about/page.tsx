@@ -4,8 +4,7 @@ import { Devider } from "@/components/Devider";
 
 export const metadata: Metadata = {
   title: "KuchTech | Про компанію",
-  description:
-    "Постачальник професійного обладнання для кафе, барів та ресторанів",
+  description: "Обладнання для кафе, барів та ресторанів",
 };
 
 const AboutPage = () => {
