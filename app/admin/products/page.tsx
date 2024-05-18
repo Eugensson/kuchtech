@@ -2,6 +2,7 @@ import Products from "@/app/admin/products/Products";
 
 export const metadata = {
   title: "БД товарів",
+  robots: { index: false, follow: true },
 };
 const AdminProductsPage = () => {
   return (
