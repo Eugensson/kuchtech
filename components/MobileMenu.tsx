@@ -5,8 +5,6 @@ import {
   Cog,
   Truck,
   PhoneForwarded,
-  UserCog,
-  List,
   X,
   ChevronRight,
 } from "lucide-react";

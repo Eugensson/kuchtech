@@ -72,15 +72,27 @@ const Service = () => {
         Післягарантійне обслуговування та ремонт придбаного в нас обладнання
         здійснюються зі знижкою.
       </p>
-      <p className="my-5 flex items-center gap-2">
-        Контактний телефон сервісного центру:
-        <Link
-          href="tel:+380631068008"
-          className="font-semibold transition hover:text-rose-700"
-        >
-          +38 063 106 80 08
-        </Link>
-      </p>
+      <div className="grid items-center md:grid-cols-2 gap-2">
+        <p>Контактні телефони сервісного центру:</p>
+        <ul>
+          <li>
+            <Link
+              href="tel:+380938803787"
+              className="font-semibold transition hover:text-rose-700"
+            >
+              +38 093 880 37 87
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="tel:+380631068008"
+              className="font-semibold transition hover:text-rose-700"
+            >
+              +38 063 106 80 08
+            </Link>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 };
