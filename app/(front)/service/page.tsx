@@ -7,10 +7,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Сервісне обслуговування",
   description:
-    "Інформація про гарантію, умови гарантійного та післягарантійного обслуговування придбаного обладнання",
+    "Гарантійне та післягарантійне обслугування, пуско-налагоджувальні роботи.",
 };
 
-const Service = () => {
+export default function Service() {
   return (
     <section className="flex flex-col gap-2 text-xs md:text-sm lg:text-base">
       <Devider text="Сервіс" />
@@ -95,6 +95,4 @@ const Service = () => {
       </div>
     </section>
   );
-};
-
-export default Service;
+}

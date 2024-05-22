@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Умови оплати та доставки для покупця",
 };
 
-const Payment = () => {
+export default function Payment() {
   return (
     <section className="flex flex-col gap-2 text-xs md:text-sm lg:text-base">
       <Devider text="Оплата" />
@@ -53,6 +53,4 @@ const Payment = () => {
       <p>Вартість доставки покриває Покупець.</p>
     </section>
   );
-};
-
-export default Payment;
+}

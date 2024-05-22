@@ -3,14 +3,14 @@ import { Metadata } from "next";
 import { Mail, MapPinned, Phone } from "lucide-react";
 
 import Map from "@/components/Map/index";
-import { ContactForm } from "@/components/ContactForm";
+import { ContactForm } from "@/components/ContactForms";
 
 export const metadata: Metadata = {
   title: "Контакти",
   description: "Контактна інформація постачальника обладнання",
 };
 
-const ContactPage = () => {
+export default function ContactPage() {
   return (
     <section className="w-full text-xs md:text-sm lg:text-base text-gray-800 dark:text-white">
       <ul className="grid md:grid-cols-2 gap-2 md:gap-5">
@@ -71,6 +71,4 @@ const ContactPage = () => {
       </ul>
     </section>
   );
-};
-
-export default ContactPage;
+}

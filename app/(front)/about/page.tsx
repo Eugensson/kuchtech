@@ -4,10 +4,11 @@ import { Devider } from "@/components/Devider";
 
 export const metadata: Metadata = {
   title: "Про компанію",
-  description: "Обладнання для кафе, барів та ресторанів",
+  description:
+    "Професійне обладнання та техніка для кафе, барів, ресторанів та їдалень. Гарантія. Монтажні роботи. Навчання персоналу.",
 };
 
-const AboutPage = () => {
+export default function AboutPage() {
   return (
     <section className="flex flex-col gap-2 text-xs md:text-sm lg:text-base">
       <Devider text="Про компанію" />
@@ -67,6 +68,4 @@ const AboutPage = () => {
       </p>
     </section>
   );
-};
-
-export default AboutPage;
+}

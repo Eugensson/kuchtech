@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CallBackForm } from "@/components/CallBackForm";
+import { CallBackForm } from "@/components/ContactForms";
 
 export const Contact = () => {
   return (

@@ -4,13 +4,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
-  { label: "Каталог", src: "/catalog" },
-  { label: "Про нас", src: "/about" },
-  { label: "Сервіс", src: "/service" },
-  { label: "Оплата/доставка", src: "/payment" },
-  { label: "Контакти", src: "/contact" },
-];
+import { navLinks } from "@/constants";
 
 export const Navigation = () => {
   const { data: session } = useSession();

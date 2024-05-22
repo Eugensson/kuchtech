@@ -25,7 +25,7 @@ export const Footer = () => {
             target="_blank"
             aria-label="Посилання на Facebook"
           >
-            <FaFacebook className="w-8 h-8 transition hover:text-red-500" />
+            <FaFacebook className="w-8 h-8 transition hover:text-red-500 dark:hover:text-rose-400" />
           </Link>
         </li>
         <li>
@@ -35,7 +35,7 @@ export const Footer = () => {
             target="_blank"
             aria-label="Посилання на Instagram"
           >
-            <FaInstagram className="w-8 h-8 transition hover:text-red-500" />
+            <FaInstagram className="w-8 h-8 transition hover:text-red-500 dark:hover:text-rose-400" />
           </Link>
         </li>
         <li>
@@ -45,7 +45,7 @@ export const Footer = () => {
             target="_blank"
             aria-label="Посилання на Telegram"
           >
-            <FaTelegram className="w-8 h-8 transition hover:text-red-500" />
+            <FaTelegram className="w-8 h-8 transition hover:text-red-500 dark:hover:text-rose-400" />
           </Link>
         </li>
         <li>
@@ -55,7 +55,7 @@ export const Footer = () => {
             target="_blank"
             aria-label="Посилання на LinkedIn"
           >
-            <FaLinkedinIn className="w-8 h-8 transition hover:text-red-500" />
+            <FaLinkedinIn className="w-8 h-8 transition hover:text-red-500 dark:hover:text-rose-400" />
           </Link>
         </li>
       </ul>

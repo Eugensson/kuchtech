@@ -1,14 +1,20 @@
-import bcrypt from "bcryptjs";
+// import bcrypt from "bcryptjs";
 
 const data = {
-  users: [
-    {
-      name: "Admin",
-      email: "test@test.com",
-      password: bcrypt.hashSync("123456"),
-      isAdmin: true,
-    },
-  ],
+  // users: [
+  //   {
+  //     name: "Alex",
+  //     email: "daksa1974@gmail.com",
+  //     password: bcrypt.hashSync("123456"),
+  //     isAdmin: true,
+  //   },
+  //   {
+  //     name: "Manager",
+  //     email: "kuchtech2024@gmail.com",
+  //     password: bcrypt.hashSync("123456"),
+  //     isAdmin: true,
+  //   },
+  // ],
   products: [
     {
       category: "Пароконвектомати",

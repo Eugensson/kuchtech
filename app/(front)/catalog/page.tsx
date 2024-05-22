@@ -13,39 +13,40 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { sortOrders, prices } from "@/constants";
 import { SearchBox } from "@/components/SearchBox";
 import { ProductItem } from "@/components/ProductItem";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import productServices from "@/lib/services/productService";
 
-const sortOrders = ["newest", "lowest", "highest"];
+// const sortOrders = ["newest", "lowest", "highest"];
 
-const prices = [
-  {
-    name: "до 50",
-    value: "1-50000",
-  },
-  {
-    name: "від 50 до 100",
-    value: "50001-100000",
-  },
-  {
-    name: "від 100 до 250",
-    value: "100001-250000",
-  },
-  {
-    name: "від 250 до 500",
-    value: "250001-500000",
-  },
-  {
-    name: "від 500 до 1000",
-    value: "500001-1000000",
-  },
-  {
-    name: "понад 1000",
-    value: "1000000-3000000",
-  },
-];
+// const prices = [
+//   {
+//     name: "до 50",
+//     value: "1-50000",
+//   },
+//   {
+//     name: "від 50 до 100",
+//     value: "50001-100000",
+//   },
+//   {
+//     name: "від 100 до 250",
+//     value: "100001-250000",
+//   },
+//   {
+//     name: "від 250 до 500",
+//     value: "250001-500000",
+//   },
+//   {
+//     name: "від 500 до 1000",
+//     value: "500001-1000000",
+//   },
+//   {
+//     name: "понад 1000",
+//     value: "1000000-3000000",
+//   },
+// ];
 
 export async function generateMetadata({
   searchParams: { q = "all", category = "all", price = "all" },

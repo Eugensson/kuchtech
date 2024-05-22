@@ -8,7 +8,6 @@ import {
   X,
   ChevronRight,
 } from "lucide-react";
-import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
@@ -27,7 +26,6 @@ const navLinks = [
 ];
 
 export const MobileMenu = ({ toggleMobileMenu }: MobileMenuProps) => {
-  const { data: session } = useSession();
   const pathname = usePathname();
 
   return (

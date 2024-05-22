@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Постачальник професійного обладнання для кафе, барів та ресторанів",
 };
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <section className="flex flex-col">
       <Hero />
@@ -20,6 +20,4 @@ const HomePage = () => {
       <Contact />
     </section>
   );
-};
-
-export default HomePage;
+}
